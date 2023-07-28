@@ -21,6 +21,7 @@ https://eu.shop.battle.net
 
 https://store.playstation.com
 
+//Integrantes.
 
 Nicolas Varela: mi apodo es Nico, nunca tuve otro apodo porque mis amigos no tienen mucha imaginación, decidí hacer este curso para poder crecer en cuanto a mi perfil profesional y también porque me gustaría aprender mas de informática y el desarrollo de paginas web, no tengo experiencias pero si me siento capaz de absorber los conocimientos que nos brindan y lograr ser un buen programador.
 
