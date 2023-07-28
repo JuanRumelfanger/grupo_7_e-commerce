@@ -20,6 +20,8 @@ https://www.greenmangaming.com
 https://eu.shop.battle.net
 
 https://store.playstation.com
+
+
 Nicolas Varela: mi apodo es Nico, nunca tuve otro apodo porque mis amigos no tienen mucha imaginación, decidí hacer este curso para poder crecer en cuanto a mi perfil profesional y también porque me gustaría aprender mas de informática y el desarrollo de paginas web, no tengo experiencias pero si me siento capaz de absorber los conocimientos que nos brindan y lograr ser un buen programador.
 
 Rodrigo Luciano Fines, De apodo me dicen Chino, elegiste hacer el curso de desarrollo web porque siempre me llamo la atencion todo lo que tiene que ver con la informatica y  poder aprender a desarrollar y programar  ya que son cosas que actualmente es muy util aprender, mi experiencia programando podria decir que solo es haciendo videojuegos ya que actualmente estudio la carrera de programacion de videojuegos haciendo mi segundo año hasta ahora.
