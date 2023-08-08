@@ -19,6 +19,11 @@
 
 - <https://store.playstation.com> - Formulario de login minimalista y simple
 
+
+## Tablero de trabajo
+
+https://trello.com/b/9Efhyts3/digital-house-grupo-7
+
 ## Integrantes
 
 **Nicolas Varela**: mi apodo es Nico, nunca tuve otro apodo porque mis amigos no tienen mucha imaginacion, decidi hacer este curso para poder crecer en cuanto a mi perfil profesional y tambien porque me gustaria aprender mas de informatica y el desarrollo de paginas web, no tengo experiencias pero si me siento capaz de absorber los conocimientos que nos brindan y lograr ser un buen programador.
@@ -34,3 +39,5 @@ Mi nombre es **Alejandro Guari** y me dicen Toti o Ale. Empece el curso porque m
 **Guillermo Cruz**: 25 anios - Jujuy/LGSM -- Analista Programador Universitario 1er anio.
 
 **Santiago Hernán Rios**: Algunos amigos me llaman "Magia" aunque nadie sabe el por que pero le tomamos cariño. No tengo experiencia programando pero me interesa mucho la logica al codear, aunque esta alejado de mi carrera de Ing. en Minas me gustaria dedicarme a la programacion.
+
+me llamo fede
