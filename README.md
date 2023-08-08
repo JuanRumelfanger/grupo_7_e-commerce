@@ -39,3 +39,5 @@ Mi nombre es **Alejandro Guari** y me dicen Toti o Ale. Empece el curso porque m
 **Guillermo Cruz**: 25 anios - Jujuy/LGSM -- Analista Programador Universitario 1er anio.
 
 **Santiago Hernán Rios**: Algunos amigos me llaman "Magia" aunque nadie sabe el por que pero le tomamos cariño. No tengo experiencia programando pero me interesa mucho la logica al codear, aunque esta alejado de mi carrera de Ing. en Minas me gustaria dedicarme a la programacion.
+
+me llamo fede
