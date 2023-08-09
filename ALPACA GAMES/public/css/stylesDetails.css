@@ -1,6 +1,6 @@
 *{
     font-family: 'Roboto';
-    background-color: black;
+    background-color: rgb(101, 98, 98);
     color: white;
 }
 /*position-flexbox*/
@@ -26,6 +26,18 @@
 .producto-user{
     text-align: center;
     border: solid white 3px;
+}
+.search-bar{
+    display: block;
+    margin: auto;
+}
+.bar-search{
+    width: 340px;
+    margin: auto;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    font-size: 10px;
 }
 /*icons*/
 
