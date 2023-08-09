@@ -1,22 +1,39 @@
 *{
-    background-color: black;
     font-family: 'Roboto';
-    color: white
-
+    background-color: black;
+    color: white;
 }
-
-
-
-.producto-user{
-    text-align: center;
-    border: solid rgb(137, 15, 15) 3px;
-}
-.section1{
+/*position-flexbox*/
+.haeder-section1{
     display: flex;
+    
+}
+.section-part{
+    display: flex;
+    margin: auto;
+}
+.burger-menu{
+    display: flex;
+    margin: auto;
+    margin-left: 20px;
+}
+.user-option{
+    display: flex;
+    margin: auto;
+    margin-right: 20px;
 }
 /*colors-and-styles*/
+.producto-user{
+    text-align: center;
+    border: solid white 3px;
+}
+/*icons*/
 
-.burger-menu{
-   background-color: white;
-   color: white;
+#burger-menu{
+    color: blue;
+    font-size: 20px;
+}
+#user-option{
+    color: blue;
+    font-size: 20px;
 }
