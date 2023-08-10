@@ -34,13 +34,6 @@ header {
     'opsz' 48
 }
 
-
-
-
-
-
-
-
 main {
     display: flex;
     margin: 20px auto 70px;
@@ -85,9 +78,10 @@ h2 {
     border: 2px solid #0074E0;
 }
 
-.pay-info p {
+.pay-info p, .pay-info p a {
     font-size: 15px;
     color: #5A5A5A;
+    text-align: justify;
 }
 
 .pay-info input {
@@ -124,7 +118,7 @@ h2 {
 
 .img-product {
     margin: auto;
-    width: 40%;
+    width: 50%;
     border-radius: 10px;
 }
 
@@ -167,20 +161,34 @@ h2 {
     margin: 10px auto;
 }
 
+#checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
 .resume-product label {
-    padding-left: 10px;
-    margin: auto 0;
+    padding-left: 50px;
+    text-align: justify;
 }
 
 #confirm-email {
-    width: 20px;
-    height: 20px;
+    /* width: 32px;
+    height: 32px; */
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
 }
 
 .help {
     text-align: center;
     width: 100%;
     margin: 15px auto;
+}
+
+.help a {
+    color: white;
 }
 
 footer {
@@ -198,7 +206,7 @@ footer {
 
 .logo-footer {
     width: 20%;
-    margin: 30px auto;
+    margin: 25px auto;
 }
 
 .info {
@@ -208,7 +216,9 @@ footer {
     flex-wrap: wrap;
 }
 
-.info p {
+.info a {
+    color: white;
+    text-decoration: none;
     padding: 10px;
     font-size: 1rem;
     text-align: center;
@@ -216,9 +226,44 @@ footer {
 
 .info hr {
     border-width: 1px;
+    height: 1.3rem;
+    margin: auto 0;
 }
 
 .legal-terms {
     width: 100%;
     margin: 20px 0;
+}
+
+@media (min-width: 769px) {
+    main {
+        max-width: 1000px;
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .resume-product {
+        width: 50%;
+        order: 1;
+        flex-grow: 1;
+        margin: auto;
+    }
+    
+    .pay-info {
+        width: 30%;
+        flex-grow: 1;
+        margin: auto 0;
+    }
+
+    main::after {
+        content: "";
+        display: block;
+        width:1px;
+        height: auto;
+        background-color: white;
+        margin: 0 40px;
+    }
+
 }
