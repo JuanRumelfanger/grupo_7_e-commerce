@@ -4,11 +4,8 @@
     color: white;
 }
 /*position-flexbox*/
+
 .haeder-section1{
-    display: flex;
-    
-}
-.section-part{
     display: flex;
     margin: auto;
 }
@@ -25,20 +22,28 @@
 .image-product h4{
   display: flex;
   margin: auto;
-  margin-left: 25px;
 }
 .section-button{
     display: flex;
-    margin: 30px auto;
+  
+}
+.directory{
+    margin-left: 35px;
+}
+.search-bar{
+    display: flex;
+    margin: 35px;
+}
+.image-product{
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 /*colors-and-styles*/
 .producto-user{
     text-align: center;
 }
-.search-bar{
-    display: block;
-    margin: auto;
-}
+
 .bar-search{
     width: 340px;
     margin: auto;
@@ -49,7 +54,7 @@
 }
 /*buttons*/
 .buy-now{
-    display: block;
+    display: flex;
     width: 100px;
     background-color: blue;
     padding: 10px;
@@ -58,7 +63,7 @@
     font-size: 20px;
 }
 .gift-button{
-    display: block;
+    display: flex;
     width: 80px;
     background-color: rgb(126, 126, 255);
     padding: 10px;
@@ -70,9 +75,18 @@
 
 #burger-menu{
     color: blue;
-    font-size: 20px;
+    font-size: 30px;
 }
 #user-option{
     color: blue;
-    font-size: 20px;
+    font-size: 30px;
+}
+
+/*texts*/
+.info-app{
+    display: flex;
+}
+
+.info-product{
+    border: solid 3px gainsboro;
 }
