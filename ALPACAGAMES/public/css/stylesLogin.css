@@ -1,13 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .body{
-    height: 100%;
+    border: 1px solid black;
+    height: 555px;
     background-color: black;
     font-family: 'Roboto';
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 #hamburguesa{
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 15px;
-    left: 20px;
+    top: 8px;
+    left: 8px;
     font-size: 25px;
 }
 #hamburguesa:hover{
@@ -20,8 +30,8 @@
     text-align: right;
     color: rgb(95, 95, 95);
     position: absolute;
-    right: 20px;
-    top: 14px;
+    right: 8px;
+    top: 8px;
 }
 #user:hover{
     box-shadow: 0 0 10px white;
@@ -37,9 +47,6 @@
     text-align: center;
     font-family:'Roboto';
     font-weight: bold;
-}
-.hamburg{
-    
 }
 .usuario{
     text-align: right;
@@ -126,12 +133,14 @@ button:hover[type="submit"]{
     border-radius: 10px;
 }
 footer{
-    height: 130px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     width: 100%;
-    position: absolute;
-    bottom: 0.1px;
     background-color: gray;
+    height: 100px;
+    position: fixed;
+    bottom: 0.0000001px;
 }
 .conteiner-otros{
     background-color: black;
@@ -146,6 +155,10 @@ footer{
     text-align: center;
     position: relative;
     top: 20px;
+}
+#logo-AG{
+    width: 250px;
+    height: 70px;
 }
 .conteiner-logo-facebook{
     display: inline;
@@ -225,7 +238,7 @@ footer{
 h3{
     color: black;
     position: relative;
-    bottom: 15px;
+    top: 2px;
     font-family:'Roboto';
     font-weight: bold;
 }
@@ -265,5 +278,22 @@ h3{
 }
 .conteiner-login{
     background-color: black;
-    height: 400px;
+    height: 300px;
+}
+#mensaje-6{
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+}
+.class-footer{
+    position: relative;
+    top: 30px;
+    border-radius: 1px solid white;
+
+}
+@media(max-width: 700px){
+    footer{
+        position: relative;
+        bottom: 50px;
+    }
 }
