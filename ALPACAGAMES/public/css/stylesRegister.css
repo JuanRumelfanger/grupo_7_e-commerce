@@ -4,3 +4,106 @@
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+
+main {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+
+.text-title {
+    font-size: 24px;
+    text-align: center;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.form-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+}
+
+.input-form {
+    border: 1px solid #ebebeb;
+    outline: none;
+    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    color: #222;
+}
+
+.input-form:focus {
+    border: 1px solid #666;
+}
+
+.container-input-label > label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.container-input-label > select {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #222;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+}
+
+.container-input-label > select:focus-visible {
+    outline: none;
+}
+
+.container-checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+}
+
+.container-checkbox .checkbox > input {
+    margin-right: 0.5rem;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transition-property: background-color, color opacity;
+}
+
+.btn:hover {
+    background-color: #222;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #1259c3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1259c3;
+    color: white;
+}
