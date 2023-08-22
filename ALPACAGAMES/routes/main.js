@@ -10,6 +10,6 @@ router.get('/login' ,mainController.login);
 
 router.get('/shop' ,mainController.shop);
 
-router.get('/productDetail' ,mainController.productDetail);
+router.get('/detail' ,mainController.productDetail);
   
 module.exports = router;

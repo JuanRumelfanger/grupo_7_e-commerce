@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('./partials/head') %>
+<%- include('../partials/head') %>
 
 <body>
 
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
         <section class="resume-product">
@@ -38,12 +38,7 @@
                 <option value="debit">Tarjeta de Debito</option>
                 <option value="credit">Tarjeta de Credito</option>
                 <option value="counted">Efectivo</option>
-                <option value="paypal">Paypal</option>
             </select>
-            <div class="warning">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <p>Pueden aplicarse impuestos adicionales</p>
-            </div>
             <p>Al hacer clic en el botón de "Realizar pedido", afirmo que estoy de acuerdo en el lavado de dinero que realiza esta página según lo estipulado en los <a href="#">Terminos y Servicios</a>.</p>
             <!-- <p>Al hacer clic en el botón de "Realizar pedido", más abajo, afirmo que tengo más de 18 años, que soy un usuario autorizado de este método de pago y que acepto el <a href="#">Acuerdo de licencia de usuario final<a>.</p> -->
             <input class="acept" type="submit" value="Realizar Pedido">
@@ -51,7 +46,8 @@
         </section>
     </main>
 
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
 
 </body>
 </html>
+
