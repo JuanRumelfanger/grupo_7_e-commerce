@@ -149,6 +149,13 @@ h2 {
     text-align: end;
 }
 
+.parting-line {
+    width: 100%;
+    height: 1px;
+    border-width: 0;
+    background-color: rgba(250, 250, 250, 0.2);
+}
+
 .calc-total {
     font-size: 18px;
     font-weight: bold;

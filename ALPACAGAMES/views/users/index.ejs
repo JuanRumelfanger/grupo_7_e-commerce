@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpaca Games</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/partials/header.css">
-    <link rel="stylesheet" href="/css/partials/footer.css">
-
-</head>
+<%- include('../partials/head') %>
 
 <body>
+
+    <%- include('../partials/header') %>
+
+    <article id="showcase">
+        <div class="container">
+            <div class="showcase-container">
+                <div class="showcase-content">
+                    <div class="category category-sports">Adventure</div>
+                    <h1>Resident Evil 8</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Molestias repellat qui, blanditiis deserunt nihil a! Hic
+                        excepturi sint accusantium officiis, et quo voluptas quasi
+                        itaque ea maxime delectus nostrum porro.</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+    </article>
 
     <main class="container-cases">
         <div id="cases">
@@ -73,6 +81,8 @@
             </div>
         </div>
     </main>
+
+    <%- include('../partials/footer') %>
 
 </body>
 
