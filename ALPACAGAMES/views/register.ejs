@@ -1,30 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"/>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/stylesRegister.css">
 
-    <title>Registrate</title>
-</head>
+<%- include('./partials/head') %>
+
 <body>
-    <header>
-        <div class="barra">
-            <div class="hamburg">
-            <i class="fa fa-bars" id="hamburguesa"></i>
-            </div>
-            <div class="usuario">
-            <i class="fa fa-user" id="user"></i>
-            </div>
-        </div>   
-    </header>
+
+    <%- include('./partials/header') %>
+
     <main>
         <form action="" method="post" class="form-container">
             <h6 class="text-title">Registrarse</h6>
@@ -89,15 +71,8 @@
             </div>
         </form>
     </main>
-    <footer>
-        <div class="class-footer">
-            <div>
-                <a id="mensaje-7">QUIENES SOMOS | INFORMACION | CONTACTO | RECURSOS</a>
-            </div>    
-            <div>
-                <a id="mensaje-6">Copyright © 2023, All Rights Reeserved</a>
-            </div>      
-        </div>
-    </footer>
+
+    <%- include('./partials/footer') %>
+
 </body>
 </html>
