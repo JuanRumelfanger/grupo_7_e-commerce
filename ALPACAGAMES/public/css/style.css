@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #c72727;
+    --primary-color: #00A6E6;
     --secundary-color: #5A5A5A;
     --light-color: #f3f3f3;
     --dark-color: #333;
@@ -13,7 +13,6 @@
     --end-color: #a66bbe;
     --tech-color: #009cff;
 }
-
 
 
 * {
@@ -48,14 +47,23 @@ a {
 .btn {
     display: inline-block;
     border: none;
+    border-radius: 5px;
     background: var(--dark-color);
     color: #fff;
     padding: 0.3rem 1.2rem;
 }
 
-.btn-light { background: var(--light-color);}
-.btn-primary { background: var(--primary-color);}
-.btn-secundary { background: var(--secundary-color);}
+.btn-light {
+    background: var(--light-color);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+
+.btn-secundary {
+    background: var(--secundary-color);
+}
 
 .btn-block {
     display: block;
@@ -131,7 +139,6 @@ a {
     margin: 15px 15px;
     background: #313339;
     height: 500px;
-    /* border: 5px solid #333; */
 }
 
 #cases img {
@@ -139,15 +146,11 @@ a {
 
 }
 
-
-#cases .text-item h4{
+#cases .text-item h4 {
     font-size: 1.2rem;
     color: var(--white-color);
     text-align: center;
 }
-
-
-
 
 #main-footer {
     background: #333;
@@ -158,9 +161,6 @@ a {
     padding-left: 0;
 }
 
-/* #main-footer .img-logo {
-    text-align: center;
-} */
 
 #main-footer img {
     width: 120px;
@@ -199,4 +199,29 @@ a {
 
 .py-2 {
     padding: 2rem 0;
+}
+
+@media(max-width:600px) {
+    /* Stack grid items */
+    #showcase .showcase-container,
+    #main-footer .footer-container,
+    #cases {
+        margin: auto;
+        max-width: 1100px;
+        padding: 0 2rem;
+        overflow: hidden;
+        grid-template-columns: 1fr;
+    }
+
+    #main-footer .img-logo {
+        text-align: center;
+    }
+
+    #main-footer .footer-container > :nth-child(1) {
+        border-bottom: 1px solid #111;
+    }
+
+    #main-footer .footer-container>*:last-child {
+        grid-column: 1;
+    }
 }
