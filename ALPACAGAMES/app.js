@@ -9,21 +9,21 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/index.html'));
+  res.sendFile(path.resolve(__dirname, './views/users/index.html'));
 });
 
 app.get('/productDetail', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/productDetail.html'));
+  res.sendFile(path.resolve(__dirname, './views/products/productDetail.html'));
 });
 
 app.get('/productCart', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/shop.html'));
+  res.sendFile(path.resolve(__dirname, './views/products/shop.html'));
 });
 
 app.get('/register', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/register.html'));
+  res.sendFile(path.resolve(__dirname, './views/users/register.html'));
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './views/login.html'));
+  res.sendFile(path.resolve(__dirname, './views/users/login.html'));
 });
