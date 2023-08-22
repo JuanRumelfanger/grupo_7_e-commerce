@@ -4,11 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Grupo 7",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
