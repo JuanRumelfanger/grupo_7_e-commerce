@@ -1,6 +1,8 @@
 const express = require('express');
-const mainController = require('../controllers/mainController.js');
+const path = require ('path');
+const mainController = require('../controllers/mainController');
 const router = express.Router();
+
 
 router.get('/' ,mainController.home);
 
@@ -10,6 +12,8 @@ router.get('/login' ,mainController.login);
 
 router.get('/shop' ,mainController.shop);
 
-router.get('/detail' ,mainController.productDetail);
+router.get('/productDetail/:id' ,mainController.productDetail);
   
+router.get('/test', mainController.test);
+
 module.exports = router;

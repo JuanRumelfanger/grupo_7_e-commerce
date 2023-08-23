@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<%- include('../partials/head') %>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/stylesLogin.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
 <body>
-
-    <%- include('../partials/header') %>
-
-    <!-- <div class="barra">
+    <div class="barra">
         <div class="hamburg">
         <i class="fa fa-bars" id="hamburguesa"></i>
         </div>
         <div class="usuario">
         <i class="fa fa-user" id="user"></i>
         </div>
-    </div>     -->
+    </div>    
     <div class="mensaje-1"><marquee>Formulario de Login</marquee></div>
     <div class="conteiner-otros" align="center">
         <div class="conteiner-logo">
@@ -60,20 +63,17 @@
             </class>
         </form>
         <div class="iniciar-sesion">
-            <button type="submit"><a href="/" id="mensaje-3">Iniciar sesión</a>
+            <button type="submit"><a href="/views/index.html" id="mensaje-3">Iniciar sesión</a>
         </div>
         <div class="caja-mensaje-4">
-            <a href="/register" id="mensaje-4">Crea una cuenta gratis</a>
+            <a href="/views/register.html" id="mensaje-4">Crea una cuenta gratis</a>
         </div>
         <div class="caja-mensaje-5">
             <a id="mensaje-5">¿No puedes iniciar sesion?</a>
         </div>
     </div>    
-
-    <%- include('../partials/footer') %>
-
-    <!-- <footer>
+    <footer>
         <a>Footer</a>
-    </footer> -->
+    </footer>
 </body>
 </html>

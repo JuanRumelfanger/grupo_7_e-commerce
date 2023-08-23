@@ -1,35 +1,30 @@
 const path = require('path');
-
+const producto = require ('producto')
 const mainController = {
     home: (req, res) => {
-        res.render('./users/index', {
-            "title": "Alpaca Games",
-            "css": "styles"
-        });
+        res.render('index')
+        //res.sendFile(path.join(__dirname, '../views/users/index.html'));
     },
     register: (req, res) => {
-        res.render('./users/register', {
-            "title": "Registro",
-            "css": "stylesRegister"
-        });
+        res.render('register')
+        //res.sendFile(path.resolve(__dirname, '../views/users/register.html'));;
     },
     login: (req, res) => {
-        res.render('./users/login', {
-            "title": "Login",
-            "css": "stylesLogin"
-        });
+        res.render('login')
+        //res.sendFile(path.resolve(__dirname, '../views/users/login.html'));
     },
     shop: (req, res) => {
-        res.render('./products/shop', {
-            "title": "Shop",
-            "css": "stylesShop"
-        });
+        //res.sendFile(path.resolve(__dirname, '../views/products/shop.html'));
     },
     productDetail: (req, res) => {
-        res.render('./products/productDetail', {
-            "title": "Producto",
-            "css": "stylesDetails"
-        });
+        const id = req.params.id
+
+        const foundGame = producto.find(()=>{
+            return game.id == id;
+        })
+        
+        res.render('productDetail')
+        //res.sendFile(path.resolve(__dirname, '../views/products/productDetail.html'));
     },
 }
 
