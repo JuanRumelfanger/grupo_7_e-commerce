@@ -11,5 +11,9 @@ router.get('/login' ,mainController.login);
 router.get('/shop' ,mainController.shop);
 
 router.get('/detail' ,mainController.productDetail);
+
+router.get('/crear', mainController.crearProducto);
+  
+router.get('/editar', mainController.editarProducto);
   
 module.exports = router;

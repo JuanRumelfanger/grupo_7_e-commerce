@@ -1,5 +1,4 @@
 const path = require('path');
-
 const mainController = {
     home: (req, res) => {
         res.render('./users/index', {
@@ -29,6 +28,18 @@ const mainController = {
         res.render('./products/productDetail', {
             "title": "Producto",
             "css": "stylesDetails"
+        });
+    },
+    crearProducto:  (req, res) => {
+        res.render('./products/crearProducto',{
+            "title": "Crear Producto",
+            "css": "stylesProducts"
+        });
+    },
+    editarProducto: (req, res) => {    
+        res.render('./products/editarProducto', { 
+            "title": "Editar Producto",
+            "css": "stylesProducts"            
         });
     },
 }
