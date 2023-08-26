@@ -36,10 +36,7 @@ body {
 .directory{
     margin-left: 35px;
 }
-.search-bar{
-    display: flex;
-    margin: 35px;
-}
+
 .image-product{
     display: block;
     margin: auto;
