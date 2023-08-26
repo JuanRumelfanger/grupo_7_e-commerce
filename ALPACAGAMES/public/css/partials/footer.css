@@ -7,9 +7,30 @@
 
 }
 
-#main-footer {
-    background: #222429;
-    color: #fff;
+footer {
+    font-family: "roboto";
+    font-weight: 400;
+    background-color: #222429;
+    color: rgba(250, 250, 250, 0.6);
+}
+
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    row-gap: 1.5rem;
+    margin: 0 4rem;
+}
+
+
+#main-footer .text-footer {
+    text-align: justify;
+    margin: 7px 0;
+}
+
+#main-footer .title-footer {
+    color: rgba(250, 250, 250, 0.7);
+    font-size: 1.4rem;
 }
 
 #main-footer ul {
@@ -17,50 +38,49 @@
 }
 
 
-#main-footer img {
+#main-footer .img-logo, #main-footer img {
     width: 120px;
-}
-
-#main-footer .footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin: 0 10px;
+    margin: auto;
 }
 
 
 #main-footer .footer-container>*:last-child {
-    background: #444;
     grid-column: 1/ span 4;
     text-align: center;
     font-size: 0.75rem;
+    margin: 0;
 }
 
-#main-footer .footer-container input[type='email'] {
+#main-footer .footer-container .email {
     width: 90%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+    border: 0;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: lighter;
+    color: rgba(250, 250, 250, 0.7);
 }
 
-ul {
+.list {
     list-style: none;
 }
 
 .list li {
-    width: 90%;
+    width: 100%;
     padding: 0.5rem 0;
     border-bottom: #555 dotted 1px;
 }
 
 .list li a {
-    color: var(--white-color);
+    color: rgba(250, 250, 250, 0.6);
 }
 
 a {
     text-decoration: none;
 }
 
-.btn {
+.button {
     display: inline-block;
     border: none;
     border-radius: 5px;
@@ -69,12 +89,12 @@ a {
     padding: 0.3rem 1.2rem;
 }
 
-.btn-primary {
+.button-primary {
     background: var(--primary-color);
 }
 
 .py-2 {
-    padding: 2rem 0;
+    padding: 2rem 0 1.3rem;
 }
 
 @media(max-width:600px) {
@@ -92,11 +112,15 @@ a {
     }
 
     #main-footer .footer-container > :nth-child(1) {
-        border-bottom: 1px solid #111;
+        border-bottom: 1px solid rgba(250, 250, 250, 0.3);
     }
 
     #main-footer .footer-container>*:last-child {
         grid-column: 1;
+    }
+
+    #main-footer .text-description {
+        text-align: center;
     }
 }
 

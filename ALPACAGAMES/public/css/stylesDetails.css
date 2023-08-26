@@ -1,9 +1,15 @@
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*position-flexbox*/
+
+body {
     font-family: 'Roboto';
     background-color: rgb(101, 98, 98);
     color: white;
 }
-/*position-flexbox*/
 
 .haeder-section1{
     display: flex;

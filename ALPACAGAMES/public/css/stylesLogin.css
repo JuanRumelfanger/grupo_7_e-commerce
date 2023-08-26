@@ -13,16 +13,7 @@
     margin-left: 0px;
     margin-right: 0px;
 }
-/* #hamburguesa{
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    font-size: 25px;
-}
-#hamburguesa:hover{
-    box-shadow: 0 0 10px white;
-} */
+
 #user{
     border: 7px solid white;
     border-radius: 50%;
@@ -36,11 +27,7 @@
 #user:hover{
     box-shadow: 0 0 10px white;
 }
-/* .barra{
-    height: 40px;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-} */
+
 .mensaje-1{
     background-color: grey;
     height: 18px;
@@ -55,7 +42,7 @@
     display: block;
     text-align: center;
 }
-input[type=email]{
+.caja-email input[type=email]{
     width: 300px;
     height: 30px;
     border: 1px solid rgb(0, 0, 0);
@@ -64,7 +51,7 @@ input[type=email]{
     font-family:'Roboto';
     font-weight: bold;
 }
-input:hover[type=email]{
+.caja-email input:hover[type=email]{
     box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 .caja-contraseña{
@@ -133,16 +120,6 @@ button:hover[type="submit"]{
     border-radius: 10px;
 }
 
-/* footer{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    background-color: gray;
-    height: 100px;
-    position: fixed;
-    bottom: 0.0000001px;
-} */
 .conteiner-otros{
     background-color: black;
     height: 285px;
