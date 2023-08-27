@@ -71,3 +71,13 @@
 .icon-wishList, .icon-cart {
     display: none;
 }
+
+@media (max-width: 600px) {
+    .icon-wishList, .icon-cart {
+        display: block;
+        min-width: auto;
+    }
+    .wishList, .cart {
+        display: none;
+    }
+}
