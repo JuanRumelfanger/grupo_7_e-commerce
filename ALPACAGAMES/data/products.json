@@ -1,0 +1,272 @@
+[
+    {
+      "id": 1,
+      "name": "Futuristic Odyssey",
+      "description": "Embark on an epic space adventure to save the galaxy from an alien invasion.",
+      "platforms": ["PC", "Xbox", "PlayStation"],
+      "genre": "Sci-Fi Action RPG",
+      "release_date": "2023-05-15",
+      "price": 49.99,
+      "images": ["link_to_image1", "link_to_image2"],
+      "system_requirements": {
+        "minimum": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i5",
+          "Memory": "8 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 970",
+          "Storage": "50 GB available space"
+        },
+        "recommended": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i7",
+          "Memory": "16 GB RAM",
+          "Graphics": "NVIDIA GeForce RTX 3080",
+          "Storage": "50 GB available space"
+        }
+      },
+      "download_size": "35 GB"
+    },
+    {
+      "id": 2,
+      "name": "Fantasy Quest",
+      "description": "Embark on a mythical journey filled with magic, monsters, and destiny.",
+      "platforms": ["PC", "PlayStation"],
+      "genre": "Fantasy RPG",
+      "release_date": "2023-03-10",
+      "price": 39.99,
+      "images": ["link_to_image1", "link_to_image2"],
+      "system_requirements": {
+        "minimum": {
+          "OS": "Windows 8",
+          "Processor": "AMD Ryzen 5",
+          "Memory": "6 GB RAM",
+          "Graphics": "AMD Radeon RX 570",
+          "Storage": "40 GB available space"
+        },
+        "recommended": {
+          "OS": "Windows 10",
+          "Processor": "AMD Ryzen 7",
+          "Memory": "12 GB RAM",
+          "Graphics": "AMD Radeon RX 6700 XT",
+          "Storage": "40 GB available space"
+        }
+      },
+      "download_size": "30 GB"
+    },
+    {
+      "id": 3,
+      "name": "Cybernetic Uprising",
+      "description": "Battle against rogue AI in a dystopian cyberpunk world.",
+      "platforms": ["PC", "Xbox"],
+      "genre": "Cyberpunk FPS",
+      "release_date": "2023-07-20",
+      "price": 59.99,
+      "images": ["link_to_image1", "link_to_image2"],
+      "system_requirements": {
+        "minimum": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i5",
+          "Memory": "8 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 1060",
+          "Storage": "60 GB available space"
+        },
+        "recommended": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i7",
+          "Memory": "16 GB RAM",
+          "Graphics": "NVIDIA GeForce RTX 3060",
+          "Storage": "60 GB available space"
+        }
+      },
+      "download_size": "45 GB"
+    },
+    {
+      "id": 4,
+      "name": "Kingdoms Reborn",
+      "description": "Build and manage your own medieval kingdom in this simulation game.",
+      "platforms": ["PC"],
+      "genre": "Simulation",
+      "release_date": "2023-02-05",
+      "price": 29.99,
+      "images": ["link_to_image1", "link_to_image2"],
+      "system_requirements": {
+        "minimum": {
+          "OS": "Windows 7",
+          "Processor": "Intel Core i3",
+          "Memory": "4 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 750",
+          "Storage": "20 GB available space"
+        },
+        "recommended": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i5",
+          "Memory": "8 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 960",
+          "Storage": "20 GB available space"
+        }
+      },
+      "download_size": "15 GB"
+    },
+    {
+      "id": 5,
+      "name": "Galactic Conquest",
+      "description": "Lead your space fleet to conquer galaxies and establish your dominance.",
+      "platforms": ["PC", "Xbox"],
+      "genre": "Space Strategy",
+      "release_date": "2023-06-18",
+      "price": 44.99,
+      "images": ["link_to_image1", "link_to_image2"],
+      "system_requirements": {
+        "minimum": {
+          "OS": "Windows 8",
+          "Processor": "AMD Ryzen 5",
+          "Memory": "8 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 960",
+          "Storage": "40 GB available space"
+        },
+        "recommended": {
+          "OS": "Windows 10",
+          "Processor": "AMD Ryzen 7",
+          "Memory": "16 GB RAM",
+          "Graphics": "NVIDIA GeForce RTX 3060",
+          "Storage": "40 GB available space"
+        }
+      },
+      "download_size": "35 GB"
+    },
+    {
+      "id": 6,
+      "name": "Mystic Spellslinger",
+      "description": "Master the arcane arts and become a legendary spellslinger.",
+      "platforms": ["PC"],
+      "genre": "Action RPG",
+      "release_date": "2023-04-12",
+      "price": 37.99,
+      "images": ["link_to_image1", "link_to_image2"],
+      "system_requirements": {
+        "minimum": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i5",
+          "Memory": "8 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 1050",
+          "Storage": "25 GB available space"
+        },
+        "recommended": {
+          "OS": "Windows 10",
+          "Processor": "Intel Core i7",
+          "Memory": "16 GB RAM",
+          "Graphics": "NVIDIA GeForce GTX 1660",
+          "Storage": "25 GB available space"
+        }
+      },
+      "download_size": "20 GB"
+    },
+    {
+        "id": 7,
+        "name": "Survival Outbreak",
+        "description": "Fight for survival in a post-apocalyptic world overrun by zombies.",
+        "platforms": ["PC", "PlayStation"],
+        "genre": "Survival Horror",
+        "release_date": "2023-08-02",
+        "price": 42.99,
+        "images": ["link_to_image1", "link_to_image2"],
+        "system_requirements": {
+            "minimum": {
+                "OS": "Windows 7",
+                "Processor": "AMD Ryzen 5",
+                "Memory": "8 GB RAM",
+                "Graphics": "NVIDIA GeForce GTX 1050",
+                "Storage": "40 GB available space"
+            },
+            "recommended": {
+                "OS": "Windows 10",
+                "Processor": "AMD Ryzen 7",
+                "Memory": "16 GB RAM",
+                "Graphics": "NVIDIA GeForce GTX 2060",
+                "Storage": "40 GB available space"
+            }
+        },
+        "download_size": "35 GB"
+    },
+    {
+        "id": 8,
+        "name": "Racing Legends",
+        "description": "Experience the thrill of high-speed racing in iconic cars on legendary tracks.",
+        "platforms": ["PC", "Xbox"],
+        "genre": "Racing",
+        "release_date": "2023-07-08",
+        "price": 54.99,
+        "images": ["link_to_image1", "link_to_image2"],
+        "system_requirements": {
+          "minimum": {
+            "OS": "Windows 8",
+            "Processor": "Intel Core i3",
+            "Memory": "6 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760",
+            "Storage": "50 GB available space"
+          },
+          "recommended": {
+            "OS": "Windows 10",
+            "Processor": "Intel Core i5",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1080",
+            "Storage": "50 GB available space"
+          }
+        },
+        "download_size": "45 GB"
+    },
+    {
+        "id": 9,
+        "name": "Pirate's Cove",
+        "description": "Set sail as a daring pirate captain in search of treasure and adventure.",
+        "platforms": ["PC", "PlayStation"],
+        "genre": "Open World Adventure",
+        "release_date": "2023-04-25",
+        "price": 47.99,
+        "images": ["link_to_image1", "link_to_image2"],
+        "system_requirements": {
+          "minimum": {
+            "OS": "Windows 10",
+            "Processor": "Intel Core i5",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 960",
+            "Storage": "45 GB available space"
+          },
+          "recommended": {
+            "OS": "Windows 10",
+            "Processor": "Intel Core i7",
+            "Memory": "16 GB RAM",
+            "Graphics": "NVIDIA GeForce RTX 3060",
+            "Storage": "45 GB available space"
+          }
+        },
+        "download_size": "40 GB"
+    },
+    {
+        "id": 10,
+        "name": "Stealth Operative",
+        "description": "Infiltrate enemy bases and complete covert missions as a skilled operative.",
+        "platforms": ["PC"],
+        "genre": "Stealth Action",
+        "release_date": "2023-08-15",
+        "price": 32.99,
+        "images": ["link_to_image1", "link_to_image2"],
+        "system_requirements": {
+          "minimum": {
+            "OS": "Windows 8",
+            "Processor": "Intel Core i3",
+            "Memory": "6 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 760",
+            "Storage": "30 GB available space"
+          },
+          "recommended": {
+            "OS": "Windows 10",
+            "Processor": "Intel Core i5",
+            "Memory": "8 GB RAM",
+            "Graphics": "NVIDIA GeForce GTX 1060",
+            "Storage": "30 GB available space"
+          }
+        },
+        "download_size": "25 GB"
+    }
+]
