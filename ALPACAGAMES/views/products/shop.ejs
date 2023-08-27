@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop AlpacaGames</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="/css/style-shop.css">
-    <script src="https://kit.fontawesome.com/018260dd55.js" crossorigin="anonymous"></script>
-</head>
+
+<%- include('../partials/head') %>
 
 <body>
-    <header>
-        <img class="logo-header" src="/images/Alpaca-celu.svg" alt="logo">
-        <span class="material-symbols-outlined">account_circle</span>
-    </header>
+
+    <%- include('../partials/header') %>
+
     <main>
         <section class="resume-product">
             <h2 class="title">Resumen del pedido</h2>
-            <img class="img-product" src="/images/producto-del-carrito.jpeg" alt="producto">
+            <img class="img-product" src="/img/producto-del-carrito.jpeg" alt="producto">
             <p class="name-product">Nombre del Producto</p>
             <p class="name-seller">Productor/Editor</p>
             <div class="calc-PriceDesc">
@@ -46,42 +38,16 @@
                 <option value="debit">Tarjeta de Debito</option>
                 <option value="credit">Tarjeta de Credito</option>
                 <option value="counted">Efectivo</option>
-                <option value="paypal">Paypal</option>
             </select>
-            <div class="warning">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <p>Pueden aplicarse impuestos adicionales</p>
-            </div>
             <p>Al hacer clic en el botón de "Realizar pedido", afirmo que estoy de acuerdo en el lavado de dinero que realiza esta página según lo estipulado en los <a href="#">Terminos y Servicios</a>.</p>
             <!-- <p>Al hacer clic en el botón de "Realizar pedido", más abajo, afirmo que tengo más de 18 años, que soy un usuario autorizado de este método de pago y que acepto el <a href="#">Acuerdo de licencia de usuario final<a>.</p> -->
             <input class="acept" type="submit" value="Realizar Pedido">
             <input class="cancel" type="reset" value="Cancelar">
         </section>
     </main>
-    <footer>
-        <hr class="parting-line">
-        <img class="logo-footer" src="/images/Alpaca-celu.svg" alt="logo">
-        <div class="info">
-            <a href="#">QUIENES SOMOS</a>
-            <hr>
-            <a href="#">INFORMACION</a>
-            <hr>
-            <a href="#">CONTACTO</a>
-            <hr>
-            <a href="#">RECURSO</a>
-        </div>
-        <section class="redes">
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-        </section>
-        <section class="legal-terms">
-            <hr class="parting-line">
-            <p>Terminos Legales</p>
-        </section>
-        <h3>copyright ©</h3>
-    </footer>
+
+    <%- include('../partials/footer') %>
+
 </body>
 </html>
+

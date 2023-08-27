@@ -1,0 +1,177 @@
+/* ESTILOS DEL FOOTER DEL INDEX.HTML */
+
+:root {
+    --primary-color: #00A6E6;
+    --dark-color: #333;
+    --white-color: #fff;
+
+}
+
+#main-footer {
+    background: #222429;
+    color: #fff;
+}
+
+#main-footer ul {
+    padding-left: 0;
+}
+
+
+#main-footer img {
+    width: 120px;
+}
+
+#main-footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 0 10px;
+}
+
+
+#main-footer .footer-container>*:last-child {
+    background: #444;
+    grid-column: 1/ span 4;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type='email'] {
+    width: 90%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.list li {
+    width: 90%;
+    padding: 0.5rem 0;
+    border-bottom: #555 dotted 1px;
+}
+
+.list li a {
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: var(--dark-color);
+    color: #fff;
+    padding: 0.3rem 1.2rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+
+.py-2 {
+    padding: 2rem 0;
+}
+
+@media(max-width:600px) {
+    /* Stack grid items */
+    #main-footer .footer-container {
+        margin: auto;
+        max-width: 1100px;
+        padding: 0 2rem;
+        overflow: hidden;
+        grid-template-columns: 1fr;
+    }
+
+    #main-footer .img-logo {
+        text-align: center;
+    }
+
+    #main-footer .footer-container > :nth-child(1) {
+        border-bottom: 1px solid #111;
+    }
+
+    #main-footer .footer-container>*:last-child {
+        grid-column: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ESTILOS DEL FOOTER DEL SHOP.HTML */
+/* 
+footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parting-line {
+    width: 100%;
+    height: 1px;
+    border-width: 0;
+    background-color: rgba(250, 250, 250, 0.2);
+}
+
+.logo-footer {
+    width: 30%;
+    min-width: 150px;
+    margin: 25px auto;
+}
+
+.info {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.info hr {
+    border-width: 1px;
+    height: 1.3rem;
+    margin: auto 0;
+}
+
+.redes {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0 10px;
+}
+
+.redes a{
+    color: white;
+    padding: 10px;
+}
+
+.legal-terms {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.copyright {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px auto;
+    color: #5A5A5A;
+}
+ */

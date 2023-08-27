@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/stylesLogin.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <title>Login</title>
-</head>
+<html lang="es">
+
+<%- include('../partials/head') %>
+
 <body>
-    <div class="barra">
+
+    <%- include('../partials/header') %>
+
+    <!-- <div class="barra">
         <div class="hamburg">
         <i class="fa fa-bars" id="hamburguesa"></i>
         </div>
         <div class="usuario">
         <i class="fa fa-user" id="user"></i>
         </div>
-    </div>    
+    </div>     -->
     <div class="mensaje-1"><marquee>Formulario de Login</marquee></div>
     <div class="conteiner-otros" align="center">
         <div class="conteiner-logo">
-            <img src="/img/Alpaca-celu.svg" alt="logo" id="logo-AG">
+            <img src="#" alt="logo" id="logo-AG">
         </div>
         <div class="conteiner-mensaje">
             <h3>Inicia sesion con:</h3>
@@ -72,15 +69,11 @@ rel="stylesheet" />
             <a id="mensaje-5">¿No puedes iniciar sesion?</a>
         </div>
     </div>    
-    <footer>
-        <div class="class-footer">
-            <div>
-                <a id="mensaje-7">QUIENES SOMOS | INFORMACION | CONTACTO | RECURSOS</a>
-            </div>    
-            <div>
-                <a id="mensaje-6">Copyright © 2023, All Rights Reeserved</a>
-            </div>      
-        </div>
-    </footer>
+
+    <%- include('../partials/footer') %>
+
+    <!-- <footer>
+        <a>Footer</a>
+    </footer> -->
 </body>
 </html>
