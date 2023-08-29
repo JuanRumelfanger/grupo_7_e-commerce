@@ -22,7 +22,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.5;
+    /* line-height: 1.5; */
     background: #15171E;
 }
 
@@ -30,7 +30,7 @@ img {
     width: 100%;
 }
 
-p {
+.showcase-content p {
     margin: .5rem 0;
 }
 

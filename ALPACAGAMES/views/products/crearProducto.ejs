@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <%- include('../partials/search-bar') %>
+
+    <h1>Nuevo Producto</h1>
+  <form action="/guardar-producto" method="POST" class="form" aling="center">
+
+      <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego" minlength="5" required>
+      <section class="photo-cover">
+        <h3>Foto de portada del Juego</h3>
+        <input type="file" name="avatar" accept="image/*">
+      </section>
+      <section class="launch">
+          <h3>Fecha de Lanzamiento</h3>
+          <input type="date" name="launch" id="launch" min="2023-08-01" max="2045-01-01" required>
+      </section>
+      <section class="launch">
+        <h4>Modificar Descripcion</h4>
+        <input type="text" name="address" id="address" class="controls" placeholder="Descripcion">
+     </section>
+      <section class="user-profile">
+          <h3>Categoría</h3>
+          <div>
+              <input type="radio" name="type" value="type" id="type">
+              <label for="type">Accion</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Deportes</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Sandbox</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">MMO</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Estrategia</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Aventura</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Shooter</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">RPG</label>
+         </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Survival</label>
+         </div>
+         <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Terror</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Arcade</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Minijuegos</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Cartas</label>
+          </div>
+          <div>
+              <input type="radio" name="user-profile" value="buy" id="buyer" checked>
+              <label for="buyer">Otro</label>
+          </div>
+     </section>
+      <input type="text" name="other-game" id="other-game" class="controls" placeholder="Otro tipo" minlength="6" required>
+      <h3>Precio</h3>
+      <input type="text" name="price" id="price-product" class="controls" placeholder="Precio" minlength="5" required>
+      
+      <section class="buttons">
+          <a href="/" id="send">Enviar</a>
+          <input type="reset" name="cancel" value="Cancelar" id="cancel">
+      </section>
+  </form>
+    <%- include('../partials/footer') %>
+
+</body>
+</html>
