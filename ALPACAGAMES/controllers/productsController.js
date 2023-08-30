@@ -6,7 +6,7 @@ const products = JSON.parse(dataJson);
 
 const productsController = {
   listProducts: (req, res) => {
-    res.render('productsList');
+    res.render('productsList', { products: products });
   },
 };
 

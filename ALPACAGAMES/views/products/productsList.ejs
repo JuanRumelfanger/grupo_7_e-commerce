@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+<%- include('../partials/head.ejs') %>
+
 <body>
+    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/search-bar.ejs') %>
     <main>
-        <h1>Hola mundo</h1>
+        <h1>Catálogo de Videojuegos</h1>
+
+        <div class="products">
+            <% products.forEach(product => { %>
+                <div class="product">
+                    <img src="<%= product.images[0] %>" alt="<%= product.name %>">
+
+                    <h2><%= product.name %></h2>
+
+                    <p><%= product.description %></p>
+
+                    <p>
+                        <strong>Plataformas:</strong>
+                        <%= product.platforms.join(', ') %>
+                    </p>
+
+                    <p>
+                        <strong>Género:</strong>
+                        <%= product.genre %>
+                    </p>
+
+                    <p>
+                        <strong>Fecha de lanzamiento:</strong>
+                        <%= product.releaseDate %>
+                    </p>
+
+                    <p>
+                        <strong>Precio:</strong>
+                        <%= product.price %>
+                    </p>
+
+                    <a href="/products/<%= product.id %>" class="btn">
+                        Ver detalles
+                    </a>
+
+                </div>
+            <% }) %>
+        </div>
     </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
