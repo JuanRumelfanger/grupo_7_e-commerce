@@ -1,19 +1,11 @@
 const express = require('express');
-const mainController = require('../controllers/mainController.js');
 const router = express.Router();
+const mainController = require('../controllers/mainController.js');
 
-router.get('/' ,mainController.home);
+router.get('/', mainController.home);
 
-router.get('/register' ,mainController.register);
+router.get('/register', mainController.register);
 
-router.get('/login' ,mainController.login);
+router.get('/login', mainController.login);
 
-router.get('/shop' ,mainController.shop);
-
-router.get('/detail' ,mainController.productDetail);
-
-router.get('/crear', mainController.crearProducto);
-  
-router.get('/editar', mainController.editarProducto);
-  
 module.exports = router;
