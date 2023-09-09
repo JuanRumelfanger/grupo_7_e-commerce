@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head') %>
+<head>
+
+    <%- include('../partials/head') %>
+
+
+</head>
 
 <body>
 
-    <%- include('../partials/header') %>
 
     <%- include('../partials/search-bar') %>
 
     <main>
         <form action="" method="post" class="form-container">
             <h6 class="text-title">Registrarse</h6>
-                <label for="firstName">Nombre
-                    <input class="input-form" type="text" name="firstName" id="firstName" placeholder="Ingrese su nombre" required>
-                </label>
+            <label for="firstName">Nombre
+                <input class="input-form" type="text" name="firstName" id="firstName" placeholder="Ingrese su nombre"
+                    required>
+            </label>
             <label for="lastName">Apellido
-                <input class="input-form" type="text" name="lastName" id="lastName" placeholder="Ingrese su apellido" required>
+                <input class="input-form" type="text" name="lastName" id="lastName" placeholder="Ingrese su apellido"
+                    required>
             </label>
             <label for="displayName">Nombre de usuario
-                <input class="input-form" type="text" name="displayName" id="displayName" placeholder="Ingrese nombre de usuario">
+                <input class="input-form" type="text" name="displayName" id="displayName"
+                    placeholder="Ingrese nombre de usuario">
             </label>
             <label for="email">Email
                 <input class="input-form" type="email" name="email" id="email" placeholder="Ingrese su email" required>
             </label>
             <label for="password">Contraseña
-                <input class="input-form" type="password" name="password" id="password" placeholder="Ingrese su contraseña" required>
+                <input class="input-form" type="password" name="password" id="password"
+                    placeholder="Ingrese su contraseña" required>
             </label>
             <h6 class="text-title">Por favor, introduzca su fecha de nacimiento</h6>
             <div class="container-input-label">
                 <label for="fechaNac">Fecha de nacimiento</label>
-                <input
-                    id="fechaNac"
-                    name="fechaNac"
-                    type="date"
-                    class="input-form"
-                    required
-                />
+                <input id="fechaNac" name="fechaNac" type="date" class="input-form" required />
             </div>
             <div class="container-input-label">
                 <label for="pais">País</label>
@@ -55,11 +57,12 @@
                 <div class="container-checkbox">
                     <div class="checkbox">
                         <input type="checkbox" name="oferta-correo" id="oferta-correo">
-                        <label for="oferta-correo">El correo de la cuenta recibirá ofertas especiales, noticias y demás de AlpacaGames Entertainment.</label>
+                        <label for="oferta-correo">El correo de la cuenta recibirá ofertas especiales, noticias y demás
+                            de AlpacaGames Entertainment.</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" name="pol-privacidad" id="pol-privacidad">
-                        <label for="pol-privacidad">He leido y acepto lo siguiente: 
+                        <label for="pol-privacidad">He leido y acepto lo siguiente:
                             <a href="#">Politica de privacidad en línea de Alpaca Games Entertainment</a>
                         </label>
                     </div>
@@ -77,4 +80,5 @@
     <%- include('../partials/footer') %>
 
 </body>
+
 </html>
