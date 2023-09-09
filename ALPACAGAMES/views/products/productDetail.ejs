@@ -12,11 +12,12 @@
     <main>
         <article class="producto-user">
         <section class="image-product">
-            <img src="/img/producto-AgeOfEmpires.jpg" width="300px">
+            <img src="/img/<%= product.images %>" width="300px">
+            
             <div class="carousel">
                 <h3>imagenes del carrusel</h3>
             </div>
-            <h4>PRECIO</h4><i class="fa-solid fa-gamepad"></i>  
+            <h4><%= product.price %></h4><i class="fa-solid fa-gamepad"></i>  
         </section>    
         <section class="section-button">            
             <button class="buy-now">Comprar</button>
@@ -26,8 +27,7 @@
             <article class="info-product">
                 <div>
                     <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis itaque 
-                    earum adipisci! Necessitatibus magnam laboriosam iste expedita repellendus numquam rem neque corrupti modi quam, beatae nulla totam natus, asperiores blanditiis.
+                        <%= product.description %>
                     </p>
                 </div>
                 
