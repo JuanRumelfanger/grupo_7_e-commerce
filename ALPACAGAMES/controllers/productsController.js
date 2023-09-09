@@ -8,14 +8,11 @@ const productsController = {
   listProducts: (req, res) => {
     res.render('productsList', { products: products });
   },
-
-  productDetail: (req, res) => {
+  productsDetail: (req, res) => {
     const idProduct = req.params.id;
-    const product = products.filter(function(elem){
-      return elem.id == idProduct;
-    })
-    res.render('productDetail', { product:product });
+    const productFound = products.filter(product => product.id == idProduct);
+    res.render('productDetail',{product : productFound[0]})
   }
-};  
+};
 
 module.exports = productsController;
