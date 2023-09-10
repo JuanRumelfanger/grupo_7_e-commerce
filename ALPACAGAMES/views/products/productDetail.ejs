@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('../partials/head') %>
-<link rel="stylesheet" href="/css/stylesDetails.css">
-<link rel="stylesheet" href="/css/partials/footer.css">
-<link rel="stylesheet" href="/css/partials/header.css">
-<link rel="stylesheet" href="/css/partials/search-bar.css">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/stylesDetails.css">
+</head>
 <body>
 
     <%- include('../partials/header') %>
@@ -14,12 +12,15 @@
 
     <main>
         <article class="producto-user">
-        <section class="image-product">
-            <img src="<%=product.images%>" width="300px">
+        <section class="header-product">
+            <img class="image-product" src="<%= product.images %>" width="300px">
             <div class="carousel">
                 <h3>imagenes del carrusel</h3>
             </div>
-            <h4>PRECIO</h4><i class="fa-solid fa-gamepad"></i>  
+            <div class="price-product">
+                <p>$<%= product.price %></p>
+            </div>
+
         </section>    
         <section class="section-button">            
             <button class="buy-now">Comprar</button>

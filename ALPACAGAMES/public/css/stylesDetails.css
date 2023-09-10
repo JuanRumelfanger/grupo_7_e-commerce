@@ -37,14 +37,19 @@ body {
     margin-left: 35px;
 }
 
-.image-product{
+.header-product{
     display: block;
     margin: auto;
     text-align: center;
+    border: blue 5px;
 }
 /*colors-and-styles*/
 .producto-user{
     text-align: center;
+}
+
+.image-prodct{
+    border: rgb(102, 102, 156) 5px solid;
 }
 
 .bar-search{
@@ -92,4 +97,10 @@ body {
 
 .info-product{
     border: solid 3px gainsboro;
+}
+.price-product{
+    width: 250px;
+    color:rgb(28, 183, 240);
+    display: flex;
+    margin: auto;
 }
