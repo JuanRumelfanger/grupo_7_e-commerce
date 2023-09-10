@@ -38,7 +38,8 @@ footer {
 }
 
 
-#main-footer .img-logo, #main-footer img {
+#main-footer .img-logo,
+#main-footer img {
     width: 120px;
     margin: auto;
 }
@@ -98,6 +99,7 @@ a {
 }
 
 @media(max-width:600px) {
+
     /* Stack grid items */
     #main-footer .footer-container {
         margin: auto;
@@ -111,7 +113,7 @@ a {
         text-align: center;
     }
 
-    #main-footer .footer-container > :nth-child(1) {
+    #main-footer .footer-container> :nth-child(1) {
         border-bottom: 1px solid rgba(250, 250, 250, 0.3);
     }
 

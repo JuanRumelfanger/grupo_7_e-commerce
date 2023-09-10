@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head') %>
+<head>
+
+    <%- include('../partials/head.ejs') %>
+
+
+</head>
+
 
 <body>
 
     <%- include('../partials/header') %>
 
     <%- include('../partials/search-bar') %>
-    
+
     <main>
         <section class="resume-product">
             <h2 class="title">Resumen del pedido</h2>
@@ -28,7 +34,8 @@
             </div>
             <div id="checkbox">
                 <input id="confirm-email" type="checkbox" name="confirm-email" value="si">
-                <label for="confirm-email">Haz clic si estas de acuerdo con compartir tu correo para fines lucrativos vendiendo tu información.</label>
+                <label for="confirm-email">Haz clic si estas de acuerdo con compartir tu correo para fines lucrativos
+                    vendiendo tu información.</label>
             </div>
             <p class="help">¿Necesitas ayuda? <a href="#">Contacta con nosotros</a></p>
         </section>
@@ -41,7 +48,8 @@
                 <option value="credit">Tarjeta de Credito</option>
                 <option value="counted">Efectivo</option>
             </select>
-            <p>Al hacer clic en el botón de "Realizar pedido", afirmo que estoy de acuerdo en el lavado de dinero que realiza esta página según lo estipulado en los <a href="#">Terminos y Servicios</a>.</p>
+            <p>Al hacer clic en el botón de "Realizar pedido", afirmo que estoy de acuerdo en el lavado de dinero que
+                realiza esta página según lo estipulado en los <a href="#">Terminos y Servicios</a>.</p>
             <!-- <p>Al hacer clic en el botón de "Realizar pedido", más abajo, afirmo que tengo más de 18 años, que soy un usuario autorizado de este método de pago y que acepto el <a href="#">Acuerdo de licencia de usuario final<a>.</p> -->
             <input class="acept" type="submit" value="Realizar Pedido">
             <input class="cancel" type="reset" value="Cancelar">
@@ -51,5 +59,5 @@
     <%- include('../partials/footer') %>
 
 </body>
-</html>
 
+</html>

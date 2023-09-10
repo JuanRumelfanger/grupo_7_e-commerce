@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head') %>
+<head>
+
+    <%- include('../partials/head') %>
+
+
+</head>
+
 
 <body>
 
@@ -9,7 +15,9 @@
 
     <%- include('../partials/search-bar') %>
 
-    <div class="mensaje-1"><marquee>Formulario de Login</marquee></div>
+    <div class="mensaje-1">
+        <marquee>Formulario de Login</marquee>
+    </div>
     <div class="conteiner-otros" align="center">
         <div class="conteiner-logo">
             <img src="#" alt="logo" id="logo-AG">
@@ -43,7 +51,7 @@
     </div>
     <div class="conteiner-login">
         <div class="conteiner-mensaje-2">
-                <a class="mensaje-2">------     O INICIA SESION CON:     -----</a>
+            <a class="mensaje-2">------ O INICIA SESION CON: -----</a>
         </div>
         <form action="/login" method="post">
             <class class="caja-email">
@@ -62,9 +70,10 @@
         <div class="caja-mensaje-5">
             <a id="mensaje-5">¿No puedes iniciar sesion?</a>
         </div>
-    </div>    
+    </div>
 
     <%- include('../partials/footer') %>
 
 </body>
+
 </html>
