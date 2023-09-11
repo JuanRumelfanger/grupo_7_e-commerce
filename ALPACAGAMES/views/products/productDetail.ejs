@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('../partials/head') %>
-<link rel="stylesheet" href="/css/stylesDetails.css">
-<link rel="stylesheet" href="/css/partials/footer.css">
-<link rel="stylesheet" href="/css/partials/header.css">
-<link rel="stylesheet" href="/css/partials/search-bar.css">
+<head>
+    <%- include('../partials/head') %>
+    <!--<link rel="stylesheet" href="/css/stylesDetails.css">-->
+</head>
 <body>
 
     <%- include('../partials/header') %>
@@ -13,6 +11,7 @@
     <%- include('../partials/search-bar') %>
 
     <main>
+    <!--
         <article class="producto-user">
         <section class="image-product">
             <img src="/img/<%= product.images %>" width="300px">
@@ -28,19 +27,38 @@
         <section>
             <article class="info-product">
                 <div>
-                    <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis itaque 
-                    earum adipisci! Necessitatibus magnam laboriosam iste expedita repellendus numquam rem neque corrupti modi quam, beatae nulla totam natus, asperiores blanditiis.
-                    </p>
+                    <p><%= product.description %></p>
                 </div>
-                
             </article>
         </section>
         </article>
         <section>
+        -->
+        <h2>Detalle del Producto - <%= product.name %></h2>
+        <section>
+            <h3>Descripción</h3>
+            <p><%= product.description %></p>
+        </section>
+        <section>
+            <h3>Detalles del Producto</h>
+            <ul>
+                <li><strong>Plataformas:</strong> <%= product.platforms.join(', ') %></li>
+                <li><strong>Género:</strong> <%= product.genre %></li>
+                <li><strong>Fecha de Lanzamiento:</strong> <%= product.releaseDate %></li>
+                <li><strong>Precio:</strong> <%= product.price %></li>
+                <li><strong>Tamaño de Descarga:</strong> <%= product.downloadSize %></li>
+                <li><strong>Requisitos del Sistema:</strong></li>
+                <ul>
+                    <li><strong>Sistema Operativo:</strong> <%= product.systemReq.os %></li>
+                    <li><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
+                </ul>
+            </ul>
+        </section>
+        <section>
+            <h3>Imagen del Producto</h><br>
+            <img src="/img/<%= product.images %>" alt="<%= product.name %>">
+        </section>
     </main>
-
     <%- include('../partials/footer') %>
-
 </body>
 </html>

@@ -15,10 +15,10 @@
     <%- include('../partials/search-bar') %>
 
     <main>
-        <h1>Nuevo Producto</h1>
-        <form action="/products/create" method="POST" class="form" aling="center">
+        <h1>Agregar Producto</h1>
+        <form action="/products/create" method="POST" class="form" enctype="multipart/form-data">
     
-            <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
+<!--            <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
                 minlength="5" required>
             <section class="photo-cover">
                 <h3>Foto de portada del Juego</h3>
@@ -100,6 +100,53 @@
                 <button type="submit">ENVIAR</button>
                 <input type="reset" name="cancel" value="Cancelar" id="cancel">
             </section>
+        -->
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" required><br>
+
+        <label for="description">Descripcion:</label>
+        <textarea name="description" id="description" required></textarea><br>
+
+        <label for="platforms">Plataformas:</label>
+        <br>
+        <input type="checkbox" name="platforms" id="nintendoSwitch" value="Nintendo Switch">
+        <label for="nintendoSwitch">Nintendo Switch</label><br>
+        
+        <input type="checkbox" name="platforms" id="playStation4" value="PlayStation 4">
+        <label for="playStation4">PlayStation 4</label><br>
+        
+        <input type="checkbox" name="platforms" id="xboxOne" value="Xbox One">
+        <label for="xboxOne">Xbox One</label><br>
+
+        <input type="checkbox" name="platforms" id="pc" value="PC">
+        <label for="pc">PC</label><br>
+
+        <input type="checkbox" name="platforms" id="dispositivosMoviles" value="Dispositivos móviles">
+        <label for="dispositivosMoviles">Dispositivos Móviles</label><br>
+
+        <label for="genre">Género:</label>
+        <input type="text" name="genre" id="genre" required><br>
+
+        <label for="releaseDate">Fecha de lanzamiento:</label>
+        <input type="date" name="releaseDate" id="releaseDate" required><br>
+
+        <label for="price">Precio:</label>
+        <input type="number" name="price" id="price" step="0.01" required><br>
+
+        <label for="images">Imágenes:</label>
+        <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required><br>
+
+        <label for="os">Sistema operativo:</label>
+        <input type="text" name="systemReq[os]" id="os" required><br>
+
+        <label for="storage">Almacenamiento requerido:</label>
+        <input type="text" name="systemReq[storage]" id="storage" required><br>
+
+        <label for="downloadSize">Tamaño de descarga:</label>
+        <input type="text" name="downloadSize" id="downloadSize" required><br>
+
+        <button type="submit">Agregar Producto</button>
+
         </form>
     </main>
     
