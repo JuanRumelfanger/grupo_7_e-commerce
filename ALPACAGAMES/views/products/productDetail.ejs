@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/stylesDetails.css">
+    <!--<link rel="stylesheet" href="/css/stylesDetails.css">-->
 </head>
 <body>
 
@@ -11,9 +11,10 @@
     <%- include('../partials/search-bar') %>
 
     <main>
+    <!--
         <article class="producto-user">
-        <section class="header-product">
-            <img class="image-product" src="<%= product.images %>" width="300px">
+        <section class="image-product">
+            <img src="/img/<%= product.images %>" width="300px">
             <div class="carousel">
                
             </div>
@@ -28,18 +29,38 @@
         <section>
             <article class="info-product">
                 <div>
-                    <p>
-                        <%= product.description %>
-                    </p>
+                    <p><%= product.description %></p>
                 </div>
-                
             </article>
         </section>
         </article>
         <section>
+        -->
+        <h2>Detalle del Producto - <%= product.name %></h2>
+        <section>
+            <h3>Descripción</h3>
+            <p><%= product.description %></p>
+        </section>
+        <section>
+            <h3>Detalles del Producto</h>
+            <ul>
+                <li><strong>Plataformas:</strong> <%= product.platforms.join(', ') %></li>
+                <li><strong>Género:</strong> <%= product.genre %></li>
+                <li><strong>Fecha de Lanzamiento:</strong> <%= product.releaseDate %></li>
+                <li><strong>Precio:</strong> <%= product.price %></li>
+                <li><strong>Tamaño de Descarga:</strong> <%= product.downloadSize %></li>
+                <li><strong>Requisitos del Sistema:</strong></li>
+                <ul>
+                    <li><strong>Sistema Operativo:</strong> <%= product.systemReq.os %></li>
+                    <li><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
+                </ul>
+            </ul>
+        </section>
+        <section>
+            <h3>Imagen del Producto</h><br>
+            <img src="/img/<%= product.images %>" alt="<%= product.name %>">
+        </section>
     </main>
-
     <%- include('../partials/footer') %>
-
 </body>
 </html>
