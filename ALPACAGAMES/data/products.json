@@ -7,7 +7,7 @@
     "genre": "Plataformas", 
     "releaseDate": "2017-10-27",
     "price": 59.99,
-    "images": ["/img/super_mario_odyssey-.jpg"],
+    "images": "super_mario_odyssey-.jpg",
     "systemReq": {"os": "Switch OS", "storage": "1.4GB"},
     "downloadSize": "7GB"
   },
@@ -20,7 +20,7 @@
     "genre": "Acción/Aventura",
     "releaseDate": "2017-03-03",
     "price": 59.99,
-    "images": ["/img/Zelda Breath Of The Wild.jpg"],
+    "images": "Zelda Breath Of The Wild.jpg",
     "systemReq": {"os": "Switch OS, Wii U", "storage": "13.4GB"},
     "downloadSize": "14GB"  
   },
@@ -33,7 +33,7 @@
     "genre": "Disparos", 
     "releaseDate": "2019-10-25",
     "price": 59.99,
-    "images": ["/img/call of duty.jpg"],
+    "images": "call of duty.jpg",
     "systemReq": {"os": "Windows 7/8/10", "storage": "175GB"},
     "downloadSize": "175GB"
   },
@@ -46,7 +46,7 @@
     "genre": "Deportes",
     "releaseDate": "2020-10-09", 
     "price": 69.99,
-    "images": ["/img/FIFA 21.jpeg"], 
+    "images": "FIFA 21.jpeg", 
     "systemReq": {"os": "Windows 7/8/10", "storage": "50GB"},
     "downloadSize": "50GB"
   },
@@ -59,7 +59,7 @@
     "genre": "Acción/Aventura", 
     "releaseDate": "2014-11-18",
     "price": 29.99,
-    "images": ["/img/Grand Theft Auto V.jpeg"],
+    "images": "Grand Theft Auto V.jpeg",
     "systemReq": {"os": "Windows 7/8/10", "storage": "72GB"}, 
     "downloadSize": "72GB"
   },
@@ -72,7 +72,7 @@
     "genre": "RPG",
     "releaseDate": "2015-05-18",
     "price": 39.99,
-    "images": ["/img/The witcher 3.jpg"],
+    "images": "The witcher 3.jpg",
     "systemReq": {"os": "Windows 7/8/10", "storage": "50GB"},
     "downloadSize": "50GB"
   },
@@ -85,7 +85,7 @@
     "genre": "Construcción/Supervivencia", 
     "releaseDate": "2011-11-18", 
     "price": 26.95,
-    "images": ["/img/minecraft.jpeg"],
+    "images": "minecraft.jpeg",
     "systemReq": {"os": "Windows 7/8/10, OSX", "storage": "500MB"},
     "downloadSize": "500MB"
   },
@@ -98,7 +98,7 @@
     "genre": "Acción/Aventura",
     "releaseDate": "2018-04-20", 
     "price": 19.99,
-    "images": ["/img/god of war.jpg"],
+    "images": "god of war.jpg",
     "systemReq": {"os": "PS4 System Software 5.50 or higher", "storage": "70GB"},
     "downloadSize": "70GB"
   },
@@ -111,7 +111,7 @@
     "genre": "Disparos", 
     "releaseDate": "2016-05-24",
     "price": 19.99,
-    "images": ["/img/Overwatch 2.jpg"],
+    "images": "Overwatch 2.jpg",
     "systemReq": {"os": "Windows 7/8/10", "storage": "30GB"},
     "downloadSize": "30GB"
   },
@@ -124,7 +124,7 @@
     "genre": "Supervivencia/Construcción",
     "releaseDate": "2017-07-25",
     "price": 0, 
-    "images": ["/img/Fornite.jpg"],
+    "images": "Fornite.jpg",
     "systemReq": {"os": "Windows 7/8/10, OSX", "storage": "30GB"}, 
     "downloadSize": "30GB" 
   }
