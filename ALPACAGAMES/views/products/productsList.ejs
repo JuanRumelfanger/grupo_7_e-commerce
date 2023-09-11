@@ -16,30 +16,30 @@
         <div class="products">
             <% products.forEach(product => { %>
                 <div class="product">
-                    <img src="/img/<%= products.images[0] %>" alt="<%= product.name %>">
+                    <img src="/img/<%= product.images %>" alt="<%= product.name %>">
 
-                    <h2><%= products.name %></h2>
+                    <h2><%= product.name %></h2>
 
-                    <p><%= products.description %></p>
+                    <p><%= product.description %></p>
 
                     <p>
                         <strong>Plataformas:</strong>
-                        <%= products.platforms.join(', ') %>
+                        <%= product.platforms %>
                     </p>
 
                     <p>
                         <strong>Género:</strong>
-                        <%= products.genre %>
+                        <%= product.genre %>
                     </p>
 
                     <p>
                         <strong>Fecha de lanzamiento:</strong>
-                        <%= products.releaseDate %>
+                        <%= product.releaseDate %>
                     </p>
 
                     <p>
                         <strong>Precio:</strong>
-                        <%= products.price %>
+                        <%= product.price %>
                     </p>
 
                     <a href="/products/<%= products.id %>" class="btn">

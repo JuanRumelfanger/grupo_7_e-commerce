@@ -12,9 +12,8 @@ const productsController = {
     res.render('productsList', { products: products });
   },
   productsDetail: (req, res) => {
-    const idProduct = req.params.id;
-    const productFound = products.filter(product => product.id == idProduct);
-    res.render('productDetail',{product : productFound})
+    let productFound = products.find(x => x.id == req.params.id);
+    res.render('productDetail', {product : productFound})
   },
   create: (req, res) => {
     res.render('crearProducto');
@@ -38,7 +37,7 @@ const productsController = {
   },
   edit: (req, res) => {
     let productFound = products.find(x => x.id == req.params.id);
-    res.render('editarProducto',{product : productFound});
+    res.render('editarProducto', {product : productFound});
   },
   update: (req, res) => {
     let productFound = products.find(x => x.id == req.params.id);
@@ -53,6 +52,16 @@ const productsController = {
     productFound.downloadSize = req.body.downloadSize;
     updateJSON();
     res.redirect('/products/' + req.params.id)
+  },
+	destroy : (req, res) => {
+		let index = products.findIndex(x => x.id == req.params.id);
+		products.splice(index, 1);
+		updateJSON();
+		res.redirect('/products/list');
+	},
+  shop: (req, res) => {
+    let productFound = products.find(x => x.id == req.params.id);
+    res.render('shop', {product : productFound})
   }
 }
 
