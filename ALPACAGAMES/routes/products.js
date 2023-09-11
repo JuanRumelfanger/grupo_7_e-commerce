@@ -10,5 +10,8 @@ router.post('/create', productsController.store);
 
 router.get('/:id', productsController.productsDetail);
 
+// EDICION DE PRODUCTOS
+router.get('/:id/edit', productsController.edit);
+router.put('/:id/edit', productsController.update);
 
 module.exports = router;
