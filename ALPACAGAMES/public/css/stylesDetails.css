@@ -31,16 +31,15 @@ body {
 }
 .section-button{
     display: flex;
-  
+    margin-right: 100px;
 }
 .directory{
     margin-left: 35px;
 }
 
 .header-product{
-    display: block;
-    margin: auto;
-    text-align: center;
+    display: flex;
+  
     border: blue 5px;
 }
 /*colors-and-styles*/
@@ -48,8 +47,10 @@ body {
     text-align: center;
 }
 
-.image-prodct{
-    border: rgb(102, 102, 156) 5px solid;
+.image-product{
+    border: blue 5px solid;
+    display: flex;
+    margin: 25px 0px 25px 15px;
 }
 
 .bar-search{
@@ -62,16 +63,16 @@ body {
 }
 /*buttons*/
 .buy-now{
-    display: flex;
+  
     width: 100px;
-    background-color: blue;
+    background-color: rgb(71, 71, 167);
     padding: 10px;
     margin: auto;
     text-align: center;
     font-size: 20px;
 }
 .gift-button{
-    display: flex;
+  
     width: 80px;
     background-color: rgb(126, 126, 255);
     padding: 10px;
@@ -99,8 +100,8 @@ body {
     border: solid 3px gainsboro;
 }
 .price-product{
-    width: 250px;
+    width: 300px;
     color:rgb(28, 183, 240);
     display: flex;
-    margin: auto;
+    margin: 80px 0px 0px 15px;
 }
