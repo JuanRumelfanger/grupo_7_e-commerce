@@ -11,7 +11,7 @@ const productsController = {
   productsDetail: (req, res) => {
     const idProduct = req.params.id;
     const productFound = products.filter(product => product.id == idProduct);
-    res.render('productDetail',{product : productFound})
+    res.render('productDetail',{productFound : productFound})
   },
   create: (req, res) => {
     res.render('crearProducto');
