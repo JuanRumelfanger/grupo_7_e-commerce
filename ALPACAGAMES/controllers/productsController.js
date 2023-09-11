@@ -11,7 +11,13 @@ const productsController = {
   productsDetail: (req, res) => {
     const idProduct = req.params.id;
     const productFound = products.filter(product => product.id == idProduct);
-    res.render('productDetail',{product : productFound[0]})
+    res.render('productDetail',{product : productFound})
+  },
+  create: (req, res) => {
+    res.render('crearProducto');
+  },
+  store: (req, res) => {
+    res.send('Aqui se envia los datos')
   }
 };
 
