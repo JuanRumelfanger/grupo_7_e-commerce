@@ -25,7 +25,13 @@ body {
     margin: auto;
     margin-right: 20px;
 }
-
+.info-product{
+    width: 300px;
+    color:rgb(28, 183, 240);
+    align-items:start;
+    text-align: left;
+    margin-left: 10px;
+}
 .section-button{
     display: flex;
     margin-right: 100px;
@@ -40,10 +46,13 @@ body {
     border: blue 5px;
 }
 /*colors-and-styles*/
-.producto-user{
-    text-align: center;
+a{
+    text-decoration: none;
+    color: wheat;
 }
-
+.producto-user{
+   
+}
 .image-product{
     display: flex;
     margin: 25px 0px 25px 15px;
@@ -60,6 +69,33 @@ body {
     padding: 5px;
     background-color: white;
     font-size: 10px;
+}
+
+.carrusel{
+    border: 4px solid rgb(76, 43, 155);
+    position: relative;
+    height: 200px;
+}
+
+.image-carrusel{
+    background-color: rgb(118, 122, 126);
+    height: 100%;
+}
+.arrow-carrusel{
+    background-color: rgb(37, 43, 43, 0.3);
+    height:100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.container-carrusel{
+    height: 200px;
+    overflow: hidden;
 }
 /*buttons*/
 .buy-now{
@@ -93,18 +129,10 @@ body {
 }
 
 /*texts*/
+
 .info-app{
     display: flex;
 }
-
-.info-product{
+.product-description{
     border: solid 3px gainsboro;
-}
-.price-product{
-    width: 300px;
-    color:rgb(28, 183, 240);
-    display: block;
-    text-align: justify;
-    align-items: flex-start;
-    margin: 80px 0px 0px 15px;
 }

@@ -12,36 +12,41 @@
 
     <main>
     
-        <article class="producto-user">
-        <section class="image-product">
-            <img src="/img/<%= product.images %>" width="300px" id="ima">
-            <div class="carousel">
-               
-            </div>
-            <div class="price-product">
+    <section class="producto-user">
+        <article class="image-product">
+                <img src="/img/<%= product.images %>" width="300px" id="ima">           
+                <div class="info-product">
                     <h2>$<%= product.price %></h2>
-
-
-                <button class="buy-now">Comprar</button>
-                <button class="gift-button">regalar</button>
-            </div>
-        </section>    
+                    <button class="buy-now">Comprar</button>
+                    <button class="gift-button">regalar</button>
+                </div>
+        </article>    
        
-        <section>
-            <article class="info-product">
+        <article class="container-carrusel">
+            <div class="carrusel" id="section1">
+                <div class="image-carrusel"><i>imagen1</i></div>
+                <div class="arrow-carrusel">
+                    <a href="section3"><i class="fa-solid fa-circle-left"></i></a>
+                    <a href="section2"><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <article class="product-description">
                 <div>
                     <p><%= product.description %></p>
                 </div>
             </article>
-        </section>
         </article>
+      
         <section>
         <h2>Detalle del Producto - <%= product.name %></h2>
-        <section>
+        <article>
             <h3>Descripción</h3>
             <p><%= product.description %></p>
-        </section>
-        <section>
+        </article>
+        <article>
             <h3>Detalles del Producto</h>
             <ul>
                 <li><strong>Plataformas:</strong> <%= product.platforms.join(', ') %></li>
@@ -55,8 +60,9 @@
                     <li><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
                 </ul>
             </ul>
+        </article>
         </section>
-    
+    </section>
     </main>
     <%- include('../partials/footer') %>
 </body>
