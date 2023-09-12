@@ -41,3 +41,13 @@
 - Hasta el momento es el sprint más dificil que pasamos como equipo por diversos problemas como por ejemplo: Comunicación.
 - Falta la implementación de las daily/weekly ya que por estos problemas no llegamos a implementar es ritual como tal.
 - La sinergia y ganas por avanzar se nota en el compromiso del equipo.
+
+## Transcurso del Cuarto Sprint
+- En este Sprint fue en el que menos reuniones tuvimos por diferentes motivos que no lo hicieron posible.
+- Sin embargo con pocas reuniones fue suficiente para ponernos al dia con las tarea, compartir ideas nuevas y aclarar dudas.
+- El equipo tiene que mejorar en hacer las tareas en equipo.
+
+## Conclusiones del Cuarto Sprint
+- El equipo todavia sigue unido y no se presentaron grandes incovenientes para presentar el Cuarto Sprint en tiempo y forma.
+- Se hicieron bastantes tareas en equipo, por lo que nos estamos consolidando como equipo, pero todavia nos falta mejorar
+- Tenemos buenas herramientas para organizar los Sprint y por consecuente sin falta de tantas reuniones estamos muy presentes en el trabajo.  
