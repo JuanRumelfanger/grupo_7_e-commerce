@@ -87,7 +87,7 @@ const productsController = {
     let index = products.findIndex((x) => x.id == req.params.id);
     products.splice(index, 1);
     updateJSON();
-    res.redirect('/products/list');
+    res.redirect('/products');
   },
   shop: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);

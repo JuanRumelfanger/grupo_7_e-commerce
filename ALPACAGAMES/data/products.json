@@ -202,5 +202,41 @@
       "storage": "30GB"
     },
     "downloadSize": "30GB"
+  },
+  {
+    "id": 12,
+    "name": " Heladera no frost Whirlpool messi",
+    "description": "heladera",
+    "platforms": [
+      "PC",
+      "Dispositivos móviles"
+    ],
+    "genre": "Juego de mesa",
+    "releaseDate": "2023-12-12",
+    "price": "140",
+    "images": "images-1694545681092.jpg",
+    "systemReq": {
+      "os": "Cualquiera",
+      "storage": "500"
+    },
+    "downloadSize": "145"
+  },
+  {
+    "id": 13,
+    "name": " Heladera no frost Whirlpool messi",
+    "description": "heladera",
+    "platforms": [
+      "PC",
+      "Dispositivos móviles"
+    ],
+    "genre": "Juego de mesa",
+    "releaseDate": "2023-12-12",
+    "price": "140",
+    "images": "images-1694545751671.jpg",
+    "systemReq": {
+      "os": "Cualquiera",
+      "storage": "500"
+    },
+    "downloadSize": "145"
   }
 ]
