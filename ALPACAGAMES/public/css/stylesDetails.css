@@ -25,10 +25,7 @@ body {
     margin: auto;
     margin-right: 20px;
 }
-.image-product h4{
-  display: flex;
-  margin: auto;
-}
+
 .section-button{
     display: flex;
     margin-right: 100px;
@@ -48,9 +45,12 @@ body {
 }
 
 .image-product{
-    border: blue 5px solid;
     display: flex;
     margin: 25px 0px 25px 15px;
+}
+
+.image-product img{
+    border: solid rgb(99, 99, 168) 6px;
 }
 
 .bar-search{
@@ -63,21 +63,22 @@ body {
 }
 /*buttons*/
 .buy-now{
-  
+    display: block;
     width: 100px;
     background-color: rgb(71, 71, 167);
     padding: 10px;
     margin: auto;
-    text-align: center;
+    margin-left: 0px;
     font-size: 20px;
+    text-align: left;
 }
 .gift-button{
-  
+    display: block;
     width: 80px;
     background-color: rgb(126, 126, 255);
     padding: 10px;
     margin: auto;
-    text-align: center;
+    margin-left: 0px;
     font-size: 20px;
 }
 /*icons*/
@@ -102,6 +103,8 @@ body {
 .price-product{
     width: 300px;
     color:rgb(28, 183, 240);
-    display: flex;
+    display: block;
+    text-align: justify;
+    align-items: flex-start;
     margin: 80px 0px 0px 15px;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
-    <!--<link rel="stylesheet" href="/css/stylesDetails.css">-->
+    <link rel="stylesheet" href="/css/stylesDetails.css">
 </head>
 <body>
 
@@ -11,16 +11,17 @@
     <%- include('../partials/search-bar') %>
 
     <main>
-    <!--
+    
         <article class="producto-user">
         <section class="image-product">
-            <img src="/img/<%= product.images %>" width="300px">
+            <img src="/img/<%= product.images %>" width="300px" id="ima">
             <div class="carousel">
                
             </div>
             <div class="price-product">
-                <h2>$<%= product.price %></h2>
-               
+                    <h2>$<%= product.price %></h2>
+
+
                 <button class="buy-now">Comprar</button>
                 <button class="gift-button">regalar</button>
             </div>
@@ -35,7 +36,6 @@
         </section>
         </article>
         <section>
-        -->
         <h2>Detalle del Producto - <%= product.name %></h2>
         <section>
             <h3>Descripción</h3>
@@ -56,10 +56,7 @@
                 </ul>
             </ul>
         </section>
-        <section>
-            <h3>Imagen del Producto</h><br>
-            <img src="/img/<%= product.images %>" alt="<%= product.name %>">
-        </section>
+    
     </main>
     <%- include('../partials/footer') %>
 </body>
