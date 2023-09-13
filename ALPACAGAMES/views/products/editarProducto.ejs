@@ -15,7 +15,7 @@
     <%- include('../partials/search-bar') %>
 
     <h1>Editar Producto</h1>
-    <form action="/actualizar-producto" method="POST" class="form" aling="center">
+    <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" class="form" aling="center">
         <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
             minlength="5" required>
         <section class="photo-cover">
@@ -30,72 +30,43 @@
             <h4>Modificar Descripcion</h4>
             <input type="text" name="address" id="address" class="controls" placeholder="Descripcion">
         </section>
-        <section class="user-profile">
+        <section class="genre">
             <h3>Cambiar categoría</h3>
-            <div>
-                <input type="radio" name="type" value="type" id="type">
-                <label for="type">Accion</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Deportes</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Sandbox</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">MMO</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Estrategia</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Aventura</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Shooter</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">RPG</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Survival</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Terror</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Arcade</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Minijuegos</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Cartas</label>
-            </div>
-            <div>
-                <input type="radio" name="user-profile" value="buy" id="buyer" checked>
-                <label for="buyer">Otro</label>
-            </div>
+            <select name="genre" id="genre">
+                <option value="Accion">Accion</option><br>
+                <option value="Deportes">Deportes</option><br>
+                <option value="Sandbox">Sandbox</option><br>
+                <option value="Estrategia">Estrategia</option><br>
+                <option value="Aventura">Aventura</option><br>
+                <option value="Shooter">Shooter</option><br>
+                <option value="RPG">RPG</option><br>
+                <option value="Survival">Survival</option><br>
+                <option value="Arcade">Arcade</option><br>
+                <option value="Terror">Terror</option><br>
+                <option value="Minijuegos">Minijuegos</option><br>
+                <option value="Cartas">Cartas</option><br>
+                <option value="Otro">Otro</option><br>
+            </select>
         </section>
         <input type="text" name="other-game" id="other-game" class="controls" placeholder="Otro tipo" minlength="6"
             required>
         <h3>Editar Precio</h3>
         <input type="text" name="price" id="price-product" class="controls" placeholder="Precio" minlength="5" required>
 
+        <h3>Editar Plataforma</h3>
+        <input type="text" name="platforms" id="platforms" class="platforms" placeholder="Plataforma" minlength="2">
+
+        <h3>Editar Requisitos</h3>
+        <input type="text" name="releaseDate" id="releaseDate" class="controls" inlength="5">
+
+        <h3>Editar Sistemas operativos</h3>
+        <input type="text" name="systemReq" id="systemReq" class="controls" inlength="5">
+
+        <h3>Editar Almacenamiento requerido<h3>
+        <input type="number" name="downloadSize" id="downloadSize" class="controls" >
+
         <section class="buttons">
-            <a href="/" id="send">Enviar</a>
+            <button>Enviar</button>
             <input type="reset" name="cancel" value="Cancelar" id="cancel">
         </section>
     </form>

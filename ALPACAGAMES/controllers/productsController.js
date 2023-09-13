@@ -6,7 +6,7 @@ const products = JSON.parse(dataJson);
 
 // ACTUALIZAR BASE DE DATOS
 function updateJSON() {
-  const productsJSON = JSON.stringify(products, null, 2);
+  const productsJSON = JSON.stringify(products, null, 4);
   fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
 }
 
@@ -71,8 +71,8 @@ const productsController = {
   },
   update: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
-    productFound.name = req.body.name;
-    productFound.description = req.body.description;
+    productFound.name = req.body["name-product"];
+    productFound.description = req.body.address;
     productFound.platforms = req.body.plataforms;
     productFound.genre = req.body.genre;
     productFound.releaseDate = req.body.releaseDate;
