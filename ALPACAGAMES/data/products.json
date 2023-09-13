@@ -212,5 +212,187 @@
             "storage": "500"
         },
         "downloadSize": "145"
+    },
+    {
+        "id": 14,
+        "name": "Ajedrez",
+        "description": "Aprende a pensar",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2024-09-12",
+        "price": "20000",
+        "images": "images-1694565227227.jpg",
+        "systemReq": {
+            "os": "Widowse",
+            "storage": "500"
+        },
+        "downloadSize": "145"
+    },
+    {
+        "id": 15,
+        "name": "Ajedrez",
+        "description": "Aprende a pensar",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2024-09-12",
+        "price": "20000",
+        "images": "images-1694565345331.jpg",
+        "systemReq": {
+            "os": "Widowse",
+            "storage": "500"
+        },
+        "downloadSize": "145"
+    },
+    {
+        "id": 16,
+        "name": "Ajedrez",
+        "description": "Aprende a pensar",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2024-09-12",
+        "price": "20000",
+        "images": "images-1694565436837.jpg",
+        "systemReq": {
+            "os": "Widowse",
+            "storage": "500"
+        },
+        "downloadSize": "145"
+    },
+    {
+        "id": 17,
+        "name": "BombSquad",
+        "description": "bombas",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Accion",
+        "releaseDate": "2024-12-12",
+        "price": "10000000",
+        "images": "images-1694565541475.jpg",
+        "systemReq": {
+            "os": "Widowse",
+            "storage": "500"
+        },
+        "downloadSize": "145"
+    },
+    {
+        "id": 18,
+        "name": "MiniMilitia",
+        "description": "bombas",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Accion",
+        "releaseDate": "2024-12-12",
+        "price": "10000000",
+        "images": "images-1694565579239.jpg",
+        "systemReq": {
+            "os": "Widowse",
+            "storage": "500"
+        },
+        "downloadSize": "145"
+    },
+    {
+        "id": 19,
+        "name": "DH",
+        "description": "Programación",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2023-09-12",
+        "price": "10000",
+        "images": "images-1694567943163.jpg",
+        "systemReq": {
+            "os": "Cualquiera",
+            "storage": "500"
+        },
+        "downloadSize": "145"
+    },
+    {
+        "id": 20,
+        "name": "VSC",
+        "description": "Codeo",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2023-02-02",
+        "price": "10000",
+        "images": "images-1694568489338.jpg",
+        "downloadSize": "200"
+    },
+    {
+        "id": 21,
+        "name": "VSC2",
+        "description": "Codeo",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2023-02-02",
+        "price": "10000",
+        "images": "images-1694568560445.jpg",
+        "downloadSize": "200"
+    },
+    {
+        "id": 22,
+        "name": "VSC2",
+        "description": "Codeo",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2023-02-02",
+        "price": "10000",
+        "images": "images-1694568639568.jpg",
+        "downloadSize": "200"
+    },
+    {
+        "id": 23,
+        "name": "VSC2",
+        "description": "Codeo",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2023-02-02",
+        "price": "10000",
+        "images": "images-1694568699478.jpg",
+        "downloadSize": "200"
+    },
+    {
+        "id": 24,
+        "name": "VSC2",
+        "description": "Codeo",
+        "platforms": [
+            "PC",
+            "Dispositivos móviles"
+        ],
+        "genre": "Juego de mesa",
+        "releaseDate": "2023-02-02",
+        "price": 10000,
+        "images": "images-1694568781201.jpg",
+        "systemReq": {
+            "os": "Cualquiera",
+            "storage": "500"
+        },
+        "downloadSize": 200
     }
 ]

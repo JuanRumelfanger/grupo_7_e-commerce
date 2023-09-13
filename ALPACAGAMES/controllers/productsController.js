@@ -52,10 +52,10 @@ const productsController = {
       platforms: selectedPlatforms,
       genre: req.body.genre,
       releaseDate: req.body.releaseDate,
-      price: req.body.price,
+      price: parseFloat(req.body.price),
       images: imageFilename,
-      systemReq: req.body.systemReq,
-      downloadSize: req.body.downloadSize,
+      systemReq:{os:req.body.os, storage:req.body.storage},
+      downloadSize: Number(req.body.downloadSize),
     };
     //newProduct.id = lastProductId + 1;
 
@@ -63,7 +63,7 @@ const productsController = {
     //newProduct.images = imageFilename;
     products.push(newProduct);
     updateJSON();
-    res.redirect('/products/list');
+    res.redirect('/products/');
   },
   edit: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
