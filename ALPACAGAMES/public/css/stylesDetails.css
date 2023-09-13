@@ -25,26 +25,41 @@ body {
     margin: auto;
     margin-right: 20px;
 }
-.image-product h4{
-  display: flex;
-  margin: auto;
+.info-product{
+    width: 300px;
+    color:rgb(28, 183, 240);
+    align-items:start;
+    text-align: left;
+    margin-left: 10px;
 }
 .section-button{
     display: flex;
-  
+    margin-right: 100px;
 }
 .directory{
     margin-left: 35px;
 }
 
-.image-product{
-    display: block;
-    margin: auto;
-    text-align: center;
+.header-product{
+    display: flex;
+  
+    border: blue 5px;
 }
 /*colors-and-styles*/
+a{
+    text-decoration: none;
+    color: wheat;
+}
 .producto-user{
-    text-align: center;
+   
+}
+.image-product{
+    display: flex;
+    margin: 25px 0px 25px 15px;
+}
+
+.image-product img{
+    border: solid rgb(99, 99, 168) 6px;
 }
 
 .bar-search{
@@ -55,23 +70,51 @@ body {
     background-color: white;
     font-size: 10px;
 }
+
+.carrusel{
+    border: 4px solid rgb(76, 43, 155);
+    position: relative;
+    height: 200px;
+}
+
+.image-carrusel{
+    background-color: rgb(118, 122, 126);
+    height: 100%;
+}
+.arrow-carrusel{
+    background-color: rgb(37, 43, 43, 0.3);
+    height:100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.container-carrusel{
+    height: 200px;
+    overflow: hidden;
+}
 /*buttons*/
 .buy-now{
-    display: flex;
+    display: block;
     width: 100px;
-    background-color: blue;
+    background-color: rgb(71, 71, 167);
     padding: 10px;
     margin: auto;
-    text-align: center;
+    margin-left: 0px;
     font-size: 20px;
+    text-align: left;
 }
 .gift-button{
-    display: flex;
+    display: block;
     width: 80px;
     background-color: rgb(126, 126, 255);
     padding: 10px;
     margin: auto;
-    text-align: center;
+    margin-left: 0px;
     font-size: 20px;
 }
 /*icons*/
@@ -86,10 +129,10 @@ body {
 }
 
 /*texts*/
+
 .info-app{
     display: flex;
 }
-
-.info-product{
+.product-description{
     border: solid 3px gainsboro;
 }
