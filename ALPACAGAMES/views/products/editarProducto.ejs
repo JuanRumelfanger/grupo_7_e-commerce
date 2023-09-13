@@ -68,9 +68,15 @@
         <section class="buttons">
             <button>Enviar</button>
             <input type="reset" name="cancel" value="Cancelar" id="cancel">
-        </section>
-    </form>
 
+            
+
+        </section>
+
+    </form>
+    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="action-button delete">ELIMINAR</button>
+        </form>
     <%- include('../partials/footer') %>
 
 </body>
