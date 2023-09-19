@@ -22,7 +22,7 @@
                 </div>
                 <article class="product-description">
                     <div>
-                        <h2>Detalle del Producto - <%= product.name %></h2>
+                        <h2><%= product.name %></h2>
                         <p><%= product.description %></p>
                     </div>
                 </article>
@@ -41,7 +41,7 @@
 
         <section class="product-detail">
 
-        <article>
+        <article class="list-detail">
             <h2>Detalles del Producto</h2>
             <ul>
                 <li type="none"><strong>Plataformas:</strong> <%= product.platforms%></li>
@@ -55,6 +55,9 @@
                     <li type="none"><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
                 </ul>
             </ul>
+        </article>
+        <article class="lore-product">
+
         </article>
         </section>
     </section>
