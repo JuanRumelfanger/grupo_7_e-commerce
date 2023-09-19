@@ -51,8 +51,14 @@ a{
     color: wheat;
 }
 .producto-user{
-   
+ 
 }
+
+.product-detail{
+    margin-top: 30px;
+    padding: 20px;
+}
+
 .image-product{
     display: flex;
     margin: 25px 0px 25px 15px;
@@ -134,5 +140,26 @@ a{
     display: flex;
 }
 .product-description{
-    border: solid 3px gainsboro;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    padding-left: 20px;
+    border: inset 10px gainsboro;
+    font-size: 20px;
+}
+
+.product-description h2{
+    text-align: left; 
+    font-family: Arial Black; 
+    font-weight: bold; font-size: 30px; 
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(28, 24, 24, 0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+
+.product-description p{
+    color: #202020;
 }
