@@ -14,14 +14,20 @@
     
     <section class="producto-user">
         <article class="image-product">
-                <img src="/img/<%= product.images %>" width="300px" id="ima">           
+                <img src="/img/<%= product.images %>" width="400px" id="ima">           
                 <div class="info-product">
                     <h2>$<%= product.price %></h2>
                     <button class="buy-now">Comprar</button>
                     <button class="gift-button">regalar</button>
                 </div>
+                <article class="product-description">
+                    <div>
+                        <h2><%= product.name %></h2>
+                        <p><%= product.description %></p>
+                    </div>
+                </article>
         </article>    
-       
+
         <article class="container-carrusel">
             <div class="carrusel" id="section1">
                 <div class="image-carrusel"><i>imagen1</i></div>
@@ -33,34 +39,25 @@
 
         </article>
 
-        <article>
-            <article class="product-description">
-                <div>
-                    <p><%= product.description %></p>
-                </div>
-            </article>
-        </article>
-      
-        <section>
-        <h2>Detalle del Producto - <%= product.name %></h2>
-        <article>
-            <h3>Descripción</h3>
-            <p><%= product.description %></p>
-        </article>
-        <article>
-            <h3>Detalles del Producto</h>
+        <section class="product-detail">
+
+        <article class="list-detail">
+            <h2>Detalles del Producto</h2>
             <ul>
-                <li><strong>Plataformas:</strong> <%= product.platforms%></li>
-                <li><strong>Género:</strong> <%= product.genre %></li>
-                <li><strong>Fecha de Lanzamiento:</strong> <%= product.releaseDate %></li>
-                <li><strong>Precio:</strong> <%= product.price %></li>
-                <li><strong>Tamaño de Descarga:</strong> <%= product.downloadSize %></li>
-                <li><strong>Requisitos del Sistema:</strong></li>
+                <li type="none"><strong>Plataformas:</strong> <%= product.platforms%></li>
+                <li type="none"><strong>Género:</strong> <%= product.genre %></li>
+                <li type="none"><strong>Fecha de Lanzamiento:</strong> <%= product.releaseDate %></li>
+                <li type="none"><strong>Precio:</strong> <%= product.price %></li>
+                <li type="none"><strong>Tamaño de Descarga:</strong> <%= product.downloadSize %></li>
+                <li type="none"><strong>Requisitos del Sistema:</strong></li>
                 <ul>
-                    <li><strong>Sistema Operativo:</strong> <%= product.systemReq.os %></li>
-                    <li><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
+                    <li type="none"><strong>Sistema Operativo:</strong> <%= product.systemReq.os %></li>
+                    <li type="none"><strong>Almacenamiento Requerido:</strong> <%= product.systemReq.storage %></li>
                 </ul>
             </ul>
+        </article>
+        <article class="lore-product">
+
         </article>
         </section>
     </section>
