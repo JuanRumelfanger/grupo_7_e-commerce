@@ -54,7 +54,7 @@ const productsController = {
       releaseDate: req.body.releaseDate,
       price: parseFloat(req.body.price),
       images: imageFilename,
-      systemReq:{os:req.body.os, storage:req.body.storage},
+      systemReq: { os: req.body.os, storage: req.body.storage },
       downloadSize: Number(req.body.downloadSize),
     };
     //newProduct.id = lastProductId + 1;
@@ -71,7 +71,7 @@ const productsController = {
   },
   update: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
-    productFound.name = req.body["name-product"];
+    productFound.name = req.body['name-product'];
     productFound.description = req.body.address;
     productFound.platforms = req.body.plataforms;
     productFound.genre = req.body.genre;

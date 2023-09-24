@@ -6,6 +6,8 @@ const methodOverride = require('method-override');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
+
 const cookieParser = require('cookie-parser');
 
 const userViews = path.join(__dirname, '/views/users');
@@ -29,6 +31,7 @@ app.set('views', [userViews, productsViews]);
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
+app.use('/users', usersRouter);
 
 app.listen(3000, () => {
   console.log('Successfully started');
