@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-
     <%- include('../partials/head') %>
-
-
+    <link rel="stylesheet" href="/css/stylesRegister.css">
 </head>
 
 <body>
@@ -53,27 +51,23 @@
                     <option value="uruguay">Uruguay</option>
                 </select>
             </div>
-            <div class="container-input-label">
-                <div class="container-checkbox">
-                    <div class="checkbox">
-                        <input type="checkbox" name="oferta-correo" id="oferta-correo">
-                        <label for="oferta-correo">El correo de la cuenta recibirá ofertas especiales, noticias y demás
-                            de AlpacaGames Entertainment.</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" name="pol-privacidad" id="pol-privacidad">
-                        <label for="pol-privacidad">He leido y acepto lo siguiente:
-                            <a href="#">Politica de privacidad en línea de Alpaca Games Entertainment</a>
-                        </label>
-                    </div>
-                </div>
+            <div>
+                <label for="avatar">Agregar avatar</label>
+                <input type="file" name="avatar" id="avatar">
             </div>
             <div class="btn-container">
                 <button type="submit" class="btn btn-primary">
-                    Enviar
+                    Crear cuenta
                 </button>
-                <button type="reset" class="btn">Borrar</button>
             </div>
+            <p>
+                <em>¿Tenes cuenta?</em>
+            </p>
+            <a href="/users/login">
+                <div>
+                    <p>Iniciar sesión</p>
+                </div>
+            </a>
         </form>
     </main>
 

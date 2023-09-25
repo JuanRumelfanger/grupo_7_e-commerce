@@ -3,45 +3,60 @@
     "id": 1,
     "firstName": "massa quis",
     "lastName": "maecenas leo",
+    "displayName": "lorem ipsum",
     "email": "bdebeneditti0@naver.com",
     "password": "cU3`ny$c)!_E'\"v0",
-    "type": "Admin",
+    "birthDate": "2019-01-01",
+    "country": "France",
+    "admin": false,
     "avatar": ""
   },
   {
     "id": 2,
     "firstName": "luctus",
     "lastName": "non lectus",
+    "displayName": "lorem ipsum",
     "email": "cscamadine1@sun.com",
     "password": "zO8~?q2L",
-    "type": "Admin",
-    "avatar": "/images/avatars/polloCorazon.jpg"
+    "birthDate": "2019-01-01",
+    "country": "France",
+    "admin": false,
+    "avatar": ""
   },
   {
     "id": 3,
     "firstName": "hac",
     "lastName": "consequat lectus",
+    "displayName": "lorem ipsum",
     "email": "amarshall2@yahoo.com",
     "password": "gS0{'y)IhH*o>k",
-    "type": "Customer",
-    "avatar": "/images/avatars/kipa.jpg"
+    "birthDate": "2019-01-01",
+    "country": "France",
+    "admin": false,
+    "avatar": ""
   },
   {
     "id": 4,
     "firstName": "donec pharetra",
     "lastName": "lorem id",
+    "displayName": "lorem ipsum",
     "email": "urowe3@japanpost.jp",
     "password": "iK2}i&<%`&U",
-    "type": "Admin",
-    "avatar": "/images/avatars/pretzel.jpg"
+    "birthDate": "2019-01-01",
+    "country": "France",
+    "admin": false,
+    "avatar": ""
   },
   {
     "id": 5,
     "firstName": "convallis",
     "lastName": "integer",
+    "displayName": "lorem ipsum",
     "email": "lbertrand4@geocities.jp",
     "password": "hP5,W&_'or&",
-    "type": "Admin",
-    "avatar": "/images/avatars/polloCorazon.jpg"
+    "birthDate": "2019-01-01",
+    "country": "France",
+    "admin": true,
+    "avatar": ""
   }
 ]
