@@ -9,9 +9,8 @@ body {
     font-family: 'Roboto';
     background-color: rgb(86, 97, 143);
 }
-.lore-product{
-    
-}
+ 
+
 .haeder-section1{
     display: flex;
     margin: auto;
@@ -83,35 +82,56 @@ a{
     font-size: 10px;
 }
 
-.carrusel{
-   
-    position: relative;
-    height: 200px;
-    margin: auto;
-    margin: 20px;
-    
-}
 
-.image-carrusel{
-    background-color: rgb(118, 122, 126);
-    height: 100%;
-}
-.arrow-carrusel{
-    background-color: rgb(37, 43, 43, 0.3);
-    height:100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
 
 .container-carrusel{
-    height: 200px;
-    overflow: hidden;
-}
+    display: flex;
+    margin: auto;
+    background-color:  rgb(99, 99, 168);
+    width: auto;
+    padding: 30px;
+  }
+  
+.container-carrusel ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  }
+  
+  ul.slider{
+    position: relative;
+    width: 800px;
+    height: 300px;
+  }
+  
+.container-carrusel  ul.slider li {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: 0;
+      width: inherit;
+      height: inherit;
+      transition: opacity .5s;
+
+  }
+
+  ul.slider li img{  
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  ul.slider li:first-child {
+      opacity: 1; /*Mostramos el primer <li>*/
+  }
+  
+  ul.slider li:target {
+      opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+  }
+
 /*buttons*/
 .buy-now{
     display: block;
@@ -141,6 +161,14 @@ a{
 #user-option{
     color: blue;
     font-size: 30px;
+}
+#arrow1{
+    display: flex;
+    justify-content: start;
+}
+#arrow2{
+    display: flex;
+    justify-content: end;
 }
 
 /*texts*/
@@ -172,6 +200,6 @@ a{
     text-shadow: 0px 3px 3px rgba(62, 135, 184, 0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 
-.product-description p{
- 
-}
+/*animations*/
+
+

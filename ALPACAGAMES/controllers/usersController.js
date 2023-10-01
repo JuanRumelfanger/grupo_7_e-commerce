@@ -40,7 +40,7 @@ const usersController = {
       };
       users.push(newUser);
       updateUserJSON();
-      res.redirect('/users/login');
+      res.redirect('/');
     }
   },
 };
