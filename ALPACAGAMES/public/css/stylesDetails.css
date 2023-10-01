@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Roboto';
-    background-color: rgb(101, 98, 98);
-    color: white;
+    background-color: rgb(86, 97, 143);
 }
+ 
 
 .haeder-section1{
     display: flex;
@@ -39,7 +39,13 @@ body {
 .directory{
     margin-left: 35px;
 }
+.list-detail li{
+    padding: 5px 0px;
+}
+.list-detail h2{
 
+    padding-bottom: 10px;
+}
 .header-product{
     display: flex;
   
@@ -48,11 +54,16 @@ body {
 /*colors-and-styles*/
 a{
     text-decoration: none;
-    color: wheat;
-}
+  
+}   
 .producto-user{
-   
+    background-color: rgb(86, 97, 143);
 }
+.product-detail{
+    margin-top: 30px;
+    padding: 20px;
+}
+
 .image-product{
     display: flex;
     margin: 25px 0px 25px 15px;
@@ -67,36 +78,60 @@ a{
     margin: auto;
     text-align: left;
     padding: 5px;
-    background-color: white;
+ 
     font-size: 10px;
 }
 
-.carrusel{
-    border: 4px solid rgb(76, 43, 155);
-    position: relative;
-    height: 200px;
-}
 
-.image-carrusel{
-    background-color: rgb(118, 122, 126);
-    height: 100%;
-}
-.arrow-carrusel{
-    background-color: rgb(37, 43, 43, 0.3);
-    height:100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
 
 .container-carrusel{
-    height: 200px;
-    overflow: hidden;
-}
+    display: flex;
+    margin: auto;
+    background-color:  rgb(99, 99, 168);
+    width: auto;
+    padding: 30px;
+  }
+  
+.container-carrusel ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  }
+  
+  ul.slider{
+    position: relative;
+    width: 800px;
+    height: 300px;
+  }
+  
+.container-carrusel  ul.slider li {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: 0;
+      width: inherit;
+      height: inherit;
+      transition: opacity .5s;
+
+  }
+
+  ul.slider li img{  
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  ul.slider li:first-child {
+      opacity: 1; /*Mostramos el primer <li>*/
+  }
+  
+  ul.slider li:target {
+      opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+  }
+
 /*buttons*/
 .buy-now{
     display: block;
@@ -127,6 +162,14 @@ a{
     color: blue;
     font-size: 30px;
 }
+#arrow1{
+    display: flex;
+    justify-content: start;
+}
+#arrow2{
+    display: flex;
+    justify-content: end;
+}
 
 /*texts*/
 
@@ -134,5 +177,29 @@ a{
     display: flex;
 }
 .product-description{
-    border: solid 3px gainsboro;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    margin-top: 0px;
+    padding: 15px;
+    padding-left: 20px;
+   
+    font-size: 20px;
+    align-items: flex-start;
 }
+
+.product-description h2{
+    text-align: left; 
+    font-family: Arial Black; 
+    font-weight: bold; font-size: 50px; 
+    background: #071969cd; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(62, 135, 184, 0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+
+/*animations*/
+
+

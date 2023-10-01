@@ -53,17 +53,26 @@
         <div class="conteiner-mensaje-2">
             <a class="mensaje-2">------ O INICIA SESION CON: -----</a>
         </div>
-        <form action="/login" method="post">
+        <form action="/users/login" method="post">
             <class class="caja-email">
-                <input type="email" placeholder="Correo electrónico o número de teléfono" class="email">
+                <label for="email">
+                     <input type="email" name="email" placeholder="Correo electrónico o número de teléfono" class="email">
+                </label>      
             </class>
             <class class="caja-contraseña">
-                <input type="password" placeholder="Contraseña">
+                <label for="password">
+                    <input type="password" name="password" placeholder="Contraseña">
+                </label>
             </class>
+            <div class="iniciar-sesion">
+            <button type="submit">Iniciar sesion</button>
+                <div class="rememberMe">
+                    <label for="rememberMe">Recuerdame</label>
+                    <input type="checkbox" name="rememberMe">
+                </div>
+            </div>
         </form>
-        <div class="iniciar-sesion">
-            <button type="submit"><a href="/" id="mensaje-3">Iniciar sesión</a>
-        </div>
+    
         <div class="caja-mensaje-4">
             <a href="/register" id="mensaje-4">Crea una cuenta gratis</a>
         </div>
