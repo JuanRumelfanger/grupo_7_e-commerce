@@ -68,5 +68,35 @@
         "password": "$2a$10$R.976TwcZfK64PtCTd5nO.9o9rOApJwcd8OZOHsr9OL.v3wAToKUC",
         "admin": false,
         "avatar": null
+    },
+    {
+        "id": 7,
+        "name": "Messi ",
+        "lastName": "GOAT",
+        "displayName": "Leo10",
+        "email": "thegoat@gmail.com",
+        "password": "$2a$10$NKliPEUER.qz9kSuWrSes.f4.MPRJQCZry/9WmGddG9oDzqdG3Qhi",
+        "admin": false,
+        "avatar": null
+    },
+    {
+        "id": 8,
+        "name": "1",
+        "lastName": "1",
+        "displayName": "1",
+        "email": "thegoat@gmail.com",
+        "password": "$2a$10$t.wq1rlCj9680L6WbFWAi.veKv83x02uIboh7PizxP6v7QdQXRL9i",
+        "admin": false,
+        "avatar": null
+    },
+    {
+        "id": 9,
+        "name": "Juan",
+        "lastName": "Rumelfanger",
+        "displayName": "Rumel",
+        "email": "umajuanrumel@gmail.com",
+        "password": "$2a$10$MjxPs4hoKeL6uJVEqHuvXej7uK9yaoLKrXHAlDI6e2WAjpunjJiYm",
+        "admin": false,
+        "avatar": null
     }
 ]
