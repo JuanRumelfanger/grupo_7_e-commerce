@@ -14,7 +14,6 @@ function updateUserJSON() {
 const usersController = {
   login: (req, res) => {
     res.render('login');
-    //console.log(req.body);
   },
   processLogin: (req, res) => {
     console.log(req.body);
