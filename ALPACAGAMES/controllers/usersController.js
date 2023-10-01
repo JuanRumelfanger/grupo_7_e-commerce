@@ -16,7 +16,7 @@ const usersController = {
     res.render('login');
   },
   processLogin: (req, res) => {
-    console.log(req.body);
+    console.log(req.session);
     res.redirect('/')
   },
   register: (req, res) => {

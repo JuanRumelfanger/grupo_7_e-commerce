@@ -38,6 +38,15 @@
 /* .usuario{
     text-align: right;
 } */
+
+.rememberMe{
+    display:flex;
+    position: relative;
+    font-family: 'Roboto';
+    justify-content: center;
+    color: rgb(121, 142, 187);
+    padding: 5px;
+}
 .caja-email{
     display: block;
     text-align: center;
