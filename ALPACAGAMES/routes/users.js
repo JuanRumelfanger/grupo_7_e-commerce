@@ -8,4 +8,4 @@ router.post('/login', usersController.processLogin);
 
 router.get('/register', usersController.register);
 router.post('/register', usersController.processRegister, upload.single('avatar'));
-module.exports = router;
+module.exports = router; 
