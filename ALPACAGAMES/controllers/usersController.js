@@ -2,7 +2,8 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-
+const validations =  require('../middlewares/validation');
+const validationLogin = validations.login
 const dataJson = fs.readFileSync(path.join(__dirname, '../data/users.json'));
 const users = JSON.parse(dataJson);
 
@@ -16,7 +17,11 @@ const usersController = {
     res.render('login');
   },
   processLogin: (req, res) => {
-    console.log(req.session);
+    if(req.body.rememberMe != undefined){
+      res.cookie("rememberMe", userFromLogin, {maxAge:120000});
+
+    }
+    
     res.redirect('/')
   },
   register: (req, res) => {

@@ -80,7 +80,7 @@ const validation = {
       .isDate()
       .withMessage('Debes ingresar una fecha válida')
       .bail()
-      .isBefore(moment().subtract(18, 'years'))
+     // .isBefore(moment().subtract(18, 'years'))
       .withMessage('Debes ser mayor de 18 años'),
     body('country').notEmpty().withMessage('Debes seleccionar un país'),
     body('avatar')

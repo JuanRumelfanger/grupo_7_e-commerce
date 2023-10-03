@@ -113,8 +113,11 @@ a{
       height: inherit;
       transition: opacity .5s;
 
-  }
-
+}
+.container-carrusel ul{
+    display: flex;
+    padding-left: 30%;
+}
   ul.slider li img{  
     display: flex;
     justify-content: center;
@@ -132,26 +135,6 @@ a{
       opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
   }
 
-/*buttons*/
-.buy-now{
-    display: block;
-    width: 100px;
-    background-color: rgb(71, 71, 167);
-    padding: 10px;
-    margin: auto;
-    margin-left: 0px;
-    font-size: 20px;
-    text-align: left;
-}
-.gift-button{
-    display: block;
-    width: 80px;
-    background-color: rgb(126, 126, 255);
-    padding: 10px;
-    margin: auto;
-    margin-left: 0px;
-    font-size: 20px;
-}
 /*icons*/
 
 #burger-menu{
@@ -163,12 +146,13 @@ a{
     font-size: 30px;
 }
 #arrow1{
-    display: flex;
-    justify-content: start;
+    display: inline-flex;
+    justify-content: center;
+    width: 100px;
 }
 #arrow2{
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
 /*texts*/
@@ -202,4 +186,83 @@ a{
 
 /*animations*/
 
+.buy-now{
+    background: #34326c; /* color de fondo */
+    color: #08063f; /* color de fuente */
+    border: 2px solid #4741d7; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+    font-size: 18px;
+    margin: 5px;
+  }
+  .buy-now {
+    color: #fff; /* color de fuente hover */
+  }
+  .buy-now::after {
+    content: "";
+    background: #4741d7; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .buy-now:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
 
+
+  .gift-button{
+    background: #34326c; /* color de fondo */
+    color: #08063f; /* color de fuente */
+    border: 2px solid #4741d7; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+    font-size: 18px;
+    margin: 5px;
+  }
+  .gift-button{
+    color: #fff; /* color de fuente hover */
+  }
+  .gift-button::after {
+    content: "";
+    background: #4741d7; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .gift-button:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
