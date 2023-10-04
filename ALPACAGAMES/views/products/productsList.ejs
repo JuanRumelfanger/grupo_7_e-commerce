@@ -12,40 +12,43 @@
     <%- include('../partials/search-bar.ejs') %>
     <main>
         <h1>Catálogo de Videojuegos</h1>
-
-        <div class="products">
+        <div class="container-products">
             <% products.forEach(product => { %>
-                <div class="product">
-                    <img src="/img/<%= product.images %>" alt="<%= product.name %>">
+                <div class="products-cajas">
+                    <div class="product">
+                        <div class="container-img">
+                            <img src="/img/<%= product.images %>" alt="<%= product.name %>" id="imagen-product">
+                        </div>
+                        <div class="information-box">
+                            <h2><%= product.name %></h2>
 
-                    <h2><%= product.name %></h2>
+                            <p><%= product.description %></p>
 
-                    <p><%= product.description %></p>
+                            <p>
+                                <strong>Plataformas:</strong>
+                                <%= product.platforms %>
+                            </p>
 
-                    <p>
-                        <strong>Plataformas:</strong>
-                        <%= product.platforms %>
-                    </p>
+                            <p>
+                                <strong>Género:</strong>
+                                <%= product.genre %>
+                            </p>
 
-                    <p>
-                        <strong>Género:</strong>
-                        <%= product.genre %>
-                    </p>
+                            <p>
+                                <strong>Fecha de lanzamiento:</strong>
+                                <%= product.releaseDate %>
+                            </p>
 
-                    <p>
-                        <strong>Fecha de lanzamiento:</strong>
-                        <%= product.releaseDate %>
-                    </p>
+                            <p>
+                                <strong>Precio:</strong>
+                                <%= product.price %>
+                            </p>
 
-                    <p>
-                        <strong>Precio:</strong>
-                        <%= product.price %>
-                    </p>
-
-                    <a href="/products/<%= product.id %>" class="btn">
-                        Ver detalles
-                    </a>
-
+                            <a href="/products/<%= product.id %>" class="btn">
+                                Ver detalles
+                            </a>
+                        </div>
+                    </div>
                 </div>
             <% }) %>
         </div>

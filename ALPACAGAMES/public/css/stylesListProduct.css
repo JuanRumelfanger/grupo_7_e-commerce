@@ -1,4 +1,132 @@
 @import './partials/header.css';
 @import './partials/search-bar.css';
 @import './partials/footer.css';
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-products{
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(rgb(51, 0, 0), rgba(73, 73, 73, 0));
+}
+.products-cajas{
+    width: 100%;
+}
+.product{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.container-img{
+    width: 100%;
+    text-align: center;
+}
+#imagen-product{
+    width: 80%;
+    height: 200px;
+    transition: 1s;
+}
+.information-box{
+    text-align: center;
+}
+#imagen-product:hover{
+    width: 90%;
+    height: 250px;
+}
+@media(min-width: 450px){
+    .container-products{
+        display: flex;
+        flex-wrap: wrap;
+        background: linear-gradient(rgb(51, 0, 0), rgba(73, 73, 73, 0));
+    }
+    .products-cajas{
+        
+        width: 50%;
+    }
+    .product{
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .container-img{
+        width: 100%;
+        text-align: center;
+    }
+    #imagen-product{
+        width: 80%;
+        height: 200px;
+        transition: 1s;
+    }
+    .information-box{
+        text-align: center;
+    }
+    #imagen-product:hover{
+        width: 90%;
+        height: 250px;
+    }
+}
+@media(min-width: 750px){
+    .container-products{
+        display: flex;
+        flex-wrap: wrap;
+        background: linear-gradient(rgb(51, 0, 0), rgba(73, 73, 73, 0));
+    }
+    .products-cajas{
+        width: 33%;
+    }
+    .product{
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .container-img{
+        width: 100%;
+        text-align: center;
+    }
+    #imagen-product{
+        width: 80%;
+        height: 200px;
+        transition: 1s;
+    }
+    .information-box{
+        text-align: center;
+    }
+    #imagen-product:hover{
+        width: 90%;
+        height: 250px;
+    }
+}
+@media(min-width: 1000px){
+    .container-products{
+        display: flex;
+        flex-wrap: wrap;
+        background: linear-gradient(rgb(51, 0, 0), rgba(73, 73, 73, 0));
+    }
+    .products-cajas{
+        
+        width: 25%;
+    }
+    .product{
+        margin: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .container-img{
+        width: 100%;
+        text-align: center;
+    }
+    #imagen-product{
+        width: 80%;
+        height: 200px;
+        transition: 1s;
+    }
+    .information-box{
+        text-align: center;
+    }
+    #imagen-product:hover{
+        width: 90%;
+        height: 250px;
+    }
+}
