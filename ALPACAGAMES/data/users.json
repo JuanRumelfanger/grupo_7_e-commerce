@@ -98,5 +98,41 @@
         "password": "$2a$10$MjxPs4hoKeL6uJVEqHuvXej7uK9yaoLKrXHAlDI6e2WAjpunjJiYm",
         "admin": false,
         "avatar": null
+    },
+    {
+        "id": 10,
+        "name": "Federico ",
+        "lastName": "Chosco",
+        "displayName": "G4BR3L_xD",
+        "email": "123123123@hotmail.com",
+        "password": "$2a$10$CO0Ezn2IzOZ1P2mUH5NzlubF9E7hNkX104OLDcbendEZnzCGgdFu6",
+        "birthDate": "1211-03-12",
+        "country": "argentina",
+        "admin": false,
+        "avatar": null
+    },
+    {
+        "id": 11,
+        "name": "Federico ",
+        "lastName": "Chosco",
+        "displayName": "G4BR3L_xD",
+        "email": "123123123@hotmail.com",
+        "password": "$2a$10$wFYazzzu/EoNdiMwq8Ta1.7ZMzuSfXwc5uCdo5VaJPX78mHlrF61y",
+        "birthDate": "8888-07-18",
+        "country": "argentina",
+        "admin": false,
+        "avatar": "superm.png"
+    },
+    {
+        "id": 12,
+        "name": "Federico ",
+        "lastName": "Chosco",
+        "displayName": "G4BR3L_xD",
+        "email": "123123123@hotmail.com",
+        "password": "$2a$10$fbNDMl92MuWo/l5Z8.eZrOhD/hqncQTArzTqYqTllDew/Ut3PL.em",
+        "birthDate": "12312-03-12",
+        "country": "argentina",
+        "admin": false,
+        "avatar": "avatar-1696440990707.png"
     }
 ]

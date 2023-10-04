@@ -39,7 +39,7 @@ const usersController = {
         birthDate: req.body.birthDate,
         country: req.body.country,
         admin: false,
-        avatar: imageFilename,
+        avatar: req.file.filename
       };
       users.push(newUser);
       updateUserJSON();
