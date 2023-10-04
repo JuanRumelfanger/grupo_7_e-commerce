@@ -52,7 +52,7 @@
     text-align: center;
 }
 .caja-email input[type=email]{
-    width: 300px;
+    width: 90%;
     height: 30px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
@@ -68,7 +68,7 @@
     text-align: center;
 }
 input[type=password]{
-    width: 300px;
+    width: 90%;
     height: 30px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
@@ -85,14 +85,15 @@ input:hover[type=password]{
 }
 button[type="submit"]{
     background-color: blue;
-    width: 309px;
+    width: 90%;
     height: 35px;
     border: 1px solid black;
     border-radius: 10px;
     margin-bottom: 15px;
+    color: white;
 }
 button:hover[type="submit"]{
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px rgb(255, 255, 255)
 }
 #mensaje-3{
     color: white;
@@ -109,6 +110,7 @@ button:hover[type="submit"]{
     text-decoration: none;
     font-family:'Roboto';
     font-weight: bold;
+    width: 50px;
 }
 #mensaje-4:hover{
     box-shadow: 0 0 10px white;
@@ -134,23 +136,26 @@ button:hover[type="submit"]{
     height: 285px;
 }
 .conteiner-logo{
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(0, 0, 0);
     border: 1px solid rgb(179, 179, 179);
-    width: 250px;
+    width: 200px;
     height: 70px;
     display: block;
     text-align: center;
     position: relative;
     top: 20px;
+    border-radius: 10px;
+}
+.conteiner-logo:hover{
+    background-color: rgb(41, 41, 41);
 }
 #logo-AG{
-    width: 250px;
+    width: 200px;
     height: 70px;
 }
 .conteiner-logo-facebook{
     display: inline;
-    margin-top: 5px;
-    margin-right: 50px;
+    margin: 10px;
     width: 41px;
     height: 41px;
     background-color: white;
@@ -159,18 +164,17 @@ button:hover[type="submit"]{
     color:rgb(0, 0, 0);
 }
 .conteiner-mensaje{
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(0, 0, 0);
     height: 30px;
     width: 200px;
     border: 1px solid rgb(179, 179, 179);
     position: relative;
     top: 30px;
-
+    border-radius: 10px;
 }
 .conteiner-logo-google{
     display: inline;
-    margin-top: 5px;
-    margin-right: 50px;
+    margin: 10px;
     width: 41px;
     height: 41px;
     background-color: white;
@@ -180,8 +184,7 @@ button:hover[type="submit"]{
 }
 .conteiner-logo-chrome{
     display: inline;
-    margin-top: 5px;
-    margin-right: 50px;
+    margin: 10px;
     width: 41px;
     height: 41px;
     background-color: white;
@@ -191,8 +194,7 @@ button:hover[type="submit"]{
 }
 .conteiner-logo-twitter{
     display: inline;
-    margin-top: 15px;
-    margin-right: 50px;
+    margin: 10px;
     width: 41px;
     height: 41px;
     background-color: white;
@@ -202,8 +204,7 @@ button:hover[type="submit"]{
 }
 .conteiner-logo-instagram{
     display: inline;
-    margin-top: 15px;
-    margin-right: 50px;
+    margin: 10px;
     width: 41px;
     height: 41px;
     background-color: white;
@@ -213,8 +214,7 @@ button:hover[type="submit"]{
 }
 .conteiner-logo-spotify{
     display: inline;
-    margin-top: 15px;
-    margin-right: 50px;
+    margin: 10px;
     width: 41px;
     height: 41px;
     background-color: white;
@@ -223,11 +223,17 @@ button:hover[type="submit"]{
     color: black;
 }
 h3{
-    color: black;
+    color: rgb(255, 255, 255);
     position: relative;
     top: 2px;
     font-family:'Roboto';
     font-weight: bold;
+
+}
+h3:hover{
+    border: 1px solid rgb(41, 41, 41);
+    background-color: rgb(41, 41, 41);
+    border-radius: 10px;
 }
 #logos-redes{
     font-size: 40px;
@@ -241,7 +247,7 @@ h3{
     top: 30px;
     display: flex;
     margin: 1px solid rgb(214, 0, 0);
-    width: 230px;
+    width: 200px;
     height: 100px;
     margin-top: 10px;
 }
@@ -250,7 +256,7 @@ h3{
     bottom: 30px;
     display: flex;
     margin: 1px solid rgb(214, 0, 0);
-    width: 236px;
+    width: 200px;
     height: 100px;
     margin-top: 10px;
 }
@@ -278,9 +284,285 @@ h3{
     border-radius: 1px solid white;
 
 }
-/* @media(max-width: 700px){
-    footer{
-        position: relative;
-        bottom: 50px;
+@media(min-width: 350px){
+    .body{
+        border: 1px solid black;
+        height: 555px;
+        background-color: black;
+        font-family: 'Roboto';
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
-} */
+    
+    #user{
+        border: 7px solid white;
+        border-radius: 50%;
+        background-color: white;
+        text-align: right;
+        color: rgb(95, 95, 95);
+        position: absolute;
+        right: 8px;
+        top: 8px;
+    }
+    #user:hover{
+        box-shadow: 0 0 10px white;
+    }
+    
+    .mensaje-1{
+        background-color: grey;
+        height: 18px;
+        text-align: center;
+        font-family:'Roboto';
+        font-weight: bold;
+    }
+    /* .usuario{
+        text-align: right;
+    } */
+    
+    .rememberMe{
+        display:flex;
+        position: relative;
+        font-family: 'Roboto';
+        justify-content: center;
+        color: rgb(121, 142, 187);
+        padding: 5px;
+    }
+    .caja-email{
+        display: block;
+        text-align: center;
+    }
+    .caja-email input[type=email]{
+        width: 300px;
+        height: 30px;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-family:'Roboto';
+        font-weight: bold;
+    }
+    .caja-email input:hover[type=email]{
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+    .caja-contraseña{
+        display: block;
+        text-align: center;
+    }
+    input[type=password]{
+        width: 300px;
+        height: 30px;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-family:'Roboto';
+        font-weight: bold;
+    }
+    input:hover[type=password]{
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+    .iniciar-sesion{
+        display: block;
+        text-align: center;
+    }
+    button[type="submit"]{
+        background-color: blue;
+        width: 309px;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        color: white;
+    }
+    button:hover[type="submit"]{
+        box-shadow: 0 0 10px rgb(255, 255, 255)
+    }
+    #mensaje-3{
+        color: white;
+        text-decoration: none;
+        font-family:'Roboto';
+        font-weight: bold;
+    }
+    .caja-mensaje-4{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #mensaje-4{
+        color: blue;
+        text-decoration: none;
+        font-family:'Roboto';
+        font-weight: bold;
+        width: 50px;
+    }
+    #mensaje-4:hover{
+        box-shadow: 0 0 10px white;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .caja-mensaje-5{
+        text-align: center;
+    }
+    #mensaje-5{
+        color: blue;
+        font-family:'Roboto';
+        font-weight: bold;
+    }
+    #mensaje-5:hover{
+        box-shadow: 0 0 10px white;
+        background-color: white;
+        border-radius: 10px;
+    }
+    
+    .conteiner-otros{
+        background-color: black;
+        height: 285px;
+    }
+    .conteiner-logo{
+        background-color: rgb(0, 0, 0);
+        border: 1px solid rgb(179, 179, 179);
+        width: 250px;
+        height: 70px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top: 20px;
+        border-radius: 10px;
+    }
+    .conteiner-logo:hover{
+        background-color: rgb(41, 41, 41);
+    }
+    #logo-AG{
+        width: 250px;
+        height: 70px;
+    }
+    .conteiner-logo-facebook{
+        display: inline;
+        margin: 10px 20px;
+        width: 33%;
+        height: 41px;
+        background-color: white;
+        border-radius: 5px;
+        border:1px solid white;
+        color:rgb(0, 0, 0);
+    }
+    .conteiner-mensaje{
+        background-color: rgb(0, 0, 0);
+        height: 30px;
+        width: 250px;
+        border: 1px solid rgb(179, 179, 179);
+        position: relative;
+        top: 30px;
+        border-radius: 10px;
+    }
+    .conteiner-logo-google{
+        display: inline;
+        margin: 10px 20px;
+        width: 33%;
+        height: 41px;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: black;
+    }
+    .conteiner-logo-chrome{
+        display: inline;
+        margin: 10px 20px;
+        width: 33%;
+        height: 41px;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: black;
+    }
+    .conteiner-logo-twitter{
+        display: inline;
+        margin: 10px 20px;
+        width: 33%;
+        height: 41px;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: black;
+    }
+    .conteiner-logo-instagram{
+        display: inline;
+        margin: 10px 20px;
+        width: 33%;
+        height: 41px;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: black;
+    }
+    .conteiner-logo-spotify{
+        display: inline;
+        margin: 10px 20px;
+        width: 33%;
+        height: 41px;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: black;
+    }
+    h3{
+        color: rgb(255, 255, 255);
+        position: relative;
+        top: 2px;
+        font-family:'Roboto';
+        font-weight: bold;
+    
+    }
+    h3:hover{
+        border: 1px solid rgb(41, 41, 41);
+        background-color: rgb(41, 41, 41);
+        border-radius: 10px;
+    }
+    #logos-redes{
+        font-size: 40px;
+    }
+    #logos-redes:hover{
+        box-shadow: 0 0 10px white;
+    }
+    .conteiner-logos-redes{
+        position: relative;
+        top: 30px;
+        display: flex;
+        margin: 1px solid rgb(214, 0, 0);
+        width: 230px;
+        height: 100px;
+        margin-top: 10px;
+    }
+    .conteiner-logos-redes-1{
+        position: relative;
+        bottom: 30px;
+        display: flex;
+        margin: 1px solid rgb(214, 0, 0);
+        width: 236px;
+        height: 100px;
+        margin-top: 10px;
+    }
+    .conteiner-mensaje-2{
+        text-align: center;
+        background-color: black;
+        position: relative;
+        bottom: 20px;
+    }
+    .mensaje-2{
+        color: white;
+    }
+    .conteiner-login{
+        background-color: black;
+        height: 300px;
+    }
+    #mensaje-6{
+        text-align: center;
+        justify-content: center;
+        flex: 1;
+    }
+    .class-footer{
+        position: relative;
+        top: 30px;
+        border-radius: 1px solid white;
+    
+    }
+}
