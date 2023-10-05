@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
-const { validationResult } = require('express-validator');
+const { validationResult, ExpressValidator } = require('express-validator');
 
 const dataJson = fs.readFileSync(path.join(__dirname, '../data/users.json'));
 const users = JSON.parse(dataJson);
@@ -16,7 +16,35 @@ const usersController = {
     res.render('login');
   },
   processLogin: (req, res) => {
-    console.log(req.session);
+    let userFound = users.find((user) => req.body.email == user.email);
+    console.log(userFound)
+    if(userFound) {
+      let correctPassword = bcrypt.compareSync(req.body.password, userFound.password)
+      if(correctPassword){
+        delete userFound.password;
+        req.session.userAreLogged = userFound;
+        return res.redirect(301, '/')
+      }
+      return res.render('login', {
+        errors: {
+          email: {
+            msg: "Las credenciales no son correctas"
+          }
+        }
+      })
+    }else{
+    return res.render('login', {
+       errors: 
+        { email: 
+          { msg: "Este email no existe en la base de datos" }
+        } 
+      })
+    }  
+    //console.log(req.session);
+    //res.redirect('/')
+  },
+  logout: (req, res) => {
+    req.session.destroy();
     res.redirect('/')
   },
   register: (req, res) => {

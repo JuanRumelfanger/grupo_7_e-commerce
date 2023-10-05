@@ -53,11 +53,16 @@
         <div class="conteiner-mensaje-2">
             <a class="mensaje-2">------ O INICIA SESION CON: -----</a>
         </div>
-        <form action="/users/login" method="post">
+        <form action="/users/login" method="POST">
             <class class="caja-email">
                 <label for="email">
                      <input type="email" name="email" placeholder="Correo electrónico o número de teléfono" class="email">
                 </label>      
+                <%if(locals.errors && errors.email) { %>
+                    <div class="container-error-email">
+                        <%= errors.email.msg%>       
+                    </div>
+                <% } %>
             </class>
             <class class="caja-contraseña">
                 <label for="password">

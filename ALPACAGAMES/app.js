@@ -12,6 +12,8 @@ const usersRouter = require('./routes/users');
 const userViews = path.join(__dirname, '/views/users');
 const productsViews = path.join(__dirname, '/views/products');
 
+const userLogged = require('./middlewares/userLogged');
+
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +26,7 @@ app.use(
     saveUninitialized: true,
   }),
 );
+app.use(userLogged)
 
 app.set('view engine', 'ejs');
 app.set('views', [userViews, productsViews]);

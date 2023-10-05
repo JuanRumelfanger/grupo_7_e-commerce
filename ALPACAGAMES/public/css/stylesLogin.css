@@ -63,6 +63,15 @@
 .caja-email input:hover[type=email]{
     box-shadow: 0 0 10px rgb(255, 255, 255);
 }
+.container-error-email{
+    width: 90%;
+    height: 60px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    font-family:'Roboto';
+    font-weight: bold;
+    color: red;
+}
 .caja-contraseña{
     display: block;
     text-align: center;
@@ -284,7 +293,7 @@ h3:hover{
     border-radius: 1px solid white;
 
 }
-@media(min-width: 350px){
+@media(min-width: 301px){
     .body{
         border: 1px solid black;
         height: 555px;
@@ -344,6 +353,9 @@ h3:hover{
     }
     .caja-email input:hover[type=email]{
         box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+    .container-error-email{
+        height: 30px;
     }
     .caja-contraseña{
         display: block;
@@ -566,3 +578,23 @@ h3:hover{
     
     }
 }
+
+
+@media(min-width: 400px){
+    .container-error-email{
+        position: relative;
+        left: 20px;
+    }
+}
+@media(min-width: 700px){
+    .container-error-email{
+        position: relative;
+        left: 40px;
+    }
+}
+@media(min-width: 1000px){
+    .container-error-email{
+        position: relative;
+        left: 60px;
+    }
+}    
