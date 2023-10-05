@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    background-color: #222429;
+}
+main{
+    background: linear-gradient(rgb(65, 16, 16), black);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+h1{
+    color: white;
+}
+.container-form{  
+    background: linear-gradient(black, rgb(65, 16, 16));
+    text-align: center;
+    margin: 5px 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+}   
+.container-sub-form{
+    width: 100%;
+    margin: 10px 0px;
+}
+form{
+    height: 100%;
+    width: 100%;
+}
+.container-platforms{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-sub-platforms{
+    width: 100%;
+}
+.container-platforms-msj{
+    width: 100%;
+}
+label{
+    color: white;
+    font-size: 20px;
+}
+label[for="platforms"]{
+    font-size: 25px;
+}
+.container-sub-form-img{
+    height: 40px;
+    margin: 0px 20px;
+  }
+.container-sub-form-img {
+    background-color: #000000;
+    color: white;
+    border-radius: 3px;
+    content: 'Seleccionar'; /* testo por defecto */
+    transition: 1s;
+    border: 1px solid white;
+  }
+.container-sub-form-img:hover{
+    background: linear-gradient(black, rgb(177, 177, 177));
+}
+.container-sub-form-img input[type="file"] {
+    opacity: 0;
+    width: 100%;
+    height: 32px;
+}
+  
+label[for="images"] {
+    gap: 0.6rem;
+    position: relative;
+    font-size: 19px;
+    top: 7px;
+  }
+button[type="submit"]{
+    width: 200px;
+    height: 32px;
+    font-size: 19px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+}
+button[type="submit"]:hover{
+    background: linear-gradient(rgb(255, 255, 255), grey);
+}
+@media(min-width: 400px){
+    .container-sub-platforms{
+        width: 50%;
+    }
+    .container-sub-form-img{
+        height: 40px;
+        margin: 0px 15%;
+      }
+}
+@media(min-width: 600px){
+    .container-sub-platforms{
+        width: 33%;
+    }
+    .container-sub-form-img{
+        height: 40px;
+        margin: 0px 25%;
+      }
+}
+@media(min-width: 900px){
+    .container-sub-form-img{
+        height: 40px;
+        margin: 0px 35%;
+      }
+    .container-sub-platforms{
+        width: 20%;
+    }
+}
+@media(min-width: 1000px){
+    .container-sub-form-img{
+        height: 40px;
+        margin: 0px 40%;
+      }
+}

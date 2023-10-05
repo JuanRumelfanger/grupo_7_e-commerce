@@ -38,7 +38,10 @@ header {
 .register-header:hover {
     color: #fff;
 }
-
+#saludo{
+    color: white;
+    font-size: 15px;
+}
 @media (max-width: 600px) {
     .login-header, .register-header,
     .detail-header {
