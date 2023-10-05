@@ -17,7 +17,9 @@ header {
     text-decoration: none;
     font-size: 1.1rem;
 }
-
+.detail-header{ 
+    margin-right: 890px;
+}
 .login-header {
     margin-left: auto;
 }
@@ -27,7 +29,7 @@ header {
     font-size: 3rem;
 }
 
-.detail-header, .register-header,
+ .register-header,
 .icon-user {
     margin-left: 3rem;
 }
@@ -40,7 +42,11 @@ header {
 }
 #saludo{
     color: white;
-    font-size: 15px;
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+}
+#productsText{
+    display: block;
 }
 @media (max-width: 600px) {
     .login-header, .register-header,

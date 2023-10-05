@@ -1,12 +1,14 @@
 <header>
-    <a href="/"><img class="logo-header" src="/img/Alpaca-celu.svg" alt="logo"></a>
-
-    <a class="link-header detail-header" href="/products">Productos</a>
+    <div clase="detail-header">
+        <a href="/"><img class="logo-header" src="/img/Alpaca-celu.svg" alt="logo"></a>
+        <a class="link-header detail-header" id="productsText" href="/products">Productos</a>
+    </div>
+  
     <% if(!locals.isLogged) { %>
     <a class="link-header login-header" href="/users/login">Login</a>
     <a class="link-header register-header" href="/users/register">Registro</a>
     <% } else {%>
-    <a>Hola <%= locals.userAreLogged.name %></a>
+    <a id="saludo" >¡Hola <%= locals.userAreLogged.name %>!</a>
     <a href="../logout" id="cerrar-sesion"><button type="submit">Cerrar sesión</button></a>
     <% } %>
     <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
