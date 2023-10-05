@@ -9,12 +9,12 @@ const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 
-const userViews = path.join(__dirname, '/views/users');
-const productsViews = path.join(__dirname, '/views/products');
+const userViews = path.join(__dirname, './views/users');
+const productsViews = path.join(__dirname, './views/products');
 
 const userLogged = require('./middlewares/userLogged');
 
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
