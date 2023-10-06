@@ -51,3 +51,13 @@
 - El equipo todavia sigue unido y no se presentaron grandes incovenientes para presentar el Cuarto Sprint en tiempo y forma.
 - Se hicieron bastantes tareas en equipo, por lo que nos estamos consolidando como equipo, pero todavia nos falta mejorar
 - Tenemos buenas herramientas para organizar los Sprint y por consecuente sin falta de tantas reuniones estamos muy presentes en el trabajo.  
+
+## Transcurso del Quinto Sprint
+- En este sprint las tareas fueron hechas para que trabajemos mas en equipo.
+- El equipo presento pequeños incovenientes por problemas personales de algunos compañeros.
+- Aparte de las consignas del quinto sprint, arreglamos varios errores que se nos habian quedado de sprint anteriores.
+
+## Conclusiones del Quinto Sprint
+- Este Sprint personalmete fue uno de los mas dificiles en cuanto a trabajo, errores y código.
+- El metodo de trabajo sigue funcionando.
+- Llegamos bien para la entrega del Sexto Sprint.
