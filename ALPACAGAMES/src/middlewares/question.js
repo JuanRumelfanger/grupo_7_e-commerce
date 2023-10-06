@@ -1,5 +1,5 @@
 function areYouLogged(req, res, next){
-    if(req.session && req.session.useAreLogged){
+    if(req.session.userAreLogged){
         res.redirect('/')
     }
     next()
