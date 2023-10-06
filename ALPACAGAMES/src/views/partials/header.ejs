@@ -1,15 +1,17 @@
 <header>
     <div clase="detail-header">
-        <a href="/"><img class="logo-header" src="/img/Alpaca-celu.svg" alt="logo"></a>
-        <a class="link-header detail-header" id="productsText" href="/products">Productos</a>
+        <a class="header-logo" href="/"><img class="logo-header" src="/img/Alpaca-celu.svg" id="logo" alt="logo"></a>
+        <a class="link-header-detail-header" id="productsText" href="/products">Productos</a>
     </div>
   
     <% if(!locals.isLogged) { %>
-    <a class="link-header login-header" href="/users/login">Login</a>
-    <a class="link-header register-header" href="/users/register">Registro</a>
-    <% } else {%>
-    <a id="saludo" >¡Hola <%= locals.userAreLogged.name %>!</a>
-    <a href="../logout" id="cerrar-sesion"><button type="submit">Cerrar sesión</button></a>
-    <% } %>
+    <a class="link-header-login-header" href="/users/login">Login</a>
+    <a class="link-header-register-header" href="/users/register">Registro</a>
     <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
+    <% } else {%>
+    <a id="saludo">¡Hola <%= locals.userAreLogged.name %>!</a>
+    <a href="/users/logout" id="cerrar-sesion"><button type="submit" id="submit">Cerrar sesión</button></a>
+    <a class="logo-header-2-a"><img class="logo-header-2" src="/img/avatars/<%= locals.userAreLogged.avatar%>"></a>
+    <% } %>
+    
 </header>

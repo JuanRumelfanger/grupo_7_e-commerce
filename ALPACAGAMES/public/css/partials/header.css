@@ -1,59 +1,82 @@
-header {
-    display: flex;
-    background-color: #222429;
+header{
     width: 100%;
-    padding: 5px 15px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #222429;
     font-family: 'roboto';
-    justify-content: end;
-    align-items: center;
+    padding: 5px 15px;
+    height: 120px;
 }
-
-.logo-header {
-    width: 100px;
-}
-
 .link-header {
     color: rgba(250, 250, 250, 0.7);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
-.detail-header{ 
-    margin-right: 890px;
+.logo-header-2-a{
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
 }
-.login-header {
-    margin-left: auto;
+.header-logo{
+    width: 100px;
 }
-
-.icon-user {
-    color: #fff;
-    font-size: 3rem;
+.detail-header{
+    width: 40%;
 }
-
- .register-header,
-.icon-user {
-    margin-left: 3rem;
+.logo-header{
+    width: 100px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
 }
-
-
-
-.detail-header:hover, .login-header:hover,
-.register-header:hover {
-    color: #fff;
+.link-header-detail-header{
+    position: absolute;
+    left: 130px;
+    top: 45px;
+    color: white;
 }
 #saludo{
     color: white;
-    font-size: 20px;
-    padding: 0px 10px 0px 10px;
+    position: absolute;
+    right: 150px;
+    top: 45px;
 }
-#productsText{
-    display: block;
+#submit{
+    position: absolute;
+    top: 37px;
+    right: 260px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid rgb(90, 90, 90);
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+button[type="submit"]{
+    color: grey;
+}
+.icon-user{
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+.link-header-register-header{
+    color: white;
+    position: absolute;
+    top: 40px;
+    right: 130px;
+    font-size: 1.3rem;
+}
+.link-header-login-header{
+    color: white;
+    position: absolute;
+    top: 40px;
+    right: 230px;
+    font-size: 1.3rem;
 }
 @media (max-width: 600px) {
-    .login-header, .register-header,
-    .detail-header {
-        display: none;
-    }
-    .icon-user {
-        margin-left: auto;
-    }
 }
