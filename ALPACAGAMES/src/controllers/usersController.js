@@ -17,12 +17,14 @@ const usersController = {
   },
   processLogin: (req, res) => {
     let userFound = users.find((user) => req.body.email == user.email);
-    console.log(userFound)
     if(userFound) {
       let correctPassword = bcrypt.compareSync(req.body.password, userFound.password)
       if(correctPassword){
         delete userFound.password;
         req.session.userAreLogged = userFound;
+        if(req.body.rememberMe){
+          res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
+        }
         return res.redirect(301, '/')
       }
       return res.render('login', {
@@ -46,6 +48,9 @@ const usersController = {
   logout: (req, res) => {
     req.session.destroy();
     res.redirect('/')
+  },
+  perfil: (req, res) => {
+    res.render('perfilUser')
   },
   register: (req, res) => {
     res.render('register');
