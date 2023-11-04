@@ -74,6 +74,7 @@ const usersController = {
         admin: false,
         avatar: req.file.filename
       };
+      console.log('Funcionando');
       users.push(newUser);
       updateUserJSON();
       res.redirect('/');
