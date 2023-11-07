@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes)=>{
     
-    let alias = 'Products';
+    let alias = 'Product';
     let cols = {
         id:{
             type:DataTypes.INTEGER,
@@ -13,10 +13,16 @@ module.exports = (sequelize, DataTypes)=>{
         name:{
             type:DataTypes.STRING
         },
+        plataform:{
+            type:DataTypes.STRING,
+        },
+        genre:{
+            type:DataTypes.STRING
+        },
         release_date:{
             type:DataTypes.DATE
         },
-        rating:{
+        size:{
             type:DataTypes.INTEGER
         },
         created_at:{
@@ -25,7 +31,6 @@ module.exports = (sequelize, DataTypes)=>{
         updated_a:{
             type:DataTypes.DATE
         }
-
     }
     let config = {
         tableName:'video_game',
@@ -33,5 +38,13 @@ module.exports = (sequelize, DataTypes)=>{
     }
     const Product = sequelize.define(alias, cols, config);
     
+    Product.associate = function(models) {
+        Product.hasMany(models.Review, {
+            as: 'reviews',
+            foreignKey: 'user_id'
+        })
+    }
+
+
     return Product;
 }

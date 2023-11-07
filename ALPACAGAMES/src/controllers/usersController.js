@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult, ExpressValidator } = require('express-validator');
+const db = require('../database/models/index')
 
 const dataJson = fs.readFileSync(path.join(__dirname, '../data/users.json'));
 const users = JSON.parse(dataJson);
@@ -56,6 +57,8 @@ const usersController = {
     res.render('register');
   },
   processRegister: (req, res) => {
+
+    /*
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('register', { errors: errors.errors, old: req.body });
@@ -78,7 +81,7 @@ const usersController = {
       users.push(newUser);
       updateUserJSON();
       res.redirect('/');
-    }
+    }*/
   },
 };
 
