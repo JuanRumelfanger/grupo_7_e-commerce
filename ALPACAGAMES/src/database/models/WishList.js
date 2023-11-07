@@ -1,14 +1,31 @@
 module.exports = (sequelize, DataTypes)=>{
     
-    let alias = '';
+    let alias = 'WishList';
     let cols = {
-
+        id:{
+            type:DataTypes.INTEGER,
+            primaryKey:true,
+            autoIncrement:true
+        },
+        userId:{
+            type:DataTypes.INTEGER,
+            allowNull: false,
+        },
+        videoGameId:{
+            type:DataTypes.INTEGER,
+            allowNull: false,
+        },
+        addedAt:{
+            type:DataTypes.DATE,
+            allowNull: false,
+        }
     }
     let config = {
-        tableName:'',
-       // timestamps:
+        tableName:'WishList',
+        timestamps: true
     }
-    //const .... = sequelize.define(alias, cols, config);
+
+    const WishList = 'sequelize.define(alias, cols, config)';
     
-   // return ;
+    return WishList;
 }
