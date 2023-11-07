@@ -29,10 +29,11 @@ module.exports = (sequelize, DataTypes)=>{
         }
     }
     let config = {
-        tableName:'',
-       // timestamps:
+        tableName:'VideoGameDetail',
+        timestamps:false
     }
-    //const .... = sequelize.define(alias, cols, config);
+
+    const VideoGameDetail = sequelize.define(alias, cols, config);
     
-   // return ;
+    return VideoGameDetail;
 }
