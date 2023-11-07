@@ -1,8 +1,32 @@
 module.exports = (sequelize, DataTypes)=>{
     
-    let alias = '';
+    let alias = 'VideoGameDetail';
     let cols = {
-
+        id:{
+            type:DataTypes.INTEGER,
+            primaryKey:true,
+            autoIncrement:true
+        },
+        videoGameId: {
+            type:DataTypes.INTEGER, 
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        images:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        size:{
+            type:DataTypes.STRING,
+            allowNull: false
+        },
+        requiments:{
+            type:DataTypes.JSON,
+            allowNull: false
+        }
     }
     let config = {
         tableName:'',

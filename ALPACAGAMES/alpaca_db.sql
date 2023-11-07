@@ -19,6 +19,10 @@
 -- Table structure for table `genre`
 --
 
+DROP DATABASE IF EXISTS alpaca_db;
+CREATE DATABASE alpaca_db;
+USE alpaca_db;
+
 DROP TABLE IF EXISTS `genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
