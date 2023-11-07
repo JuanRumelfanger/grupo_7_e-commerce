@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes)=>{
         timestamps: true
     }
 
-    const WishList = 'sequelize.define(alias, cols, config)';
+    const WishList = sequelize.define(alias, cols, config);
     
     return WishList;
 }
