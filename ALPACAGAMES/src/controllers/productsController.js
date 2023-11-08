@@ -23,6 +23,12 @@ const productsController = {
     res.render('crearProducto');
   },
   store: (req, res) => {
+    db.Product.create({
+      price : req.body.price,
+      name: req.body.name,
+      release_date: req.body.releaseDate,
+    })
+
     /*
     newProduct = {
       id: products.length + 1,
@@ -39,7 +45,7 @@ const productsController = {
     products.push(newProduct);
     updateJSON();
     res.redirect('/products/' + newProduct.id);
-    */
+    
     const imageFilename = req.file ? req.file.filename : null;
     const selectedPlatforms = Array.isArray(req.body.platforms)
       ? req.body.platforms
@@ -64,7 +70,7 @@ const productsController = {
     //newProduct.images = imageFilename;
     products.push(newProduct);
     updateJSON();
-    res.redirect('/products/');
+    res.redirect('/products/');*/
   },
   edit: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
