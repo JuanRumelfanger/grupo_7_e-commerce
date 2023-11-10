@@ -17,5 +17,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   const Genre = sequelize.define(alias, cols, config)
 
+  Genre.associate = function (models) {
+    Genre.belongToMany(models.VideoGame, {
+      as: 'videoGamesGenre',
+      through: 'genre_list',
+      foreignKey: 'genre_id',
+      otherKey: 'video_game_id',
+    })
+  }
+
   return Genre
 }
