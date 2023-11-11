@@ -46,13 +46,21 @@ const productsController = {
         },
       );
 
-      const platformPromises = req.body.platforms.map((name) =>
-        db.Platform.findOrCreate({ where: { name } }).then(
-          ([platform]) => platform,
-        ),
-      );
+      let platforms;
+      if (typeof req.body.platforms === 'string') {
+        const [platform] = await db.Platform.findOrCreate({
+          where: { name: req.body.platforms },
+        });
+        platforms = [platform];
+      } else {
+        const platformPromises = req.body.platforms.map((name) =>
+          db.Platform.findOrCreate({ where: { name } }).then(
+            ([platform]) => platform,
+          ),
+        );
+        platforms = await Promise.all(platformPromises);
+      }
 
-      const platforms = await Promise.all(platformPromises);
       const [genre] = await db.Genre.findOrCreate({
         where: { name: req.body.genre },
       });
