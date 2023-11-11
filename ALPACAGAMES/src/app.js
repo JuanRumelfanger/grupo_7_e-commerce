@@ -18,6 +18,10 @@ const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 
+const apiUsersRouter = require ('./routes/api/users');
+const apiVideoGamesRouter = require('./routes/api/products')
+
+
 const userViews = path.join(__dirname, './views/users');
 const productsViews = path.join(__dirname, './views/products');
 
@@ -44,14 +48,18 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
-db.sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Database connected');
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// db.sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log('Database connected');
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+app.use('/api/users', apiUsersRouter);
+app.use('/api/videogames', apiVideoGamesRouter)
+
 
 app.listen(3000, () => {
   console.log('Successfully started');
