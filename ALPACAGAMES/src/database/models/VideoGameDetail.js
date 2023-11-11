@@ -1,14 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = 'VideoGameDetail'
+  let alias = 'VideoGameDetail';
   let cols = {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-    },
-    videoGameId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
@@ -26,20 +22,21 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
       allowNull: false,
     },
-  }
+  };
   let config = {
-    tableName: 'VideoGameDetail',
+    tableName: 'video_game_details',
     timestamps: false,
-  }
+    underscored: true,
+  };
 
-  const VideoGameDetail = sequelize.define(alias, cols, config)
+  const VideoGameDetail = sequelize.define(alias, cols, config);
 
   VideoGameDetail.associate = function (models) {
-    VideoGameDetail.hasOne(models.VideoGame, {
-      as: 'details',
+    VideoGameDetail.belongsTo(models.VideoGame, {
+      as: 'videoGame',
       foreignKey: 'video_game_id',
-    })
-  }
+    });
+  };
 
-  return VideoGameDetail
-}
+  return VideoGameDetail;
+};

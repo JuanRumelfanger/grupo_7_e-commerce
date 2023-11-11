@@ -5,6 +5,7 @@ module.exports = {
     database: 'alpaca-db',
     host: '127.0.0.1',
     dialect: 'mysql',
+    port: '3306',
   },
   test: {
     username: 'root',
@@ -20,4 +21,4 @@ module.exports = {
     host: '127.0.0.1',
     dialect: 'mysql',
   },
-}
+};

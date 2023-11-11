@@ -2,6 +2,7 @@
 -- Thu Nov  9 16:02:46 2023
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
+-- Host: localhost    Database: alpaca-db
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -25,7 +26,7 @@ USE `alpaca-db` ;
 -- Table `alpaca-db`.`genre`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `alpaca-db`.`genre` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
@@ -37,7 +38,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `alpaca-db`.`video_game` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `price` VARCHAR(255) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `release_date` DATE NOT NULL,
   `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
@@ -77,7 +78,6 @@ DEFAULT CHARACTER SET = utf8mb3;
 CREATE TABLE IF NOT EXISTS `alpaca-db`.`platforms` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `url_logo` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
@@ -141,7 +141,7 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- Table `alpaca-db`.`users_game`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `alpaca-db`.`users_game` (
-  `id` VARCHAR(45) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `users_id` INT NOT NULL,
   `video_game_id` INT NOT NULL,
   PRIMARY KEY (`id`),

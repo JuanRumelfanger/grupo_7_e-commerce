@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = 'Platform'
+  let alias = 'Platform';
   let cols = {
     id: {
       type: DataTypes.INTEGER,
@@ -10,26 +10,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-    url_logo: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-    },
-  }
+  };
 
   let config = {
-    tableName: 'Platform',
+    tableName: 'platforms',
     timestamps: false,
-  }
-  const Platform = sequelize.define(alias, cols, config)
+  };
+  const Platform = sequelize.define(alias, cols, config);
 
   Platform.associate = function (models) {
     Platform.belongsToMany(models.VideoGame, {
       as: 'videoGamesPlatform',
       through: 'video_game_platform',
+      timestamps: false,
       foreignKey: 'platform_id',
       otherKey: 'video_game_id',
-    })
-  }
+    });
+  };
 
-  return Platform
-}
+  return Platform;
+};
