@@ -57,7 +57,16 @@ const usersController = {
     res.render('register');
   },
   processRegister: (req, res) => {
-
+    db.User.create({
+      first_name:req.body.firstName,
+      last_name:req.body.lastName,
+      display_name:req.body.displayName,
+      email:req.body.email,
+      password:req.body.password,
+      date_of_birth: req.body.birthDate,
+      country:req.body.country,
+      avatar:req.body.avatar
+    })
     /*
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
