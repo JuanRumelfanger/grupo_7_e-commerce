@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = 'Role'
+  let alias = 'Role';
   let cols = {
     id: {
       type: DataTypes.INTEGER,
@@ -10,13 +10,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
-  }
+  };
 
   let config = {
-    tableName: 'Role',
+    tableName: 'roles',
     timestamps: false,
-  }
-  const Role = sequelize.define(alias, cols, config)
+  };
+  const Role = sequelize.define(alias, cols, config);
 
-  return Role
-}
+  Role.associate = function (models) {
+    Role.belongsToMany(models.User, {
+      as: 'user_rol',
+      through: 'user_roles',
+      foreignKey: 'role_id',
+      otherKey: 'user_id',
+    });
+  };
+
+  return Role;
+};
