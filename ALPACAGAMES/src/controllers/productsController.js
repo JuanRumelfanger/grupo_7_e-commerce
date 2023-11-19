@@ -13,7 +13,19 @@ function updateJSON() {
 
 const productsController = {
   listProducts: (req, res) => {
-    res.render('productsList', { products: products });
+    db.VideoGame.findAll()
+              .then(users => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        url: ''
+                    },
+                    data: users
+                }
+                res.render('productsList', { products: respuesta.data });
+                    //console.log(respuesta.data);
+                    //res.json(respuesta)
+              })
   },
   productsDetail: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);

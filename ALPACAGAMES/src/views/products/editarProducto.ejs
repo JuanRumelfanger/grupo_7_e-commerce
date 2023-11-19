@@ -17,7 +17,7 @@
     <h1>Editar Producto</h1>
     <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" class="form" aling="center">
         <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
-            minlength="5" >
+            minlength="5"  value="<%= product.name %>"> 
         <section class="photo-cover">
             <h3>Cambiar Foto de portada del Juego</h3>
             <input type="file" name="avatar" accept="image/*">

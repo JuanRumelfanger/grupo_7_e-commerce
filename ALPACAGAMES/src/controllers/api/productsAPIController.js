@@ -16,7 +16,8 @@ module.exports = {
                     },
                     data: users
                 }
-                    res.json(respuesta)
+                    //console.log(respuesta.data);
+                    //res.json(respuesta)
               })
         },
 
@@ -89,8 +90,11 @@ module.exports = {
                         status: 200,
                         data: users
                     })
+                    res.render('editarProducto', { product: users });
                 })
-                .catch(error => res.send(error))
+                .catch(error => res.send(error));
+            
+            
         },
 
         destroy:(req, res) =>{
