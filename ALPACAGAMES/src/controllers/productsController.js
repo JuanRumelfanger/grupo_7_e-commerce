@@ -1,38 +1,46 @@
-const path = require('path');
-const fs = require('fs');
-const db = require('../database/models/index');
+const path = require("path");
+const fs = require("fs");
+const db = require("../database/models/index");
 
-const dataJson = fs.readFileSync(path.join(__dirname, '../data/products.json'));
+const dataJson = fs.readFileSync(path.join(__dirname, "../data/products.json"));
 const products = JSON.parse(dataJson);
 
 // ACTUALIZAR BASE DE DATOS
 function updateJSON() {
   const productsJSON = JSON.stringify(products, null, 4);
-  fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
+  fs.writeFileSync(path.join(__dirname, "../data/products.json"), productsJSON);
 }
 
 const productsController = {
   listProducts: (req, res) => {
-    db.VideoGame.findAll()
-              .then(users => {
-                let respuesta = {
-                    meta: {
-                        status: 200,
-                        url: ''
-                    },
-                    data: users
-                }
-                res.render('productsList', { products: respuesta.data });
-                    //console.log(respuesta.data);
-                    //res.json(respuesta)
-              })
+    db.VideoGame.findAll().then((users) => {
+      let respuesta = {
+        meta: {
+          status: 200,
+          url: "",
+        },
+        data: users,
+      };
+      res.render("productsList", { products: respuesta.data });
+      //console.log(respuesta.data);
+      //res.json(respuesta)
+    });
   },
   productsDetail: (req, res) => {
-    let productFound = products.find((x) => x.id == req.params.id);
-    res.render('productDetail', { product: productFound });
+    db.VideoGame.findByPk(req.params.id).then((users) => {
+      let respusta = {
+        meta: {
+          status: 200,
+          url: "",
+        },
+        data: users,
+      };
+      res.render("productDetail", { product: respusta.data });
+      //res.json(respusta);
+    });
   },
   create: (req, res) => {
-    res.render('crearProducto');
+    res.render("crearProducto");
   },
   store: async (req, res) => {
     const imagePath = req.file.path;
@@ -54,12 +62,12 @@ const productsController = {
           },
         },
         {
-          include: [{ model: db.VideoGameDetail, as: 'details' }],
-        },
+          include: [{ model: db.VideoGameDetail, as: "details" }],
+        }
       );
 
       let platforms;
-      if (typeof req.body.platforms === 'string') {
+      if (typeof req.body.platforms === "string") {
         const [platform] = await db.Platform.findOrCreate({
           where: { name: req.body.platforms },
         });
@@ -67,8 +75,8 @@ const productsController = {
       } else {
         const platformPromises = req.body.platforms.map((name) =>
           db.Platform.findOrCreate({ where: { name } }).then(
-            ([platform]) => platform,
-          ),
+            ([platform]) => platform
+          )
         );
         platforms = await Promise.all(platformPromises);
       }
@@ -82,9 +90,9 @@ const productsController = {
         videoGameInstance.addGenre(genre),
       ]);
 
-      console.log('Video game, details and platforms created successfully');
+      console.log("Video game, details and platforms created successfully");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   /*
@@ -132,11 +140,11 @@ const productsController = {
 
   edit: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
-    res.render('editarProducto', { product: productFound });
+    res.render("editarProducto", { product: productFound });
   },
   update: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
-    productFound.name = req.body['name-product'];
+    productFound.name = req.body["name-product"];
     productFound.description = req.body.address;
     productFound.platforms = req.body.plataforms;
     productFound.genre = req.body.genre;
@@ -146,17 +154,17 @@ const productsController = {
     productFound.systemReq = req.body.systemReq;
     productFound.downloadSize = req.body.downloadSize;
     updateJSON();
-    res.redirect('/products/' + req.params.id);
+    res.redirect("/products/" + req.params.id);
   },
   destroy: (req, res) => {
     let index = products.findIndex((x) => x.id == req.params.id);
     products.splice(index, 1);
     updateJSON();
-    res.redirect('/products');
+    res.redirect("/products");
   },
   shop: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
-    res.render('shop', { product: productFound });
+    res.render("shop", { product: productFound });
   },
 };
 
