@@ -55,8 +55,6 @@ CREATE TABLE IF NOT EXISTS `alpaca-db`.`genre_list` (
   `genre_id` INT NOT NULL,
   `video_game_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_genre_has_video_game_video_game1_idx` (`video_game_id` ASC) VISIBLE,
-  INDEX `fk_genre_has_video_game_genre1_idx` (`genre_id` ASC) VISIBLE,
   CONSTRAINT `genre_id`
     FOREIGN KEY (`genre_id`)
     REFERENCES `alpaca-db`.`genre` (`id`)
@@ -111,8 +109,9 @@ CREATE TABLE IF NOT EXISTS `alpaca-db`.`users` (
   `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  INDEX `idx_users_email` (`email` ASC) VISIBLE)
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
+  INDEX `idx_users_email` (`email` ASC) 
+)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -125,8 +124,6 @@ CREATE TABLE IF NOT EXISTS `alpaca-db`.`user_roles` (
   `user_id` INT NOT NULL,
   `role_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_users_id_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_roles_id_idx` (`role_id` ASC) VISIBLE,
   CONSTRAINT `fk_roles_id`
     FOREIGN KEY (`role_id`)
     REFERENCES `alpaca-db`.`roles` (`id`),
@@ -145,8 +142,6 @@ CREATE TABLE IF NOT EXISTS `alpaca-db`.`users_game` (
   `users_id` INT NOT NULL,
   `video_game_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_users_has_video_game_video_game1_idx` (`video_game_id` ASC) VISIBLE,
-  INDEX `fk_users_has_video_game_users1_idx` (`users_id` ASC) VISIBLE,
   CONSTRAINT `fk_users_has_video_game_users1`
     FOREIGN KEY (`users_id`)
     REFERENCES `alpaca-db`.`users` (`id`),
@@ -168,7 +163,6 @@ CREATE TABLE IF NOT EXISTS `alpaca-db`.`video_game_details` (
   `size` VARCHAR(255) NOT NULL,
   `requiments` JSON NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_video_games_idx` (`video_game_id` ASC) VISIBLE,
   CONSTRAINT `fk_video_games`
     FOREIGN KEY (`video_game_id`)
     REFERENCES `alpaca-db`.`video_game` (`id`))
@@ -184,8 +178,6 @@ CREATE TABLE IF NOT EXISTS `alpaca-db`.`video_game_platform` (
   `video_game_id` INT NOT NULL,
   `platform_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `id_platform_idx` (`platform_id` ASC) VISIBLE,
-  INDEX `id_product_idx` (`video_game_id` ASC) VISIBLE,
   CONSTRAINT `platform_id`
     FOREIGN KEY (`platform_id`)
     REFERENCES `alpaca-db`.`platforms` (`id`)

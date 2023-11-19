@@ -3,15 +3,15 @@ const db = require('../../database/models');
 
 
 module.exports = {
-    'list':(req,res) => {
+    list:(req,res) => {
             db.User.findAll()
               .then(users => {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: ''
+                        url: '/api/users'
                     },
-                    data: users
+                    data: users,
                 }
                     res.json(respuesta)
               })
@@ -23,7 +23,7 @@ module.exports = {
                 let respusta = {
                     meta: {
                         status: 200,
-                        url: ''
+                        url: '/api/users/'+req.params.id
                     },
                     data: users
                 }
@@ -49,7 +49,7 @@ module.exports = {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: ''
+                        url: '/api/users/create'
                     },
                     data :confirm
                 }
