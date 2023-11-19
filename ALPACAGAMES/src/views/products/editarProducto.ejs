@@ -17,14 +17,14 @@
     <h1>Editar Producto</h1>
     <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" class="form" aling="center">
         <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
-            minlength="5" required>
+            minlength="5" >
         <section class="photo-cover">
             <h3>Cambiar Foto de portada del Juego</h3>
             <input type="file" name="avatar" accept="image/*">
         </section>
         <section class="launch">
             <h3>Modificar Fecha de Lanzamiento</h3>
-            <input type="date" name="launch" id="launch" min="2023-08-01" max="2045-01-01" required>
+            <input type="date" name="launch" id="launch" min="2023-08-01" max="2045-01-01" >
         </section>
         <section class="Description">
             <h4>Modificar Descripcion</h4>
@@ -49,9 +49,9 @@
             </select>
         </section>
         <input type="text" name="other-game" id="other-game" class="controls" placeholder="Otro tipo" minlength="6"
-            required>
+            >
         <h3>Editar Precio</h3>
-        <input type="text" name="price" id="price-product" class="controls" placeholder="Precio" minlength="5" required>
+        <input type="text" name="price" id="price-product" class="controls" placeholder="Precio" minlength="5" >
 
         <h3>Editar Plataforma</h3>
         <input type="text" name="platforms" id="platforms" class="platforms" placeholder="Plataforma" minlength="2">
