@@ -1,5 +1,6 @@
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
+const db = require('../database/models/index');
 
 const dataJson = fs.readFileSync(path.join(__dirname, '../data/products.json'));
 const products = JSON.parse(dataJson);
@@ -21,8 +22,60 @@ const productsController = {
   create: (req, res) => {
     res.render('crearProducto');
   },
-  store: (req, res) => {
-    /*
+  store: async (req, res) => {
+    const imagePath = req.file.path;
+
+    try {
+      const videoGameInstance = await db.VideoGame.create(
+        {
+          price: req.body.price,
+          name: req.body.name,
+          release_date: req.body.releaseDate,
+          details: {
+            description: req.body.description,
+            size: req.body.downloadSize,
+            images: imagePath,
+            requiments: {
+              os: req.body.os,
+              storage: req.body.storage,
+            },
+          },
+        },
+        {
+          include: [{ model: db.VideoGameDetail, as: 'details' }],
+        },
+      );
+
+      let platforms;
+      if (typeof req.body.platforms === 'string') {
+        const [platform] = await db.Platform.findOrCreate({
+          where: { name: req.body.platforms },
+        });
+        platforms = [platform];
+      } else {
+        const platformPromises = req.body.platforms.map((name) =>
+          db.Platform.findOrCreate({ where: { name } }).then(
+            ([platform]) => platform,
+          ),
+        );
+        platforms = await Promise.all(platformPromises);
+      }
+
+      const [genre] = await db.Genre.findOrCreate({
+        where: { name: req.body.genre },
+      });
+
+      await Promise.all([
+        videoGameInstance.addPlatforms(platforms),
+        videoGameInstance.addGenre(genre),
+      ]);
+
+      console.log('Video game, details and platforms created successfully');
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  },
+  /*
     newProduct = {
       id: products.length + 1,
       name: req.body.name,
@@ -38,7 +91,7 @@ const productsController = {
     products.push(newProduct);
     updateJSON();
     res.redirect('/products/' + newProduct.id);
-    */
+    
     const imageFilename = req.file ? req.file.filename : null;
     const selectedPlatforms = Array.isArray(req.body.platforms)
       ? req.body.platforms
@@ -63,8 +116,8 @@ const productsController = {
     //newProduct.images = imageFilename;
     products.push(newProduct);
     updateJSON();
-    res.redirect('/products/');
-  },
+    res.redirect('/products/');*/
+
   edit: (req, res) => {
     let productFound = products.find((x) => x.id == req.params.id);
     res.render('editarProducto', { product: productFound });
