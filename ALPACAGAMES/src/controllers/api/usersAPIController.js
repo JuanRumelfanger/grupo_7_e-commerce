@@ -9,9 +9,10 @@ module.exports = {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        url: '/api/users'
+                        url: '/api/users',       
+                        //raw:true,
                     },
-                    data: users,
+                    data: users
                 }
                     res.json(respuesta)
               })
