@@ -3,6 +3,7 @@
 let formulario = document.querySelector("form.form-container");
 let inputName = document.querySelector("#firstName");
 let lastName = document.querySelector("#lastName");
+let displayName = document.querySelector("#displayName");
 let email = document.querySelector("#email");
 
 //Validaciones del nombre y apellido
@@ -23,6 +24,15 @@ lastName.addEventListener("input", (e) => {
     lastName.style.borderColor = "Blue";
   }
 });
+
+
+displayName.addEventListener("input", (e)=>{
+    if (displayName.value != '') {
+        displayName.style.borderColor = "Blue";
+    }else{
+        displayName.style.borderColor = "Red";
+    }
+})
 
 //Validaciones del email
 let formatoEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
