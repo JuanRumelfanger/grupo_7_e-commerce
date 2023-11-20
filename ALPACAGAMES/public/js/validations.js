@@ -3,13 +3,13 @@
 let formulario = document.querySelector('form.form-container')
 let inputName = document.querySelector('#firstName')
 let lastName = document.querySelector('#lastName')
+let email = document.querySelector('#email');
 
 //Validaciones del nombre y apellido
 
 inputName.addEventListener('input', (e)=>{
     if(inputName.value.length<3){
         inputName.style.borderColor = 'Red'
-        inputName.innerHTML += '<sub>'+'Ingrese mas de 2 letras'+'</sub>'
     }else{
         inputName.style.borderColor = 'Blue'
     }
@@ -24,4 +24,29 @@ lastName.addEventListener('input', (e)=>{
     }
 })
 
-console.log(inputName);
+//Validaciones del email
+let formatoEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+email.addEventListener('input', (e)=>{
+  
+   if(formatoEmail.test(email.value) === true){
+    email.style.borderColor = 'Blue'
+   }else{
+    email.style.borderColor = 'Red'
+   }
+
+   db.User.findOne({
+    where:{
+        name : email.value
+    }
+   })
+    .then((usuario)=>{
+        console.log(usuario);
+        if (usuario) {
+            email.style.borderColor = 'Blue'
+        } else {
+            email.style.borderColor = 'Red'
+        }
+    })
+
+})
+
