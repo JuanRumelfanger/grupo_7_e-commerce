@@ -56,7 +56,7 @@
         <form action="/users/login" method="POST">
             <class class="caja-email">
                 <label for="email">
-                     <input type="email" name="email" placeholder="Correo electrónico o número de teléfono" class="email">
+                     <input type="email" name="email" placeholder="Correo electrónico o número de teléfono" class="email" id="email">
                 </label>      
                 <%if(locals.errors && errors.email) { %>
                     <div class="container-error-email">
@@ -87,7 +87,7 @@
     </div>
 
     <%- include('../partials/footer') %>
-    <script src="/js/validations.js"></script>
+    <script src="/js/validationsLogin.js"></script>
 </body>
 
 </html>

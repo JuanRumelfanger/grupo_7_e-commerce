@@ -5,7 +5,7 @@ let inputName = document.querySelector("#firstName");
 let lastName = document.querySelector("#lastName");
 let displayName = document.querySelector("#displayName");
 let email = document.querySelector("#email");
-let password = document.querySelector('#password');
+let password = document.querySelector("#password");
 let avatar = document.querySelector("input#avatar");
 
 //Validaciones del nombre y apellido
@@ -27,20 +27,20 @@ lastName.addEventListener("input", (e) => {
   }
 });
 
-displayName.addEventListener("input", (e)=>{
-    if (displayName.value != '') {
-        displayName.style.borderColor = "Blue";
-    }else{
-        displayName.style.borderColor = "Red";
-    }
-})
+displayName.addEventListener("input", (e) => {
+  if (displayName.value != "") {
+    displayName.style.borderColor = "Blue";
+  } else {
+    displayName.style.borderColor = "Red";
+  }
+});
 
 //Validaciones del email
 let formatoEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 email.addEventListener("input", (e) => {
   fetch("http://localhost:3000/api/users")
     .then((response) => response.json())
-    .then((user) => {   
+    .then((user) => {
       let usuarios = user.data;
       console.log(email.value);
       //console.log(usuarios);
@@ -49,7 +49,7 @@ email.addEventListener("input", (e) => {
           if (usuarios[i].email === email.value) {
             email.style.borderColor = "Red";
             console.log("Este correo ya esta registrado");
-            break
+            break;
           } else {
             email.style.borderColor = "Blue";
           }
@@ -62,22 +62,22 @@ email.addEventListener("input", (e) => {
 
 //Validaciones de la constraseña
 
-password.addEventListener("input", (e)=>{
-    if(password.value.length < 8) {
-        password.style.borderColor = "Red";
-    }else{
-        password.style.borderColor = "Blue";
-    }
-})
+password.addEventListener("input", (e) => {
+  if (password.value.length < 8) {
+    password.style.borderColor = "Red";
+  } else {
+    password.style.borderColor = "Blue";
+  }
+});
 
 //Validaciones del avatar
 
-let formatos = /.(gif|jpeg|jpg|png)$/i
-let button = document.querySelector("label#avatar")
+let formatos = /.(gif|jpeg|jpg|png)$/i;
+let button = document.querySelector("label#avatar");
 
-avatar.addEventListener("change", (e)=>{
-    console.log(avatar.value);
-    if(formatos.test(avatar.value) === true){
-        button.style.color = "#00C129"; 
-    }
-})
+avatar.addEventListener("change", (e) => {
+  console.log(avatar.value);
+  if (formatos.test(avatar.value) === true) {
+    button.style.color = "#00C129";
+  }
+});
