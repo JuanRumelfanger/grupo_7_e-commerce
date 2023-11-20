@@ -5,6 +5,7 @@ let inputName = document.querySelector("#firstName");
 let lastName = document.querySelector("#lastName");
 let displayName = document.querySelector("#displayName");
 let email = document.querySelector("#email");
+let password = document.querySelector('#password');
 
 //Validaciones del nombre y apellido
 
@@ -24,7 +25,6 @@ lastName.addEventListener("input", (e) => {
     lastName.style.borderColor = "Blue";
   }
 });
-
 
 displayName.addEventListener("input", (e)=>{
     if (displayName.value != '') {
@@ -58,3 +58,13 @@ email.addEventListener("input", (e) => {
       }
     });
 });
+
+//Validaciones de la constraseña
+
+password.addEventListener("input", (e)=>{
+    if(password.value.length < 8) {
+        password.style.borderColor = "Red";
+    }else{
+        password.style.borderColor = "Blue";
+    }
+})
