@@ -2,7 +2,8 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require('path');
 const { validationResult, ExpressValidator } = require('express-validator');
-const db = require('../database/models/index')
+const db = require('../database/models/index');
+const { DATE } = require('sequelize');
 
 const dataJson = fs.readFileSync(path.join(__dirname, '../data/users.json'));
 const users = JSON.parse(dataJson);
@@ -65,7 +66,7 @@ const usersController = {
       password:req.body.password,
       date_of_birth: req.body.birthDate,
       country:req.body.country,
-      avatar:req.body.avatar
+      avatar:req.body.avatar,
     })
     /*
     const errors = validationResult(req);

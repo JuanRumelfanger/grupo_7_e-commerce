@@ -6,6 +6,7 @@ let lastName = document.querySelector("#lastName");
 let displayName = document.querySelector("#displayName");
 let email = document.querySelector("#email");
 let password = document.querySelector('#password');
+let avatar = document.querySelector("input#avatar");
 
 //Validaciones del nombre y apellido
 
@@ -66,5 +67,17 @@ password.addEventListener("input", (e)=>{
         password.style.borderColor = "Red";
     }else{
         password.style.borderColor = "Blue";
+    }
+})
+
+//Validaciones del avatar
+
+let formatos = /.(gif|jpeg|jpg|png)$/i
+let button = document.querySelector("label#avatar")
+
+avatar.addEventListener("change", (e)=>{
+    console.log(avatar.value);
+    if(formatos.test(avatar.value) === true){
+        button.style.color = "#00C129"; 
     }
 })
