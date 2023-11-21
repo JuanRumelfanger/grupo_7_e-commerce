@@ -6,7 +6,7 @@
 .body{
     border: 1px solid black;
     height: 555px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     font-family: 'Roboto';
     margin-top: 0px;
     margin-bottom: 0px;

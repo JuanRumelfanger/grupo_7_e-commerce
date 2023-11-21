@@ -28,7 +28,7 @@ const usersController = {
           res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
         }
         return res.redirect(301, '/')
-      }
+      }/*
       return res.render('login', {
         errors: {
           email: {
@@ -43,7 +43,7 @@ const usersController = {
           { msg: "Este email no existe en la base de datos" }
         } 
       })
-    }  
+    */}
     //console.log(req.session);
     //res.redirect('/')
   },
