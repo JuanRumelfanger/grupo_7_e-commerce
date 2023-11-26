@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-
-
-<head>
-
+  <head>
     <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/stylesCreateProduct.css">
-</head>
+    <link rel="stylesheet" href="/css/stylesCreateProduct.css" />
+  </head>
 
-<body>
-
-    <%- include('../partials/header') %>
-
-    <%- include('../partials/search-bar') %>
+  <body>
+    <%- include('../partials/header') %> <%- include('../partials/search-bar')
+    %>
 
     <main>
-    <div class="container-form"> 
-        <form action="/products/create" method="POST" class="form" enctype="multipart/form-data">
-    
-<!--            <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
+      <div class="container-form">
+        <form
+          action="/products/create"
+          method="POST"
+          class="form"
+          enctype="multipart/form-data"
+        >
+          <!--            <input type="text" name="name-product" id="name-product" class="controls" placeholder="Nombre del Juego"
                 minlength="5" required>
             <section class="photo-cover">
                 <h3>Foto de portada del Juego</h3>
@@ -100,81 +99,154 @@
                 <button type="submit">ENVIAR</button>
                 <input type="reset" name="cancel" value="Cancelar" id="cancel">
             </section>
-        --> 
-            <div class="container-sub-form">   
-                <h1>Agregar Producto</h1>
+        -->
+          <div class="container-sub-form">
+            <h1>Agregar Producto</h1>
+          </div>
+          <div class="container-sub-form">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" required /><br />
+          </div>
+          <div class="container-sub-form">
+            <label for="description">Descripcion:</label>
+            <textarea name="description" id="description" required></textarea
+            ><br />
+          </div>
+          <div class="container-platforms">
+            <div class="container-platforms-msj">
+              <label for="platforms">Plataformas:</label>
+              <br />
             </div>
-            <div class="container-sub-form">
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" required><br>
+            <div class="container-sub-platforms">
+              <input
+                type="checkbox"
+                name="platforms"
+                id="nintendoSwitch"
+                value="Nintendo Switch"
+              />
+              <label for="nintendoSwitch">Nintendo Switch</label><br />
             </div>
-            <div class="container-sub-form">
-                <label for="description">Descripcion:</label>
-                <textarea name="description" id="description" required></textarea><br>
-            </div>    
-            <div class="container-platforms">
-                <div class="container-platforms-msj">
-                    <label for="platforms">Plataformas:</label>
-                    <br>
-                </div>
-                <div class="container-sub-platforms">    
-                    <input type="checkbox" name="platforms" id="nintendoSwitch" value="Nintendo Switch">
-                    <label for="nintendoSwitch">Nintendo Switch</label><br>
-                </div>
-                <div class="container-sub-platforms">
-                    <input type="checkbox" name="platforms" id="playStation4" value="PlayStation 4">
-                    <label for="playStation4">PlayStation 4</label><br>
-                </div>
-                <div class="container-sub-platforms">
-                    <input type="checkbox" name="platforms" id="xboxOne" value="Xbox One">
-                    <label for="xboxOne">Xbox One</label><br>
-                </div>
-                <div class="container-sub-platforms">
-                    <input type="checkbox" name="platforms" id="pc" value="PC">
-                    <label for="pc">PC <!--‎--></label><br>
-                </div>
-                <div class="container-sub-platforms">
-                    <input type="checkbox" name="platforms" id="dispositivosMoviles" value="Dispositivos móviles">
-                    <label for="dispositivosMoviles">Dispositivos Móviles</label><br>
-                </div>
+            <div class="container-sub-platforms">
+              <input
+                type="checkbox"
+                name="platforms"
+                id="playStation4"
+                value="PlayStation 4"
+              />
+              <label for="playStation4">PlayStation 4</label><br />
             </div>
-            <div class="container-sub-form">
-                <label for="genre">Género:</label>
-                <input type="text" name="genre" id="genre" required><br>
+            <div class="container-sub-platforms">
+              <input
+                type="checkbox"
+                name="platforms"
+                id="xboxOne"
+                value="Xbox One"
+              />
+              <label for="xboxOne">Xbox One</label><br />
             </div>
-            <div class="container-sub-form">
-                <label for="releaseDate">Fecha de lanzamiento:</label>
-                <input type="date" name="releaseDate" id="releaseDate" required><br>
+            <div class="container-sub-platforms">
+              <input type="checkbox" name="platforms" id="pc" value="PC" />
+              <label for="pc"
+                >PC
+                <!--‎--></label
+              ><br />
             </div>
-            <div class="container-sub-form">
-                <label for="price">Precio:</label>
-                <input type="number" name="price" id="price" step="0.01" required><br>
+            <div class="container-sub-platforms">
+              <input
+                type="checkbox"
+                name="platforms"
+                id="dispositivosMoviles"
+                value="Dispositivos móviles"
+              />
+              <label for="dispositivosMoviles">Dispositivos Móviles</label
+              ><br />
             </div>
-            <div class="container-sub-form-img">
-                <label for="images">Seleccionar imágen:</label>
-                <input type="file" name="images" id="images" accept=".jpg, .jpeg, .png" required><br>
-            </div>
-            <div class="container-sub-form">
-                <label for="os">Sistema operativo:</label>
-                <input type="text" name="os" id="os" required><br>
-            </div>
-            <div class="container-sub-form">
-                <label for="storage">Almacenamiento requerido:</label>
-                <input type="text" name="storage" id="storage" required><br>
-            </div>
-            <div class="container-sub-form">
-                <label for="downloadSize">Tamaño de descarga:</label>
-                <input type="text" name="downloadSize" id="downloadSize" required><br>
-            </div>
-            <div class="container-sub-form">
-                <button type="submit">Agregar Producto</button>
-            </div>
+          </div>
+          <div class="container-sub-form">
+            <label for="genre">Género:</label>
+            <select name="genre" id="genre">
+              <option value="Accion">Accion</option>
+              <br />
+              <option value="Deportes">Deportes</option>
+              <br />
+              <option value="Sandbox">Sandbox</option>
+              <br />
+              <option value="Estrategia">Estrategia</option>
+              <br />
+              <option value="Aventura">Aventura</option>
+              <br />
+              <option value="Shooter">Shooter</option>
+              <br />
+              <option value="RPG">RPG</option>
+              <br />
+              <option value="Survival">Survival</option>
+              <br />
+              <option value="Arcade">Arcade</option>
+              <br />
+              <option value="Terror">Terror</option>
+              <br />
+              <option value="Minijuegos">Minijuegos</option>
+              <br />
+              <option value="Cartas">Cartas</option>
+              <br />
+              <option value="Otro">Otro</option>
+              <br />
+            </select>
+          </div>
+          <div class="container-sub-form">
+            <label for="releaseDate">Fecha de lanzamiento:</label>
+            <input
+              type="date"
+              name="releaseDate"
+              id="releaseDate"
+              required
+            /><br />
+          </div>
+          <div class="container-sub-form">
+            <label for="price">Precio:</label>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              step="0.01"
+              required
+            /><br />
+          </div>
+          <div class="container-sub-form-img">
+            <label for="images">Seleccionar imágen:</label>
+            <input
+              type="file"
+              name="images"
+              id="images"
+              accept=".jpg, .jpeg, .png"
+              required
+            /><br />
+          </div>
+          <div class="container-sub-form">
+            <label for="os">Sistema operativo:</label>
+            <input type="text" name="os" id="os" required /><br />
+          </div>
+          <div class="container-sub-form">
+            <label for="storage">Almacenamiento requerido:</label>
+            <input type="text" name="storage" id="storage" required /><br />
+          </div>
+          <div class="container-sub-form">
+            <label for="downloadSize">Tamaño de descarga:</label>
+            <input
+              type="text"
+              name="downloadSize"
+              id="downloadSize"
+              required
+            /><br />
+          </div>
+          <div class="container-sub-form">
+            <button type="submit">Agregar Producto</button>
+          </div>
         </form>
-    </div>
+      </div>
     </main>
-    
+
     <%- include('../partials/footer') %>
     <script src="/js/validations.js"></script>
-</body>
-
+  </body>
 </html>

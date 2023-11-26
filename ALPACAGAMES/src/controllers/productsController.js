@@ -1,46 +1,69 @@
-const path = require("path");
-const fs = require("fs");
-const db = require("../database/models/index");
+const path = require('path');
+const fs = require('fs');
+const db = require('../database/models');
+const { name } = require('ejs');
 
-const dataJson = fs.readFileSync(path.join(__dirname, "../data/products.json"));
+const dataJson = fs.readFileSync(path.join(__dirname, '../data/products.json'));
 const products = JSON.parse(dataJson);
 
 // ACTUALIZAR BASE DE DATOS
 function updateJSON() {
   const productsJSON = JSON.stringify(products, null, 4);
-  fs.writeFileSync(path.join(__dirname, "../data/products.json"), productsJSON);
+  fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
 }
 
 const productsController = {
   listProducts: (req, res) => {
-    db.VideoGame.findAll().then((users) => {
-      let respuesta = {
-        meta: {
-          status: 200,
-          url: "",
+    db.VideoGame.findAll({
+      include: [
+        {
+          model: db.VideoGameDetail,
+          as: 'details',
+          attributes: ['description', 'images'],
         },
-        data: users,
-      };
-      res.render("productsList", { products: respuesta.data });
-      //console.log(respuesta.data);
-      //res.json(respuesta)
+        {
+          model: db.Platform,
+          as: 'platforms',
+          attributes: ['name'],
+        },
+        {
+          model: db.Genre,
+          as: 'genres',
+          attributes: ['name'],
+        },
+      ],
+    }).then((products) => {
+      res.render('productsList', { products });
     });
   },
-  productsDetail: (req, res) => {
-    db.VideoGame.findByPk(req.params.id).then((users) => {
-      let respusta = {
-        meta: {
-          status: 200,
-          url: "",
-        },
-        data: users,
-      };
-      res.render("productDetail", { product: respusta.data });
-      //res.json(respusta);
-    });
+  productsDetail: async (req, res) => {
+    try {
+      const product = await db.VideoGame.findByPk(req.params.id, {
+        include: [
+          {
+            model: db.VideoGameDetail,
+            as: 'details',
+          },
+          {
+            model: db.Platform,
+            as: 'platforms',
+            attributes: ['name'],
+          },
+          {
+            model: db.Genre,
+            as: 'genres',
+            attributes: ['name'],
+          },
+        ],
+        distinct: 'id',
+      });
+      res.render('productDetail', { product });
+    } catch (error) {
+      console.error('Error:', error);
+    }
   },
   create: (req, res) => {
-    res.render("crearProducto");
+    res.render('crearProducto');
   },
   store: async (req, res) => {
     const imagePath = req.file.path;
@@ -62,12 +85,12 @@ const productsController = {
           },
         },
         {
-          include: [{ model: db.VideoGameDetail, as: "details" }],
-        }
+          include: [{ model: db.VideoGameDetail, as: 'details' }],
+        },
       );
 
       let platforms;
-      if (typeof req.body.platforms === "string") {
+      if (typeof req.body.platforms === 'string') {
         const [platform] = await db.Platform.findOrCreate({
           where: { name: req.body.platforms },
         });
@@ -75,8 +98,8 @@ const productsController = {
       } else {
         const platformPromises = req.body.platforms.map((name) =>
           db.Platform.findOrCreate({ where: { name } }).then(
-            ([platform]) => platform
-          )
+            ([platform]) => platform,
+          ),
         );
         platforms = await Promise.all(platformPromises);
       }
@@ -90,9 +113,9 @@ const productsController = {
         videoGameInstance.addGenre(genre),
       ]);
 
-      console.log("Video game, details and platforms created successfully");
+      console.log('Video game, details and platforms created successfully');
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
     }
   },
   /*
@@ -138,33 +161,105 @@ const productsController = {
     updateJSON();
     res.redirect('/products/');*/
 
-  edit: (req, res) => {
-    let productFound = products.find((x) => x.id == req.params.id);
-    res.render("editarProducto", { product: productFound });
+  edit: async (req, res) => {
+    try {
+      const product = await db.VideoGame.findByPk(req.params.id, {
+        include: [
+          {
+            model: db.VideoGameDetail,
+            as: 'details',
+          },
+          {
+            model: db.Platform,
+            as: 'platforms',
+            attributes: ['name'],
+          },
+          {
+            model: db.Genre,
+            as: 'genres',
+            attributes: ['name'],
+          },
+        ],
+      });
+      res.render('editarProducto', { product });
+    } catch (error) {
+      console.error('Error:', error);
+    }
   },
-  update: (req, res) => {
-    let productFound = products.find((x) => x.id == req.params.id);
-    productFound.name = req.body["name-product"];
-    productFound.description = req.body.address;
-    productFound.platforms = req.body.plataforms;
-    productFound.genre = req.body.genre;
-    productFound.releaseDate = req.body.releaseDate;
-    productFound.price = +req.body.price;
-    productFound.images = req.body.images;
-    productFound.systemReq = req.body.systemReq;
-    productFound.downloadSize = req.body.downloadSize;
-    updateJSON();
-    res.redirect("/products/" + req.params.id);
+  update: async (req, res) => {
+    const imagePath = req.file.filename;
+
+    try {
+      const product = await db.VideoGame.findByPk(req.params.id, {
+        include: [
+          {
+            model: db.VideoGameDetail,
+            as: 'details',
+          },
+          {
+            model: db.Platform,
+            as: 'platforms',
+          },
+          {
+            model: db.Genre,
+            as: 'genres',
+          },
+        ],
+      });
+      if (!product) {
+        return res.status(404).send('Product not found');
+      }
+
+      await product.update({
+        price: req.body.price,
+        name: req.body.name,
+        release_date: req.body.releaseDate,
+      });
+
+      await product.details.update({
+        description: req.body.description,
+        size: req.body.downloadSize,
+        images: imagePath,
+        requiments: {
+          os: req.body.os,
+          storage: req.body.storage,
+        },
+      });
+
+      for (let i = 0; i < product.platforms.length; i++) {
+        if (req.body.platforms[i]) {
+          await product.platforms[i].update({
+            name: req.body.platforms[i],
+          });
+        }
+      }
+
+      await Promise.all(
+        product.genres.map((genre) =>
+          genre.update({
+            name: req.body.genre,
+          }),
+        ),
+      );
+
+      res.redirect('/products/' + req.params.id);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   },
-  destroy: (req, res) => {
-    let index = products.findIndex((x) => x.id == req.params.id);
-    products.splice(index, 1);
-    updateJSON();
-    res.redirect("/products");
-  },
-  shop: (req, res) => {
-    let productFound = products.find((x) => x.id == req.params.id);
-    res.render("shop", { product: productFound });
+  destroy: async (req, res) => {
+    try {
+      const product = await db.VideoGame.findByPk(req.params.id);
+      if (!product) {
+        return res.status(404).send('Product not found');
+      }
+
+      await product.destroy();
+
+      res.redirect('/products');
+    } catch (error) {
+      console.error('Error:', error);
+    }
   },
 };
 
