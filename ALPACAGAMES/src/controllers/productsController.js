@@ -1,39 +1,41 @@
-const path = require('path');
-const fs = require('fs');
-const db = require('../database/models');
-const { name } = require('ejs');
+const path = require("path");
+const fs = require("fs");
+const db = require("../database/models");
+const { name } = require("ejs");
+const { Op } = require("sequelize");
 
-const dataJson = fs.readFileSync(path.join(__dirname, '../data/products.json'));
+const dataJson = fs.readFileSync(path.join(__dirname, "../data/products.json"));
 const products = JSON.parse(dataJson);
 
 // ACTUALIZAR BASE DE DATOS
 function updateJSON() {
   const productsJSON = JSON.stringify(products, null, 4);
-  fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
+  fs.writeFileSync(path.join(__dirname, "../data/products.json"), productsJSON);
 }
 
 const productsController = {
   listProducts: (req, res) => {
     db.VideoGame.findAll({
+
       include: [
         {
           model: db.VideoGameDetail,
-          as: 'details',
-          attributes: ['description', 'images'],
+          as: "details",
+          attributes: ["description", "images"],
         },
         {
           model: db.Platform,
-          as: 'platforms',
-          attributes: ['name'],
+          as: "platforms",
+          attributes: ["name"],
         },
         {
           model: db.Genre,
-          as: 'genres',
-          attributes: ['name'],
+          as: "genres",
+          attributes: ["name"],
         },
       ],
     }).then((products) => {
-      res.render('productsList', { products });
+      res.render("productsList", { products });
     });
   },
   productsDetail: async (req, res) => {
@@ -42,29 +44,29 @@ const productsController = {
         include: [
           {
             model: db.VideoGameDetail,
-            as: 'details',
+            as: "details",
           },
           {
             model: db.Platform,
-            as: 'platforms',
-            attributes: ['name'],
+            as: "platforms",
+            attributes: ["name"],
           },
           {
             model: db.Genre,
-            as: 'genres',
-            attributes: ['name'],
+            as: "genres",
+            attributes: ["name"],
           },
         ],
-        distinct: 'id',
+        distinct: "id",
       });
-     console.log(product.details.images);
-      res.render('productDetail', { product });
+      console.log(product.details.images);
+      res.render("productDetail", { product });
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   create: (req, res) => {
-    res.render('crearProducto');
+    res.render("crearProducto");
   },
   store: async (req, res) => {
     const imagePath = req.file.path;
@@ -86,12 +88,12 @@ const productsController = {
           },
         },
         {
-          include: [{ model: db.VideoGameDetail, as: 'details' }],
-        },
+          include: [{ model: db.VideoGameDetail, as: "details" }],
+        }
       );
 
       let platforms;
-      if (typeof req.body.platforms === 'string') {
+      if (typeof req.body.platforms === "string") {
         const [platform] = await db.Platform.findOrCreate({
           where: { name: req.body.platforms },
         });
@@ -99,8 +101,8 @@ const productsController = {
       } else {
         const platformPromises = req.body.platforms.map((name) =>
           db.Platform.findOrCreate({ where: { name } }).then(
-            ([platform]) => platform,
-          ),
+            ([platform]) => platform
+          )
         );
         platforms = await Promise.all(platformPromises);
       }
@@ -114,10 +116,10 @@ const productsController = {
         videoGameInstance.addGenre(genre),
       ]);
 
-      console.log('Video game, details and platforms created successfully');
-      res.redirect('/products')
+      console.log("Video game, details and platforms created successfully");
+      res.redirect("/products");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   /*
@@ -169,23 +171,23 @@ const productsController = {
         include: [
           {
             model: db.VideoGameDetail,
-            as: 'details',
+            as: "details",
           },
           {
             model: db.Platform,
-            as: 'platforms',
-            attributes: ['name'],
+            as: "platforms",
+            attributes: ["name"],
           },
           {
             model: db.Genre,
-            as: 'genres',
-            attributes: ['name'],
+            as: "genres",
+            attributes: ["name"],
           },
         ],
       });
-      res.render('editarProducto', { product });
+      res.render("editarProducto", { product });
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   update: async (req, res) => {
@@ -196,20 +198,20 @@ const productsController = {
         include: [
           {
             model: db.VideoGameDetail,
-            as: 'details',
+            as: "details",
           },
           {
             model: db.Platform,
-            as: 'platforms',
+            as: "platforms",
           },
           {
             model: db.Genre,
-            as: 'genres',
+            as: "genres",
           },
         ],
       });
       if (!product) {
-        return res.status(404).send('Product not found');
+        return res.status(404).send("Product not found");
       }
 
       await product.update({
@@ -240,28 +242,55 @@ const productsController = {
         product.genres.map((genre) =>
           genre.update({
             name: req.body.genre,
-          }),
-        ),
+          })
+        )
       );
 
-      res.redirect('/products/' + req.params.id);
+      res.redirect("/products/" + req.params.id);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   destroy: async (req, res) => {
     try {
       const product = await db.VideoGame.findByPk(req.params.id);
       if (!product) {
-        return res.status(404).send('Product not found');
+        return res.status(404).send("Product not found");
       }
 
       await product.destroy();
 
-      res.redirect('/products');
+      res.redirect("/products");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
+  },
+  search: async (req, res) => {
+    const videoGames = await db.VideoGame.findAll({
+      
+      include: [
+        {
+          model: db.VideoGameDetail,
+          as: "details",
+          attributes: ["description", "images"],
+        },
+        {
+          model: db.Platform,
+          as: "platforms",
+          attributes: ["name"],
+        },
+        {
+          model: db.Genre,
+          as: "genres",
+          attributes: ["name"],
+        },
+      ],
+      where: {
+        name: { [Op.like]: "%" + req.query.search + "%" },
+      },
+    });
+    //return res.send(videoGames);
+    res.render("productsList", { products: videoGames });
   },
 };
 

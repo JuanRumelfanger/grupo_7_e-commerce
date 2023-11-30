@@ -5,6 +5,7 @@ const upload = require('../middlewares/productImage.js');
 const usersController = require('../controllers/usersController.js');
 
 router.get('/', productsController.listProducts);
+router.get('/search', productsController.search)
 
 // CREAR UN PRODUCTO
 router.get('/create', productsController.create);
