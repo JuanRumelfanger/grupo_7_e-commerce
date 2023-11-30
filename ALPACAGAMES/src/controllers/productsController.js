@@ -57,6 +57,7 @@ const productsController = {
         ],
         distinct: 'id',
       });
+     console.log(product.details.images);
       res.render('productDetail', { product });
     } catch (error) {
       console.error('Error:', error);
