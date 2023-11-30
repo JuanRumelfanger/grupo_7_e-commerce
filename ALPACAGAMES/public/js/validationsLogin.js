@@ -3,13 +3,13 @@ let formDiv = document.querySelector(".conteiner-login");
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
 let buttonLogin = document.querySelector("button");
-console.log(formDiv);
+console.log(buttonLogin);
 
 let formatoEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 let errores = [];
 let usuario;
 email.addEventListener("input", (e) => {
-  e.preventDefault();
+ // e.preventDefault();
   fetch("http://localhost:3000/api/users")
     .then((response) => response.json())
     .then((user) => {
@@ -34,7 +34,7 @@ email.addEventListener("input", (e) => {
     });
 });
 password.addEventListener("blur", (e) => {
-  e.preventDefault();
+  //e.preventDefault();
   if (usuario === password.value) {
     console.log("constraseña correcta");
   } else {
@@ -42,14 +42,12 @@ password.addEventListener("blur", (e) => {
     errores.push("Contraseña incorrecta");
   }
 });
-
 buttonLogin.addEventListener("click", (e)=>{
-  e.preventDefault();  
+  //e.preventDefault();  
   if (errores.length>0) {
+    console.log(errores);
     console.log('hola');
-    formDiv.innerHTML = errores.forEach((error)=>{
-      "<ol><li>"+error+"</li></ol>"
-    })
+   alert(errores)
   } else {
     
   }

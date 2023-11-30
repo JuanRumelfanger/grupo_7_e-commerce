@@ -45,6 +45,7 @@ email.addEventListener("input", (e) => {
       console.log(email.value);
       //console.log(usuarios);
       if (formatoEmail.test(email.value) === true) {
+        email.style.borderColor = "Blue";
         for (let i = 0; i < usuarios.length; i++) {
           if (usuarios[i].email === email.value) {
             email.style.borderColor = "Red";

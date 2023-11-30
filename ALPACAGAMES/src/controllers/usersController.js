@@ -18,9 +18,21 @@ const usersController = {
     res.render('login');
   },
   processLogin: (req, res) => {
-    let userFound = users.find((user) => req.body.email == user.email);
+    fetch('http://localhost:3000/api/users')
+      .then(result=> result.json())
+      .then((users)=>{
+        for(let i = 0; i<users.length; i++){
+          if (users[i] == req.body.email) {
+           
+            
+          }
+        }
+      })
+
+    /*let userFound = users.find((user) => req.body.email == user.email);
     if (userFound) {
       let correctPassword = bcrypt.compareSync(
+      } 
         req.body.password,
         userFound.password,
       );
@@ -31,7 +43,6 @@ const usersController = {
           res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120 });
         }
         return res.redirect(301, '/');
-      } /*
       return res.render('login', {
         errors: {
           email: {
@@ -46,8 +57,8 @@ const usersController = {
           { msg: "Este email no existe en la base de datos" }
         } 
       })
-    */
-    }
+    
+    }*/
     //console.log(req.session);
     //res.redirect('/')
   },

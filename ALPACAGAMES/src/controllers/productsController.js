@@ -114,6 +114,7 @@ const productsController = {
       ]);
 
       console.log('Video game, details and platforms created successfully');
+      res.redirect('/products')
     } catch (error) {
       console.error('Error:', error);
     }
