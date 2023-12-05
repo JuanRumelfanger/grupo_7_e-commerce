@@ -1,76 +1,68 @@
-const bcrypt = require('bcryptjs');
-const fs = require('fs');
-const path = require('path');
-const { validationResult, ExpressValidator } = require('express-validator');
-const db = require('../database/models');
-const { DATE } = require('sequelize');
+const bcrypt = require("bcryptjs");
+const fs = require("fs");
+const path = require("path");
+const { validationResult, ExpressValidator } = require("express-validator");
+const db = require("../database/models");
+const { DATE } = require("sequelize");
 
-const dataJson = fs.readFileSync(path.join(__dirname, '../data/users.json'));
+const dataJson = fs.readFileSync(path.join(__dirname, "../data/users.json"));
 const users = JSON.parse(dataJson);
 
 function updateUserJSON() {
   const usersJSON = JSON.stringify(users, null, 4);
-  fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJSON);
+  fs.writeFileSync(path.join(__dirname, "../data/users.json"), usersJSON);
 }
 
 const usersController = {
   login: (req, res) => {
-    res.render('login');
+    res.render("login");
   },
   processLogin: (req, res) => {
-    fetch('http://localhost:3000/api/users')
-      .then(result=> result.json())
-      .then((users)=>{
-        for(let i = 0; i<users.length; i++){
-          if (users[i] == req.body.email) {
-           
-            
-          }
-        }
-      })
-
-    /*let userFound = users.find((user) => req.body.email == user.email);
-    if (userFound) {
+    db.User.findOne({
+      raw: true,
+      where: {
+        email: req.body.email,
+      },
+    }).then((user) => {
+      console.log(req.body.password);
+      console.log(user.password);
       let correctPassword = bcrypt.compareSync(
-      } 
         req.body.password,
-        userFound.password,
+        user.password
       );
+      console.log(correctPassword);
       if (correctPassword) {
-        delete userFound.password;
-        req.session.userAreLogged = userFound;
+        delete user.password;
+        req.session.userAreLogged = user;
         if (req.body.rememberMe) {
-          res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120 });
+          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
+          return res.redirect(301, "/");
         }
-        return res.redirect(301, '/');
-      return res.render('login', {
-        errors: {
-          email: {
-            msg: "Las credenciales no son correctas"
-          }
-        }
-      })
-    }else{
-    return res.render('login', {
-       errors: 
-        { email: 
-          { msg: "Este email no existe en la base de datos" }
-        } 
-      })
-    
-    }*/
-    //console.log(req.session);
-    //res.redirect('/')
+        return res.render("login", {
+          errors: {
+            email: {
+              msg: "Las credenciales no son correctas",
+            },
+          },
+        });
+      } else {
+        return res.render("login", {
+          errors: {
+            email: { msg: "Este email no existe en la base de datos" },
+          },
+        });
+      }
+    });
   },
   logout: (req, res) => {
     req.session.destroy();
-    res.redirect('/');
+    res.redirect("/");
   },
   perfil: (req, res) => {
-    res.render('perfilUser');
+    res.render("perfilUser");
   },
   register: (req, res) => {
-    res.render('register');
+    res.render("register");
   },
   processRegister: (req, res) => {
     db.User.create({
@@ -78,7 +70,7 @@ const usersController = {
       last_name: req.body.lastName,
       display_name: req.body.displayName,
       email: req.body.email,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password, 10),
       date_of_birth: req.body.birthDate,
       country: req.body.country,
       avatar: req.body.avatar,

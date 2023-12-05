@@ -35,6 +35,7 @@ const productsController = {
         },
       ],
     }).then((products) => {
+      console.log(products[0].details);
       res.render("productsList", { products });
     });
   },
