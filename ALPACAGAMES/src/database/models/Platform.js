@@ -21,7 +21,10 @@ module.exports = (sequelize, DataTypes) => {
   Platform.associate = function (models) {
     Platform.belongsToMany(models.VideoGame, {
       as: 'videoGamesPlatform',
-      through: 'video_game_platform',
+      through: {
+        model: 'video_game_platform',
+        onDelete: 'CASCADE',
+      },
       timestamps: false,
       foreignKey: 'platform_id',
       otherKey: 'video_game_id',

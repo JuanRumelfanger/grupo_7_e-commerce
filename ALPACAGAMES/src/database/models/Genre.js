@@ -21,7 +21,10 @@ module.exports = (sequelize, DataTypes) => {
   Genre.associate = function (models) {
     Genre.belongsToMany(models.VideoGame, {
       as: 'videoGamesGenre',
-      through: 'genre_list',
+      through: {
+        model: 'genre_list',
+        onDelete: 'CASCADE',
+      },
       timestamps: false,
       foreignKey: 'genre_id',
       otherKey: 'video_game_id',

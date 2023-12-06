@@ -35,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     VideoGameDetail.belongsTo(models.VideoGame, {
       as: 'videoGame',
       foreignKey: 'video_game_id',
+      onDelete: 'CASCADE',
     });
   };
 
