@@ -20,11 +20,11 @@
         <section class="photo-cover">
             <h3>Cambiar Foto de portada del Juego</h3>
             <img src='/img/<%= product.details.images %>' alt='<%= product.name %>'>
-            <input type="file" name="images" accept=".jpg, .jpeg, .png" required>
+            <input type="file" name="images" accept=".jpg, .jpeg, .png">
         </section>
         <section class="launch">
             <h3>Modificar Fecha de Lanzamiento</h3>
-            <input type="date" name="releaseDate" id="releaseDate" required>
+            <input type="date" name="releaseDate" id="releaseDate">
         </section>
         <section class="Description">
             <h4>Modificar Descripcion</h4>
@@ -49,7 +49,7 @@
             </select>
         </section>
         <h3>Editar Precio</h3>
-        <input type="number" name="price" id="price" class="controls" placeholder="Precio" step="0.01" value="<%= product.price %>" required>
+        <input type="number" name="price" id="price" class="controls" placeholder="Precio" step="0.01" value="<%= product.price %>" >
 
         <h3>Editar Plataforma</h3>
         <div class="container-sub-platforms">
