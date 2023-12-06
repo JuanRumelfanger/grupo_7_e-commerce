@@ -1,24 +1,56 @@
 const db = require("../../database/models");
-const details = require("../../database/models/VideoGameDetail");
-const genre = require("../../database/models/Genre");
-const platform = require("../../database/models/Platform");
 
 module.exports = {
   list: (req, res) => {
-    db.VideoGame.findAll().then((products) => {
+    db.VideoGame.findAll({
+      include: [
+        {
+          model: db.VideoGameDetail,
+          as: "details",
+          attributes: ["description", "images"],
+        },
+        {
+          model: db.Platform,
+          as: "platforms",
+          attributes: ["name"],
+        },
+        {
+        model: db.Genre,
+        as: "genres",
+        attributes: ["name"]
+        }
+      ],
+    }).then((products) => {
       let respuesta = {
         meta: {
           status: 200,
-          url: "/",
-          //raw:true,
+          url: "api/videogames/list"
         },
-        data: products,
-      };
-      res.json(respuesta);
-    });
+        data: products
+      }
+        res.json(respuesta)
+    })
   },
+
   detail: (req, res) => {
-    db.VideoGame.findByPk(req.params.id).then((users) => {
+    db.VideoGame.findByPk(req.params.id,{
+      include: [
+        {
+          model: db.VideoGameDetail,
+          as: "details",
+        },
+        {
+          model: db.Platform,
+          as: "platforms",
+          attributes: ["name"]
+        },
+        {
+          model: db.Genre,
+          as: "genres",
+          attributtes: ["name"],
+        },
+      ]
+    }).then((users) => {
       let respusta = {
         meta: {
           status: 200,
@@ -27,70 +59,131 @@ module.exports = {
         data: users,
       };
       res.json(respusta);
-    });
+    })
+    .catch((error) => res.send(error));
   },
 
-  create: (req, res) => {
-    console.log(req.body);
-    db.VideoGame.create(
-      {
-        // videog
-        name: req.body.name,
-        // details
-        description: req.body.description,
+  create: async (req, res) => {
+    // console.log(req.body.release_date);
+    const imageFilename = req.file ? req.file.filename : null;
 
-        //plataforms
-        platform: req.body.plataform,
-        // videog genres
-        genre: req.body.genre,
-        //videog
-        release_date: req.body.release_date,
-        price: req.body.price,
-        //details
-        images: req.body.images,
-        // os: req.body.os,
-        storage: req.body.storage,
-        size: req.body.downloadSize,
-      },
-      {
-        include: ["details", "genres", "platforms", "users"],
-      }
-    )
-      .then((confirm) => {
-        let respuesta = {
-          meta: {
-            status: 200,
-            url: "",
+    try {
+      const videoGameInstance = await db.VideoGame.create(
+        {
+          price: req.body.price,
+          name: req.body.name,
+          release_date: req.body.release_date,
+          details: {
+            description: req.body.details.description,
+            size: req.body.details.size,
+            images: imageFilename,
+            requiments: {
+              os: req.body.os,
+              storage: req.body.storage,
+            },
           },
-          data: confirm,
-        };
-        res.json(respuesta);
-      })
-      .catch((error) => res.send(error));
+        },
+        {
+          include: [{ model: db.VideoGameDetail, as: "details" }],
+        }
+      );
+
+      let platforms;
+      if (typeof req.body.platforms === "string") {
+        const [platform] = await db.Platform.findOrCreate({
+          where: { name: req.body.platforms },
+        });
+        platforms = [platform];
+      } else {
+        const platformPromises = req.body.platforms.map((name) =>
+          db.Platform.findOrCreate({ where: { name } }).then(
+            ([platform]) => platform
+          )
+        );
+        platforms = await Promise.all(platformPromises);
+      }
+
+      const [genre] = await db.Genre.findOrCreate({
+        where: { name: req.body.genre },
+      });
+
+      await Promise.all([
+        videoGameInstance.addPlatforms(platforms),
+        videoGameInstance.addGenre(genre),
+      ]);
+
+      console.log("Video game, details and platforms created successfully");
+    } catch (error) {
+      console.error("Error:", error);
+    }
   },
 
-  update: (req, res) => {
-    console.log(req.body);
-    db.VideoGame.update(
+  update: async (req, res) => {
+    const imagePath = req.file.filename;
+try {
+  const product = await db.VideoGame.findByPk(req.params.id, {
+    include: [
       {
-        price: req.body.price,
-        name: req.body.name,
-        release_date: req.body.release_date,
+        model: db.VideoGameDetail,
+        as: "details",
       },
       {
-        where: { id: req.params.id },
-      }
-    )
-      .then((users) => {
-        res.json({
-          status: 200,
-          data: users,
-        });
-        res.render("editarProducto", { product: users });
-      })
-      .catch((error) => res.send(error));
-  },
+        model: db.Platform,
+        as: "platforms",
+      },
+      {
+        model: db.Genre,
+        as: "genres",
+      },
+    ],
+  });
 
+  if (!product) {
+    return res.status(404).send("Product not found");
+  }
+
+  const updateProduct = product.update({
+    price: req.body.price,
+    name: req.body.name,
+    release_date: req.body.releaseDate,
+  });
+
+  const updateDetails = product.details.update({
+    description: req.body.description,
+    size: req.body.downloadSize,
+    images: imagePath,
+    requiments: {
+      os: req.body.os,
+      storage: req.body.storage,
+    },
+  });
+
+  const updatePlatforms = Promise.all(
+    product.platforms.map((platform, i) => {
+      if (req.body.platforms[i]) {
+        return platform.update({ name: req.body.platforms[i] });
+      }
+    })
+  );
+
+  const updateGenres = Promise.all(
+    product.genres.map((genre) =>
+      genre.update({
+        name: req.body.genre,
+      })
+    )
+  );
+  // Esperar a que todas las actualizaciones se completen
+  await Promise.all([updateProduct, updateDetails, updatePlatforms, updateGenres]);
+
+  // Mostrar lo que se modificó después de las actualizaciones
+  res.status(200).json({ message: 'Actualizaciones completadas exitosamente', updatedProduct: product });
+} catch (error) {
+  console.error('Error al realizar las actualizaciones:', error);
+  // Manejar el error y enviar una respuesta adecuada
+  res.status(500).json({ error: 'Internal Server Error' });
+}
+},
   destroy: (req, res) => {
     db.VideoGame.destroy({
       where: { id: req.params.id },

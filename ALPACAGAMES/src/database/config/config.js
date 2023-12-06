@@ -1,11 +1,11 @@
 module.exports = {
   development: {
-    username: 'root',
-    password: '031296',
+    username: 'numpi_user',
+    password: '1234',
     database: 'alpaca-db',
     host: '127.0.0.1',
     dialect: 'mysql',
-    port: '3306',
+    // port: '3306',
   },
   test: {
     username: 'root',
