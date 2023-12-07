@@ -9,9 +9,9 @@
     <a class="link-header-register-header" href="/users/register">Registro</a>
     <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
     <% } else {%>
-    <a id="saludo">¡Hola <%= locals.userAreLogged.name %>!</a>
+    <a id="saludo">¡Hola <%= locals.userAreLogged.first_name %>!</a>
     <a href="/users/logout" id="cerrar-sesion"><button type="submit" id="submit">Cerrar sesión</button></a>
-    <a class="logo-header-2-a"><img class="logo-header-2" src="/img/avatars/<%= locals.userAreLogged.avatar%>"></a>
+    <a class="logo-header-2-a"><img class="logo-header-2" src="../../../public/img/avatars/avatar-1696478031566.png"></a>
     <% } %>
     
 </header>

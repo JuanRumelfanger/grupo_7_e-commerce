@@ -24,19 +24,18 @@ const usersController = {
         email: req.body.email,
       },
     }).then((user) => {
-      console.log(req.body.password);
-      console.log(user.password);
       let correctPassword = bcrypt.compareSync(
         req.body.password,
         user.password
       );
-      console.log(correctPassword);
       if (correctPassword) {
         delete user.password;
         req.session.userAreLogged = user;
         if (req.body.rememberMe) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
-          return res.redirect(301, "/");
+          return res.redirect(301, "/users/perfil");
+        }else{
+          return res.redirect(301, "/users/perfil")
         }
         return res.render("login", {
           errors: {
@@ -48,7 +47,7 @@ const usersController = {
       } else {
         return res.render("login", {
           errors: {
-            email: { msg: "Este email no existe en la base de datos" },
+            email: { msg: "Esta contraseña no existe en la base de datos" },
           },
         });
       }
