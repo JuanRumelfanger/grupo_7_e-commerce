@@ -44,6 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     registration_date: {
       type: DataTypes.DATE,
       allowNull: true,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
   };
 

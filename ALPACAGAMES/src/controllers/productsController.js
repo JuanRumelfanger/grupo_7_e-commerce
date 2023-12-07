@@ -190,7 +190,7 @@ const productsController = {
       await product.update({
         price: req.body.price,
         name: req.body.name,
-        release_date: req.body.releaseDate,
+        release_date: req.body.release_date,
       });
 
       const detailsData = req.body.details;

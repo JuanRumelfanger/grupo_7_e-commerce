@@ -28,13 +28,14 @@ const usersController = {
         req.body.password,
         user.password
       );
-      console.log(correctPassword);
       if (correctPassword) {
         delete user.password;
         req.session.userAreLogged = user;
         if (req.body.rememberMe) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
-          return res.redirect(301, "/");
+          return res.redirect(301, "/users/perfil");
+        }else{
+          return res.redirect(301, "/users/perfil")
         }
         return res.render("login", {
           errors: {
@@ -46,7 +47,7 @@ const usersController = {
       } else {
         return res.render("login", {
           errors: {
-            email: { msg: "Este email no existe en la base de datos" },
+            email: { msg: "Esta contraseña no existe en la base de datos" },
           },
         });
       }
@@ -63,17 +64,7 @@ const usersController = {
     res.render("register");
   },
   processRegister: (req, res) => {
-    db.User.create({
-      first_name: req.body.firstName,
-      last_name: req.body.lastName,
-      display_name: req.body.displayName,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
-      date_of_birth: req.body.birthDate,
-      country: req.body.country,
-      avatar: req.body.avatar,
-    });
-    /*
+       /*
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('register', { errors: errors.errors, old: req.body });
@@ -97,6 +88,22 @@ const usersController = {
       updateUserJSON();
       res.redirect('/');
     }*/
+    console.log(req.body);
+    db.User.create(
+      {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      display_name: req.body.display_name,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 10),
+      date_of_birth: req.body.date_of_birth,
+      country: req.body.country,
+      avatar: req.file.filename,
+    }
+    )
+    .then(() => {
+      return res.redirect('/')})
+    .catch(error => res.send(error))
   },
 };
 

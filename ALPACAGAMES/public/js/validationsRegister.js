@@ -1,9 +1,9 @@
 /* Validaciones register*/
 
 let formulario = document.querySelector("form.form-container");
-let inputName = document.querySelector("#firstName");
-let lastName = document.querySelector("#lastName");
-let displayName = document.querySelector("#displayName");
+let inputName = document.querySelector("#first_name");
+let lastName = document.querySelector("#last_name");
+let displayName = document.querySelector("#display_name");
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
 let avatar = document.querySelector("input#avatar");
@@ -11,6 +11,7 @@ let avatar = document.querySelector("input#avatar");
 //Validaciones del nombre y apellido
 
 inputName.addEventListener("input", (e) => {
+  e.preventDefault();
   if (inputName.value.length < 3) {
     inputName.style.borderColor = "Red";
   } else {
