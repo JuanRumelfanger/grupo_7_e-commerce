@@ -10,7 +10,7 @@ const users = JSON.parse(dataJson);
 
 function updateUserJSON() {
   const usersJSON = JSON.stringify(users, null, 4);
-  fs.writeFileSync(path.join(__dirname, "../data/users.json"), usersJSON);
+  fs.writeFileSync(path.join(__dirname, "../data/users.j  son"), usersJSON);
 }
 
 const usersController = {
@@ -24,8 +24,6 @@ const usersController = {
         email: req.body.email,
       },
     }).then((user) => {
-      console.log(req.body.password);
-      console.log(user.password);
       let correctPassword = bcrypt.compareSync(
         req.body.password,
         user.password

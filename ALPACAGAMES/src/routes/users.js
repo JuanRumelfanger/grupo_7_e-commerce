@@ -6,8 +6,8 @@ const areYouLogged = require('../middlewares/question');
 const areNotYouLogged = require('../middlewares/otherQuestion');
 const validations = require('../middlewares/validation');
 // Routes for users - Login and Register
-router.get('/login', areYouLogged, validations.login, usersController.login);
-router.post('/login', usersController.processLogin);
+router.get('/login', areYouLogged, usersController.login);
+router.post('/login', validations.login, usersController.processLogin);
 // ------------------------------------------------------ //
 router.get('/register', areYouLogged, usersController.register);
 router.post(

@@ -1,23 +1,27 @@
-const fs = require('fs');
-const path = require('path');
-const dataJson = fs.readFileSync(path.join(__dirname, '../data/users.json'));
+const fs = require("fs");
+const path = require("path");
+const dataJson = fs.readFileSync(path.join(__dirname, "../data/users.json"));
+const db = require("../database/models");
 const users = JSON.parse(dataJson);
 
-function userLogged(req, res, next){
-    res.locals.isLogged = false;
+function userLogged(req, res, next) {
+  if (req.cookies.userEmail) {
+    db.User.findOne({
+      raw: true,
+      where: {
+        email: req.cookies.userEmail,
+      },
+    }).then((user) => {
+      if (user) {
+        req.session.userAreLogged = user;
+      }
 
-    let emailCookie = req.cookies.userEmail
-    let userFoundCookie = users.find((user) => emailCookie == user.email);
-
-    if(userFoundCookie){
-        req.session.userAreLogged = userFoundCookie
-    }
-
-    if(req.session && req.session.userAreLogged){
+      if (req.session && req.session.userAreLogged) {
         res.locals.isLogged = true;
         res.locals.userAreLogged = req.session.userAreLogged;
-    }
-
-    next();
+      }
+    });
+  }
+  next();
 }
 module.exports = userLogged;
