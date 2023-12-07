@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = "User";
+  let alias = 'User';
   let cols = {
     id: {
       type: DataTypes.BIGINT(10).UNSIGNED,
@@ -44,14 +44,15 @@ module.exports = (sequelize, DataTypes) => {
     registration_date: {
       type: DataTypes.DATE,
       allowNull: true,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
   };
 
   let config = {
-    tableName: "users",
+    tableName: 'users',
     timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
     deletedAt: false,
   };
 
@@ -59,17 +60,23 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function (models) {
     User.belongsToMany(models.Role, {
-      as: "roles",
-      through: "user_roles",
-      foreignKey: "user_id",
-      otherKey: "role_id",
+      as: 'roles',
+      through: {
+        model: 'user_roles',
+        onDelete: 'CASCADE',
+      },
+      foreignKey: 'user_id',
+      otherKey: 'role_id',
     });
 
     User.belongsToMany(models.VideoGame, {
-      as: "videoGames",
-      through: "users_game",
-      foreignKey: "user_id",
-      otherKey: "video_game_id",
+      as: 'videoGames',
+      through: {
+        model: 'users_game',
+        onDelete: 'CASCADE',
+      },
+      foreignKey: 'user_id',
+      otherKey: 'video_game_id',
     });
   };
 
