@@ -33,9 +33,9 @@ const usersController = {
         req.session.userAreLogged = user;
         if (req.body.rememberMe) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
-          return res.redirect(301, "/users/perfil");
+          return res.redirect(301, "/");
         }else{
-          return res.redirect(301, "/users/perfil")
+          return res.redirect(301, "/")
         }
         return res.render("login", {
           errors: {
@@ -55,10 +55,7 @@ const usersController = {
   },
   logout: (req, res) => {
     req.session.destroy();
-    res.redirect("/");
-  },
-  perfil: (req, res) => {
-    res.render("perfilUser");
+    res.redirect(301, "/");
   },
   register: (req, res) => {
     res.render("register");
