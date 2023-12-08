@@ -12,8 +12,6 @@
 
     <%- include('../partials/header') %>
 
-    <%- include('../partials/search-bar') %>
-
     <h1>Editar Producto</h1>
     <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" class="form" aling="center" enctype="multipart/form-data">
         <input type="text" name="name" id="name" class="controls" placeholder="Nombre del Juego" value="<%= product.name %>"> 
