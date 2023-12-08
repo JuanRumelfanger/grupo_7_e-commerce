@@ -7,7 +7,7 @@ const db = require("../database/models");
 function userLogged(req, res, next){
     res.locals.isLogged = false;
 
-    if(req.cookies.userEmail){
+    if(req.cookies.userEmail && !req.session.userAreLogged){
         db.User.findOne({
             raw: true,
             where: {
@@ -18,13 +18,13 @@ function userLogged(req, res, next){
             req.session.userAreLogged = user
             }
           })
+    
+        }
     if(req.session && req.session.userAreLogged){
             res.locals.isLogged = true;
             res.locals.userAreLogged = req.session.userAreLogged;
             
           }
-        }
-
     
 
     next();
