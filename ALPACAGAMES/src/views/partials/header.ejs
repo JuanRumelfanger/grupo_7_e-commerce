@@ -1,17 +1,42 @@
 <header>
     <div clase="detail-header">
-        <a class="header-logo" href="/"><img class="logo-header" src="/img/Alpaca-celu.svg" id="logo" alt="logo"></a>
-        <a class="link-header-detail-header" id="productsText" href="/products">Productos</a>
+      <a class="header-logo" href="/"
+        ><img
+          class="logo-header"
+          src="/img/Alpaca-celu.svg"
+          id="logo"
+          alt="logo"
+      /></a>
     </div>
-  
-    <% if(!locals.isLogged) { %>
-    <a class="link-header-login-header" href="/users/login">Login</a>
-    <a class="link-header-register-header" href="/users/register">Registro</a>
-    <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
-    <% } else {%>
-    <a id="saludo">¡Hola <%= locals.userAreLogged.first_name %>!</a>
-    <a href="/users/logout" id="cerrar-sesion"><button type="submit" id="submit">Cerrar sesión</button></a>
-    <a class="logo-header-2-a"><img class="logo-header-2" src="../../../public/img/avatars/avatar-1696478031566.png"></a>
-    <% } %>
+  <nav id="search-nav-bar">
+    <form class="search-bar" method="get" action="/products/search">
+      <button type="button" class="btn-search">
+        <i class="fa-solid fa-magnifying-glass lupa"></i>
+      </button>
+      <input
+        type="search"
+        name="search"
+        id="search"
+        placeholder="Buscar en la tienda"
+        autocomplete="off"
+      />
+    </form>
+    <a href="/products" id="productsText" >Catalogo</a>
     
+</nav>
+  <% if(!locals.isLogged) { %>
+  <a class="link-header-login-header" href="/users/login">Login</a>
+  <a class="link-header-register-header" href="/users/register">Registro</a>
+  <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
+  <% } else {%>
+  <a id="saludo">¡Hola <%= locals.userAreLogged.first_name %>!</a>
+  <a href="/users/logout" id="cerrar-sesion"
+    ><button type="submit" id="submit">Cerrar sesión</button></a
+  >
+  <a class="logo-header-2-a"
+    ><img
+      class="logo-header-2"
+      src="../../../public/img/avatars/avatar-1696478031566.png"
+  /></a>
+  <% } %>
 </header>

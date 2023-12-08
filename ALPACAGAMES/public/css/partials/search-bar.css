@@ -17,8 +17,11 @@
     width: 100%;
     max-width: 400px;
     margin-right: 1.5rem;
+    margin-left: 3.0rem;
 }
-
+ #productsText {
+    color: #fff;
+ }
 .search-bar .lupa,
 .search-bar #search {
     color: #000;
