@@ -80,6 +80,8 @@ let button = document.querySelector("label#avatar");
 avatar.addEventListener("change", (e) => {
   console.log(avatar.value);
   if (formatos.test(avatar.value) === true) {
-    button.style.color = "#00C129";
+    button.style.color = "blue";
+  } else {
+    button.style.color = "red"
   }
 });
