@@ -14,11 +14,14 @@
         font-size: 1.3rem;
     }
     .logo-header-2-a{
-        width: 100px;
+        width: 50px;
         position: absolute;
-        top: 10px;
-        right: 15px;
+        top: 35px;
+        right: 20px;
         color: white;
+        border: 1px solid rgba(255, 255, 255);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
     }
     .header-logo{
         width: 100px;
@@ -43,8 +46,10 @@
         display: block;
         color: white;
         position: absolute;
-        right: 150px;
-        top: 45px;
+        top: 65px;
+        right: 105px;
+        font-size: 1rem;
+        visibility: hidden;
     }
     #submit:hover{
         background-color: red;
@@ -52,18 +57,24 @@
         border: 1px solid white;
         box-shadow: 0 0 10px grey;
         width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 24px;
+        right: 100px;
     }
     #submit{
         position: absolute;
-        top: 37px;
-        right: 260px;
+        top: 26.5px;
+        right: 100px;
+        height: 27px;
         width: 100px;
         border: 1px solid rgb(90, 90, 90);
         background-color: blue;
         color: white;
         border-radius: 10px;
-        transition: 1s;
+        transition: 0s;
         box-shadow: 0 0 10px white;
+        visibility: hidden;
     }
     button[type="submit"]{
         color: grey;
@@ -91,6 +102,41 @@
         font-size: 1.3rem;
         visibility: hidden;
     }
+@media (min-width: 300px){
+    #submit{
+        position: absolute;
+        top: 46.5px;
+        right: 190px;
+        height: 27px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 0s;
+        box-shadow: 0 0 10px white;
+        visibility: hidden;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        top: 50.1px;
+        right: 90px;
+        font-size: 1rem;
+        visibility: hidden;
+    }
+}
+@media (min-width: 450px) {
+    #submit{
+        visibility: visible;
+        transition: 0s;
+    }
+    #saludo{
+        visibility: visible;
+    }
+}
+    
     
 @media (min-width: 500px) {
     .logo-header{
@@ -107,10 +153,13 @@
         color: white;
     }
     #saludo{
+        display: block;
         color: white;
         position: absolute;
-        right: 150px;
-        top: 45px;
+        top: 47.5px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: visible;
     }
     #submit:hover{
         background-color: red;
@@ -118,17 +167,22 @@
         border: 1px solid white;
         box-shadow: 0 0 10px grey;
         width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
     }
     #submit{
         position: absolute;
-        top: 37px;
-        right: 260px;
+        top: 46.5px;
+        right: 230px;
+        height: 27px;
         width: 100px;
         border: 1px solid rgb(90, 90, 90);
         background-color: blue;
         color: white;
         border-radius: 10px;
-        transition: 1s;
+        transition: 0s;
         box-shadow: 0 0 10px white;
     }
     button[type="submit"]{
@@ -173,10 +227,13 @@
         color: white;
     }
     #saludo{
+        display: block;
         color: white;
         position: absolute;
-        right: 150px;
-        top: 45px;
+        top: 47.5px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: hidden;
     }
     #submit:hover{
         background-color: red;
@@ -184,19 +241,24 @@
         border: 1px solid white;
         box-shadow: 0 0 10px grey;
         width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
     }
     #submit{
         position: absolute;
-        top: 37px;
-        right: 260px;
+        top: 46.5px;
+        right: 230px;
         width: 100px;
+        height: 27px;
         border: 1px solid rgb(90, 90, 90);
         background-color: blue;
         color: white;
         border-radius: 10px;
-        transition: 1s;
+        transition: 0s;
         box-shadow: 0 0 10px white;
-        padding: 5px;
+        visibility: hidden;
     }
     button[type="submit"]{
         color: grey;
@@ -240,10 +302,13 @@
         color: white;
     }
     #saludo{
+        display: block;
         color: white;
         position: absolute;
-        right: 150px;
-        top: 45px;
+        top: 47.5px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: hidden;
     }
     #submit:hover{
         background-color: red;
@@ -251,18 +316,23 @@
         border: 1px solid white;
         box-shadow: 0 0 10px grey;
         width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
     }
     #submit{
         position: absolute;
-        top: 37px;
-        right: 260px;
+        top: 46.5px;
+        height: 27px;
+        right: 230px;
         width: 100px;
         border: 1px solid rgb(90, 90, 90);
         background-color: blue;
         color: white;
         border-radius: 10px;
-        transition: 1s;
         box-shadow: 0 0 10px white;
+        visibility: hidden;
     }
     button[type="submit"]{
         color: grey;
@@ -291,7 +361,7 @@
         visibility: visible;
     }
 }
-@media (min-width: 850px) {
+@media (min-width: 860px) {
     .logo-header{
         width: 100px;
         position: absolute;
@@ -299,10 +369,13 @@
         top: 15px;
     }
     #saludo{
+        display: block;
         color: white;
         position: absolute;
-        right: 150px;
-        top: 45px;
+        top: 47.5px;
+        right: 90px;
+        font-size: 1.3rem;
+        visibility: visible;
     }
     #submit:hover{
         background-color: red;
@@ -310,11 +383,16 @@
         border: 1px solid white;
         box-shadow: 0 0 10px grey;
         width: 105px;
+        height: 30px;
+        position: absolute;
+        top: 45px;
+        right: 240px;
     }
     #submit{
         position: absolute;
-        top: 37px;
-        right: 260px;
+        top: 46.5px;
+        right: 230px;
+        height: 27px;
         width: 100px;
         border: 1px solid rgb(90, 90, 90);
         background-color: blue;
@@ -322,6 +400,7 @@
         border-radius: 10px;
         transition: 1s;
         box-shadow: 0 0 10px white;
+        visibility: visible;
     }
     button[type="submit"]{
         color: grey;
