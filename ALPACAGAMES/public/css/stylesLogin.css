@@ -14,7 +14,7 @@
     background-color: black;
 }
 main{
-    background-color: rgb(56, 56, 56);
+    background: linear-gradient(black, rgb(56, 56, 56));
     padding: 20px 0;
 }
 .conteiner-all{
@@ -26,7 +26,7 @@ main{
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     height: 500px;
-    box-shadow: 0 0 20px blue;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
 .mensaje-1{
