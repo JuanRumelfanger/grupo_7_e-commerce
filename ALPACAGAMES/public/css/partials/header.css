@@ -1,82 +1,395 @@
-header{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #222429;
-    font-family: 'roboto';
-    padding: 5px 15px;
-    height: 120px;
+    header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #222429;
+        font-family: 'roboto';
+        padding: 5px 15px;
+        height: 120px;
+    }
+    .link-header {
+        color: rgba(250, 250, 250, 0.7);
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+    .logo-header-2-a{
+        width: 100px;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: white;
+    }
+    .header-logo{
+        width: 100px;
+    }
+    .detail-header{
+        width: 40%;
+    }
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        display: block;
+        color: white;
+        position: absolute;
+        right: 150px;
+        top: 45px;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+    }
+    #submit{
+        position: absolute;
+        top: 37px;
+        right: 260px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 1s;
+        box-shadow: 0 0 10px white;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    #icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 55px;
+        font-size: 0.7rem;
+        visibility: hidden;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 100px;
+        font-size: 0.7rem;
+        visibility: hidden;
+    }
+    #productsText{
+        font-size: 0.7rem;
+        color: white;
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        visibility: hidden;
+    }
+
+@media (min-width: 240px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        color: white;
+        position: absolute;
+        right: 150px;
+        top: 45px;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+    }
+    #submit{
+        position: absolute;
+        top: 37px;
+        right: 260px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 1s;
+        box-shadow: 0 0 10px white;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    .icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 75px;
+        font-size: 0.8rem;
+        visibility: hidden;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 135px;
+        font-size: 0.8rem;
+        visibility: hidden;
+    }
+    #productsText{
+        font-size: 0.8rem;
+        color: white;
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        visibility: hidden;
+    }
 }
-.link-header {
-    color: rgba(250, 250, 250, 0.7);
-    text-decoration: none;
-    font-size: 1.3rem;
+@media (min-width: 300px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        color: white;
+        position: absolute;
+        right: 150px;
+        top: 45px;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+    }
+    #submit{
+        position: absolute;
+        top: 37px;
+        right: 260px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 1s;
+        box-shadow: 0 0 10px white;
+        padding: 5px;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    .icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 90px;
+        font-size: 1rem;
+        visibility: hidden;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 160px;
+        font-size: 1rem;
+        visibility: hidden;
+    }
+    #productsText{
+        font-size: 1rem;
+        color: white;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        visibility: hidden;
+    }
 }
-.logo-header-2-a{
-    width: 100px;
-    position: absolute;
-    top: 10px;
-    right: 15px;
+@media (min-width: 400px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        visibility: visible;
+    }
+    .link-header-detail-header{
+        position: absolute;
+        left: 130px;
+        top: 45px;
+        color: white;
+    }
+    #saludo{
+        color: white;
+        position: absolute;
+        right: 150px;
+        top: 45px;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+    }
+    #submit{
+        position: absolute;
+        top: 37px;
+        right: 260px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 1s;
+        box-shadow: 0 0 10px white;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    .icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 130px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 220px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
+    #productsText{
+        color: white;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        font-size: 1.3rem;
+        visibility: hidden;
+    }
 }
-.header-logo{
-    width: 100px;
-}
-.detail-header{
-    width: 40%;
-}
-.logo-header{
-    width: 100px;
-    position: absolute;
-    left: 10px;
-    top: 15px;
-}
-.link-header-detail-header{
-    position: absolute;
-    left: 130px;
-    top: 45px;
-    color: white;
-}
-#saludo{
-    color: white;
-    position: absolute;
-    right: 150px;
-    top: 45px;
-}
-#submit{
-    position: absolute;
-    top: 37px;
-    right: 260px;
-    width: 100px;
-    height: 40px;
-    border: 1px solid rgb(90, 90, 90);
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-}
-button[type="submit"]{
-    color: grey;
-}
-.icon-user{
-    color: white;
-    font-size: 3rem;
-    position: absolute;
-    top: 20px;
-    right: 40px;
-}
-.link-header-register-header{
-    color: white;
-    position: absolute;
-    top: 40px;
-    right: 130px;
-    font-size: 1.3rem;
-}
-.link-header-login-header{
-    color: white;
-    position: absolute;
-    top: 40px;
-    right: 230px;
-    font-size: 1.3rem;
-}
-@media (max-width: 600px) {
+@media (min-width: 525px) {
+    .logo-header{
+        width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+    }
+    #saludo{
+        color: white;
+        position: absolute;
+        right: 150px;
+        top: 45px;
+    }
+    #submit:hover{
+        background-color: red;
+        color: white;
+        border: 1px solid white;
+        box-shadow: 0 0 10px grey;
+        width: 105px;
+    }
+    #submit{
+        position: absolute;
+        top: 37px;
+        right: 260px;
+        width: 100px;
+        border: 1px solid rgb(90, 90, 90);
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        transition: 1s;
+        box-shadow: 0 0 10px white;
+    }
+    button[type="submit"]{
+        color: grey;
+    }
+    .icon-user{
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 20px;
+        right: 40px;
+    }
+    .link-header-register-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 130px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    .link-header-login-header{
+        color: white;
+        position: absolute;
+        top: 40px;
+        right: 230px;
+        font-size: 1.3rem;
+        visibility: visible;
+    }
+    #productsText{
+        color: white;
+        position: absolute;
+        font-size: 1.3rem;
+        top: 40px;
+        left: 125px;
+        visibility: visible;
+    }
+    #productsText:hover{
+        color: rgba(250, 250, 250, 0.7); 
+    }
 }

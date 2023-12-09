@@ -42,6 +42,10 @@ main {
     color: #222;
 }
 
+.checkbox-input .checkbox{
+    margin-left: 150px;
+}
+
 .input-form:focus {
     border: 1px solid #666;
 }

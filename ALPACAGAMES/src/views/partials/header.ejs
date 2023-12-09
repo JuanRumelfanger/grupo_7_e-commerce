@@ -8,35 +8,26 @@
           alt="logo"
       /></a>
     </div>
+  
+    <% if(!locals.isLogged) { %>
+    <a class="link-header-login-header" href="/users/login">Login</a>
+    <a class="link-header-register-header" href="/users/register">Registro</a>
+    <a class="icon-user" id="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
+    <% } else {%>
+      <div>
+        <h4 id="saludo">¡Hola <%= locals.userAreLogged.first_name %>!</h4>
+      <a href="/users/logout" id="cerrar-sesion"><button type="submit" id="submit">Cerrar sesión</button></a>
+      <img class="logo-header-2-a" width="50px" src="/img/avatars/user_icon_001.jpg">
+      </div>
+      <% } %>
+
+  
   <nav id="search-nav-bar">
     <form class="search-bar" method="get" action="/products/search">
-      <button type="button" class="btn-search">
-        <i class="fa-solid fa-magnifying-glass lupa"></i>
-      </button>
-      <input
-        type="search"
-        name="search"
-        id="search"
-        placeholder="Buscar en la tienda"
-        autocomplete="off"
-      />
+      <button type="button" class="btn-search"><i class="fa-solid fa-magnifying-glass lupa"></i></button>
+      <input type="search" name="search" id="search" placeholder="Buscar en la tienda" autocomplete="off">
     </form>
-    <a href="/products" id="productsText" >Catalogo</a>
-    
-</nav>
-  <% if(!locals.isLogged) { %>
-  <a class="link-header-login-header" href="/users/login">Login</a>
-  <a class="link-header-register-header" href="/users/register">Registro</a>
-  <a href="" class="icon-user"><i class="fa-solid fa-user-astronaut"></i></a>
-  <% } else {%>
-  <a id="saludo">¡Hola <%= locals.userAreLogged.first_name %>!</a>
-  <a href="/users/logout" id="cerrar-sesion"
-    ><button type="submit" id="submit">Cerrar sesión</button></a
-  >
-  <a class="logo-header-2-a"
-    ><img
-      class="logo-header-2"
-      src="../../../public/img/avatars/avatar-1696478031566.png"
-  /></a>
-  <% } %>
+  </nav>
+  
+  <script src="/js/header.js"></script>
 </header>
