@@ -24,33 +24,38 @@ const usersController = {
         email: req.body.email,
       },
     }).then((user) => {
-      let correctPassword = bcrypt.compareSync(
-        req.body.password,
-        user.password
-      );
-      if (correctPassword) {
-        delete user.password;
-        req.session.userAreLogged = user;
-        if (req.body.rememberMe) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
-          return res.redirect(301, "/");
-        }else{
-          return res.redirect(301, "/")
-        }
-        return res.render("login", {
-          errors: {
-            email: {
-              msg: "Las credenciales no son correctas",
+      if (user) {
+        let correctPassword = bcrypt.compareSync(
+          req.body.password,
+          user.password
+        );
+        if (correctPassword) {
+          delete user.password;
+          req.session.userAreLogged = user;
+          if (req.body.rememberMe) {
+            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
+            return res.redirect(301, "/");
+          } else {
+            return res.redirect(301, "/")
+          }
+          
+        } else {
+          return res.render("login", {
+            errors: {
+              email: { msg: "Esta contraseña no existe en la base de datos" },
             },
-          },
-        });
-      } else {
+          });
+        }
+      }else{
         return res.render("login", {
-          errors: {
-            email: { msg: "Esta contraseña no existe en la base de datos" },
-          },
-        });
+            errors: {
+              email: {
+                msg: "Las credenciales no son correctas",
+              },
+            },
+          });
       }
+      
     });
   },
   logout: (req, res) => {
