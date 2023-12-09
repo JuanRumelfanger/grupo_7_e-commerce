@@ -20,13 +20,15 @@
             <div class="conteiner-logo">
                 <img src="/img/Alpaca-celu.svg" alt="logo" id="logo-AG">
             </div>
-            <a class="mensaje-2">------ INICIA SESION -----</a>
+            <a class="mensaje-2">INICIA SESION</a>
             <form action="/users/login" method="POST">
                 <class class="caja-email">
-                    <label for="email">
-                        <input type="email" name="email" placeholder="Correo electrónico o número de teléfono" class="email"
+                    <div class="label">
+                        <label for="email" id="label">Correo electrónico</label>
+                    </div>
+                        <input type="email" name="email" placeholder="Ingrese un correo electrónico" class="email"
                             id="email">
-                    </label>
+                    
                     <%if(locals.errors && errors.email) { %>
                         <div class="container-error-email">
                             <%= errors.email.msg%>
@@ -34,14 +36,16 @@
                         <% } %>
                 </class>
                 <class class="caja-contraseña">
-                    <label for="password">
+                    <div class="label">
+                        <label for="password" id="label">Contraseña</label>
+                    </div>
                         <input type="password" name="password" placeholder="Contraseña" id="password">
-                    </label>
+                    
                 </class>
                 <div class="iniciar-sesion">
                     <button type="submit">Iniciar sesion</button>
                     <div class="rememberMe">
-                        <label for="rememberMe">Recuerdame</label>
+                        <label for="rememberMe" id="label">Recuerdame</label>
                         <input type="checkbox" name="rememberMe">
                     </div>
                 </div>
