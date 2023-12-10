@@ -13,7 +13,7 @@ function userLogged(req, res, next){
             },
           }).then((user) => {
             if(user){
-            req.session.userAreLogged = user
+              req.session.userAreLogged = user
             }
           })
     

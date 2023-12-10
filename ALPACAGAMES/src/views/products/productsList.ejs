@@ -10,7 +10,11 @@
     <main>
       <h1>Catálogo de Videojuegos</h1>
       <div class="container-products">
-        <% products.forEach(product => { %>
+        <% if(products.length === 0) { %>
+        <div class="not-found">
+          <img src="/img/" alt="">
+        </div>
+        <% } %> <% products.forEach(product => { %>
         <div class="products-cajas">
           <div class="product">
             <div class="container-img">

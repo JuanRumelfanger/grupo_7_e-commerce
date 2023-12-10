@@ -1,8 +1,8 @@
-const path = require('path');
-const fs = require('fs');
-const db = require('../database/models');
-const { name } = require('ejs');
-const { Op } = require('sequelize');
+const path = require("path");
+const fs = require("fs");
+const db = require("../database/models");
+const { name } = require("ejs");
+const { Op } = require("sequelize");
 
 const productsController = {
   listProducts: (req, res) => {
@@ -10,22 +10,22 @@ const productsController = {
       include: [
         {
           model: db.VideoGameDetail,
-          as: 'details',
-          attributes: ['description', 'images'],
+          as: "details",
+          attributes: ["description", "images"],
         },
         {
           model: db.Platform,
-          as: 'platforms',
-          attributes: ['name'],
+          as: "platforms",
+          attributes: ["name"],
         },
         {
           model: db.Genre,
-          as: 'genres',
-          attributes: ['name'],
+          as: "genres",
+          attributes: ["name"],
         },
       ],
     }).then((products) => {
-      res.render('productsList', { products });
+      res.render("productsList", { products });
     });
   },
   productsDetail: async (req, res) => {
@@ -34,29 +34,29 @@ const productsController = {
         include: [
           {
             model: db.VideoGameDetail,
-            as: 'details',
+            as: "details",
           },
           {
             model: db.Platform,
-            as: 'platforms',
-            attributes: ['name'],
+            as: "platforms",
+            attributes: ["name"],
           },
           {
             model: db.Genre,
-            as: 'genres',
-            attributes: ['name'],
+            as: "genres",
+            attributes: ["name"],
           },
         ],
-        distinct: 'id',
+        distinct: "id",
       });
       console.log(product.details.images);
-      res.render('productDetail', { product });
+      res.render("productDetail", { product });
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   create: (req, res) => {
-    res.render('crearProducto');
+    res.render("crearProducto");
   },
   store: async (req, res) => {
     const imagePath = req.file.path;
@@ -78,12 +78,12 @@ const productsController = {
           },
         },
         {
-          include: [{ model: db.VideoGameDetail, as: 'details' }],
-        },
+          include: [{ model: db.VideoGameDetail, as: "details" }],
+        }
       );
 
       let platforms;
-      if (typeof req.body.platforms === 'string') {
+      if (typeof req.body.platforms === "string") {
         const [platform] = await db.Platform.findOrCreate({
           where: { name: req.body.platforms },
         });
@@ -91,8 +91,8 @@ const productsController = {
       } else {
         const platformPromises = req.body.platforms.map((name) =>
           db.Platform.findOrCreate({ where: { name } }).then(
-            ([platform]) => platform,
-          ),
+            ([platform]) => platform
+          )
         );
         platforms = await Promise.all(platformPromises);
       }
@@ -106,10 +106,10 @@ const productsController = {
         videoGameInstance.addGenre(genre),
       ]);
 
-      console.log('Video game, details and platforms created successfully');
-      res.redirect('/products');
+      console.log("Video game, details and platforms created successfully");
+      res.redirect("/products");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   /*
@@ -161,30 +161,30 @@ const productsController = {
         include: [
           {
             model: db.VideoGameDetail,
-            as: 'details',
+            as: "details",
           },
           {
             model: db.Platform,
-            as: 'platforms',
-            attributes: ['name'],
+            as: "platforms",
+            attributes: ["name"],
           },
           {
             model: db.Genre,
-            as: 'genres',
-            attributes: ['name'],
+            as: "genres",
+            attributes: ["name"],
           },
         ],
       });
-      res.render('editarProducto', { product });
+      res.render("editarProducto", { product });
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   update: async (req, res) => {
     try {
       const product = await db.VideoGame.findByPk(req.params.id);
       if (!product) {
-        return res.status(404).send('Product not found');
+        return res.status(404).send("Product not found");
       }
 
       await product.update({
@@ -206,23 +206,23 @@ const productsController = {
 
       if (platformsData) {
         const platforms = await db.Platform.bulkCreate(
-          platformsData.map((name) => ({ name })),
+          platformsData.map((name) => ({ name }))
         );
         updates.push(product.setPlatforms(platforms));
       }
 
       if (genresData) {
         const genres = await db.Genre.bulkCreate(
-          genresData.map((name) => ({ name })),
+          genresData.map((name) => ({ name }))
         );
         updates.push(product.setGenres(genres));
       }
 
       await Promise.all(updates);
 
-      res.redirect('/products/' + req.params.id);
+      res.redirect("/products/" + req.params.id);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   destroy: async (req, res) => {
@@ -236,14 +236,14 @@ const productsController = {
 
       const product = await db.VideoGame.findByPk(req.params.id);
       if (!product) {
-        return res.status(404).send('Product not found');
+        return res.status(404).send("Product not found");
       }
 
       await product.destroy();
 
-      res.redirect('/products');
+      res.redirect("/products");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   },
   search: async (req, res) => {
@@ -251,26 +251,26 @@ const productsController = {
       include: [
         {
           model: db.VideoGameDetail,
-          as: 'details',
-          attributes: ['description', 'images'],
+          as: "details",
+          attributes: ["description", "images"],
         },
         {
           model: db.Platform,
-          as: 'platforms',
-          attributes: ['name'],
+          as: "platforms",
+          attributes: ["name"],
         },
         {
           model: db.Genre,
-          as: 'genres',
-          attributes: ['name'],
+          as: "genres",
+          attributes: ["name"],
         },
       ],
       where: {
-        name: { [Op.like]: '%' + req.query.search + '%' },
+        name: { [Op.like]: "%" + req.query.search + "%" },
       },
-    });
-    //return res.send(videoGames);
-    res.render('productsList', { products: videoGames });
+    })
+      res.render('productsList', { products: videoGames });
+    
   },
 };
 

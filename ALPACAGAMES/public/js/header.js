@@ -5,7 +5,7 @@ window.onload = function(){
     let login = document.querySelector('.link-header-login-header');
     let register = document.querySelector('.link-header-register-header');
     if(innerWidth < 525){
-        icon2.addEventListener('click', function(){
+        icon2.addEventListener('click', function(e){
             let visibilityProducts = window.getComputedStyle(products).getPropertyValue('visibility')
             if(visibilityProducts === "hidden"){
                 products.style.visibility = "visible"
