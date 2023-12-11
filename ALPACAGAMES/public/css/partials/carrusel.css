@@ -1,7 +1,6 @@
 .carousel-section {
   margin: 0px;
-  padding: 0px;
-  padding-bottom: 30px;
+  padding: 20px 5px 20px 5px;
   font-family: "roboto";
   display: flex;
   width: 100%;
@@ -77,9 +76,9 @@
 
 .carousel-container a img {
   object-fit: cover;
-  height:300px;
+  height: 300px;
   width: 200px;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in-out;
 }
@@ -112,6 +111,10 @@
 
 .carrusel-prev {
   right: 0px;
+}
+
+.carousel-container a img:hover {
+  border-radius: 3px;
 }
 
 @media (min-width: 768px) {
