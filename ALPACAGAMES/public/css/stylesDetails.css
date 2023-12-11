@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Roboto';
+    background-color: #344a5b;
 }
 
 li {
@@ -23,7 +24,11 @@ span {
     display: block;
 }
 
-
+img {
+    margin  : 30px 0px 0px 30px;
+    border: solid;
+    border-color:#909ca4 ;
+}
 
 .info-product {
     text-align: center;
@@ -42,7 +47,7 @@ span {
 .buy-now,
 .gift-button {
     background-color: #3498db;
-    color: #fff;
+    color: #000000;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -97,7 +102,7 @@ span {
     display: inline-block;
     padding: 8px;
     background-color: #3498db;
-    color: #fff;
+    color: #000000;
     border-radius: 13px;
 }
 

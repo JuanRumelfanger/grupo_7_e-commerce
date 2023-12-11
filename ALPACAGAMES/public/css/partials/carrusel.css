@@ -91,10 +91,9 @@
 
 .carrusel-arrow {
   border-radius: 30px;
-  background-color: white;
   width: 12px;
   height: 100%;
-  color: rgba(0, 0, 0, 0.7);
+  color: white;
   text-align: center;
   border: 0;
   cursor: pointer;
