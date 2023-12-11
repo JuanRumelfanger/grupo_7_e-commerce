@@ -6,6 +6,8 @@
     --max-width: 1100px;
     --white-color: #fff;
 
+    /* Tipografia */
+    --fs-2: 4.5rem
 }
 
 .category {
@@ -14,7 +16,13 @@
     --tech-color: #009cff;
 }
 
-* {
+/*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,11 +30,15 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* line-height: 1.5; */
-    /* background: #15171E; */
-    overflow-x: hidden;
-
+    /* overflow-x: hidden; */
 }
+
+
+html {
+    /* font-size: 10px; */
+    scroll-behavior: smooth;
+}
+
 
 img {
     width: 100%;
@@ -36,12 +48,17 @@ img {
     margin: .5rem 0;
 }
 
+
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 /* pantalla principal */
-
 
 .main-width {
     width: 1400px;
@@ -160,7 +177,7 @@ a {
     color: white;
 }
 
-.image img{
+.image img {
     position: absolute;
     width: 55%;
     height: 90%;
@@ -216,6 +233,315 @@ a {
 .category-sports {
     background: var(--sports-color);
 }
+
+/*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+.containerr {
+    padding-inline: 15px;
+}
+
+.section {
+    padding-block: 65px;
+}
+
+.h1,
+.h2,
+.h3 {
+    color: var(--white);
+    font-family: var(--ff-oxanium);
+    font-weight: var(--fw-800);
+    line-height: 1;
+}
+
+.h1 {
+    font-size: 4.5rem;
+    letter-spacing: -3px;
+}
+
+.h2 {
+    font-size: 3.6rem;
+}
+
+.h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+:is(.h1, .h2, .h3, .card-price) .span {
+    display: inline-block;
+    color: hsl(42, 99%, 46%);
+}
+
+
+
+.btn:is(:hover, :focus)::after {
+    --translateX: -13px;
+}
+
+.has-scrollbar {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-block-end: 30px;
+    scroll-snap-type: inline mandatory;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+    height: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+    outline: 3px solid hsl(42, 99%, 46%);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(42, 99%, 46%);
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+    width: calc(25% - 40px);
+}
+
+.section-subtitle,
+.section-title {
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    color: hsl(0, 0%, 78%);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-block-end: 10px;
+}
+
+.section-title::after {
+    content: url("../images/title-underline.png");
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scrollbar-item {
+    min-width: 100%;
+    scroll-snap-align: start;
+}
+
+.card-banner {
+    background-color: hsl(0, 0%, 80%);
+}
+
+.img-holder {
+    aspect-ratio: 400px / 470px;
+}
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-badge {
+    min-height: 30px;
+    color: hsl(277, 25%, 10%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: max-content;
+    display: grid;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.card-badge::before {
+    --skewX: -10deg;
+}
+
+
+.section-text {
+    color: var(--color, var(--light-gray-1));
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 65ch;
+    margin-inline: auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/*-----------------------------------*\
+  #LATEST GAME
+\*-----------------------------------*/
+
+.section-wrapper {
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.section-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 57%;
+    background-image: url("../navbarProyecto/assets/images/section-wrapper-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.latest-game .section-title {
+    margin-block-end: 80px;
+}
+
+.latest-game .has-scrollbar {
+    margin-inline: -15px;
+    padding-inline: 15px;
+    scroll-padding-inline-start: 15px;
+}
+
+.latest-game-card {
+    position: relative;
+    box-shadow: 0px 5px 10px 1px hsla(0, 0%, 0%, 0.4);
+}
+
+.latest-game-card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: hsla(280, 37%, 8%, 0.9);
+    padding: 35px 25px;
+}
+
+.latest-game-card .card-badge {
+    position: absolute;
+    bottom: 100%;
+    left: 25px;
+}
+
+.latest-game-card .card-title {
+    margin-block-end: 12px;
+    transition: 0.25s ease;
+}
+
+.latest-game-card .card-title:is(:hover, :focus) {
+    color: hsl(42, 99%, 46%);
+}
+
+.latest-game-card .card-price {
+    color: hsl(0, 0%, 78%);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.latest-game-card .card-price .span {
+    margin-inline-start: 5px;
+}
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for larger than 576px screen
+ */
+
+@media (min-width: 576px) {
+
+    /**
+     * REUSED STYLE
+     */
+
+    .container {
+        max-width: 540px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .h1 {
+        --fs-2: 7rem;
+    }
+}
+
+/**
+   * responsive for larger than 768px screen
+   */
+
+@media (min-width: 768px) {
+
+    /**
+     * REUSED STYLE
+     */
+
+    .container {
+        max-width: 720px;
+    }
+
+    .scrollbar-item {
+        min-width: calc(50% - 15px);
+    }
+
+}
+
+/**
+   * responsive for larger than 992px screen
+   */
+
+@media (min-width: 992px) {
+
+    /**
+     * REUSED STYLE
+     */
+
+    .container {
+        max-width: 960px;
+    }
+
+    :is(.header, .hero, .live-match) .container {
+        max-width: unset;
+    }
+
+    .scrollbar-item {
+        min-width: calc(33.33% - 20px);
+    }
+
+
+    /**
+   * responsive for larger than 1200px screen
+   */
+
+    @media (min-width: 1200px) {
+
+        /**
+     * REUSED STYLE
+     */
+
+        .container,
+        :is(.header, .hero, .live-match) .container {
+            max-width: 1230px;
+        }
+
+        .h1 {
+            --fs-2: 7.5rem;
+        }
+
+        .scrollbar-item {
+            min-width: calc(25% - 22.5px);
+        }
+
+
+    }
+}
+
+/*  */
+
 
 #showcase {
     color: #fff;
