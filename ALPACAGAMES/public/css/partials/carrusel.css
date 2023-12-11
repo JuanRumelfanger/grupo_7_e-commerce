@@ -6,7 +6,7 @@
   display: flex;
   width: 100%;
   align-items: center;
-  background-color: rgba(168, 182, 209, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .carousel-container {
@@ -77,7 +77,7 @@
 
 .carousel-container a img {
   object-fit: cover;
-  height: 300px;
+  height:300px;
   width: 200px;
   border-radius: 15px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
