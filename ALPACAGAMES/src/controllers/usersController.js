@@ -60,7 +60,7 @@ const usersController = {
   },
   logout: (req, res) => {
     req.session.destroy();
-    res.redirect(301, "/");
+    res.status(301).redirect("/");
   },
   register: (req, res) => {
     res.render("register");
