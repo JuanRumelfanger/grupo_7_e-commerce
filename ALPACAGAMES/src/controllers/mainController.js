@@ -1,7 +1,11 @@
 const path = require('path');
 const mainController = {
   home: (req, res) => {
-    res.render('index');
+    fetch('http://localhost:3000/api/videogames')
+    .then(respone => respone.json())
+    .then((data)=>{
+      res.render('index', {videoGames : data.data });
+    })
   },
   register: (req, res) => {
     res.render('register');

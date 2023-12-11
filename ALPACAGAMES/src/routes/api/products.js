@@ -6,18 +6,18 @@ const videogamesAPIController = require('../../controllers/api/productsAPIContro
 
 
 //Rutas
-//Listado de usuarios
+//Listado de productos
 router.get('/', videogamesAPIController.list);
-//Detalle de usuario
+//Detalle de producto
 router.get('/:id', videogamesAPIController.detail);
 
-//Agregar un nuevo usuario
+//Agregar un nuevo producto
 router.post('/create', upload.single('images'), videogamesAPIController.create);
 
-//Modificar un usuario
+//Modificar un producto
 router.put('/update/:id', videogamesAPIController.update);
 
-//Eliminar un usuario
+//Eliminar un producto
 router.delete('/delete/:id', videogamesAPIController.destroy)
 
 module.exports = router;
