@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nosifer&display=swap');
+
 :root {
     --primary-color: #00A6E6;
     --secundary-color: #5A5A5A;
@@ -9,6 +11,9 @@
     /* Tipografia */
     --fs-2: 4.5rem
 }
+
+
+
 
 .category {
     --sports-color: #f99500;
@@ -95,11 +100,12 @@ a {
 }
 
 .content .main-text h1 {
-    font-size: 100px;
-    line-height: 1;
+    font-family: 'Nosifer', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
     color: white;
-    margin: 0px 0px 45px;
-    font-family: 'Permanent Marker', cursive;
+    margin: 0px 0px 15px;
+    color: red;
 }
 
 .content .main-text h3 {
@@ -179,8 +185,8 @@ a {
 
 .image img {
     position: absolute;
-    width: 55%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     bottom: 0;
     right: 0;
     text-align: right;
@@ -317,13 +323,13 @@ a {
     margin-block-end: 10px;
 }
 
-.section-title::after {
+/* .section-title::after {
     content: url("../images/title-underline.png");
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-}
+} */
 
 .scrollbar-item {
     min-width: 100%;
@@ -381,19 +387,19 @@ a {
     z-index: 1;
 }
 
-.section-wrapper::before {
+/* .section-wrapper::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 57%;
-    background-image: url("../navbarProyecto/assets/images/section-wrapper-bg.png");
+    background-image: url("../img/f2.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: -1;
-}
+} */
 
 .latest-game .section-title {
     margin-block-end: 80px;
