@@ -79,22 +79,6 @@
         box-shadow: 0 0 10px white;
         visibility: hidden;
     }
-
-    #submit-create {
-        position: absolute;
-        top: 26.5px;
-        right: 100px;
-        height: 27px;
-        width: 100px;
-        margin-right: 90px;
-        border: 1px solid rgb(90, 90, 90);
-        background-color: blue;
-        color: white;
-        border-radius: 10px;
-        transition: 0s;
-        box-shadow: 0 0 10px white;
-        visibility: hidden;
-    }
     button[type="submit"]{
         color: grey;
     }
