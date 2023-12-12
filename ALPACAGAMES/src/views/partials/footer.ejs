@@ -24,7 +24,11 @@
                 <li><a href="#">Help & Support</a></li>
                 <li><a href="#">Privacy & Policy</a></li>
                 <li><a href="#">About Us</a></li>
+                <% if(locals.isAdmin){ %>
+                <li><a href="/products/create">Crear un producto</a></li>
+                <% } else { %>
                 <li><a href="#">Contact</a></li>
+                <% } %>
             </ul>
         </div>
 
