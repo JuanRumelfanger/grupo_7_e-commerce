@@ -24,7 +24,7 @@ module.exports = {
       let respuesta = {
         meta: {
           status: 200,
-          url: "/videogames/list",
+          url: "/",
         },
         data: products,
       };

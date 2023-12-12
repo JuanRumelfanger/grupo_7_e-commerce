@@ -33,14 +33,11 @@ const usersController = {
           delete user.password;
           req.session.userAreLogged = user;
           if (req.body.rememberMe) {
-            console.log(req.session.userAreLogged);
-            console.log('Controller '+req.session.userAreLogged);
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
             return res.redirect(301, "/");
           } else {
-            return res.redirect(301, "/")
+            return res.redirect(301, "/");
           }
-          
         } else {
           return res.render("login", {
             errors: {
@@ -48,7 +45,7 @@ const usersController = {
             },
           });
         }
-      }else{
+      } else {
         return res.render("login", {
           errors: {
             email: {
@@ -57,19 +54,17 @@ const usersController = {
           },
         });
       }
-      
     });
   },
   logout: (req, res) => {
     req.session.destroy();
     res.status(301).redirect("/");
-    console.log(req.session);
   },
   register: (req, res) => {
     res.render("register");
   },
   processRegister: (req, res) => {
-       /*
+    /*
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render('register', { errors: errors.errors, old: req.body });
@@ -94,8 +89,7 @@ const usersController = {
       res.redirect('/');
     }*/
     console.log(req.body);
-    db.User.create(
-      {
+    db.User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       display_name: req.body.display_name,
@@ -104,11 +98,12 @@ const usersController = {
       date_of_birth: req.body.date_of_birth,
       country: req.body.country,
       avatar: req.file.filename,
-    }
-    )
-    .then(() => {
-      return res.redirect('/')})
-    .catch(error => res.send(error))
+    })
+      .then((newUser) => {
+        req.session.userAreLogged = newUser;
+        res.redirect("/");
+      })
+      .catch((error) => res.send(error));
   },
 };
 
