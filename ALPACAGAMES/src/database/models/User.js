@@ -59,14 +59,9 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(alias, cols, config);
 
   User.associate = function (models) {
-    User.belongsToMany(models.Role, {
+    User.hasMany(models.Role, {
       as: 'roles',
-      through: {
-        model: 'user_roles',
-        onDelete: 'CASCADE',
-      },
       foreignKey: 'user_id',
-      otherKey: 'role_id',
     });
 
     User.belongsToMany(models.VideoGame, {
