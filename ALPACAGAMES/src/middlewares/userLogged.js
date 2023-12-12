@@ -12,6 +12,9 @@ function userLogged(req, res, next) {
       },
     }).then((user) => {
       if (user) {
+        if(!req.session){
+          req.session = {}
+        }
         req.session.userAreLogged = user.email;
       }
     });
