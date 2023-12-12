@@ -32,8 +32,12 @@ function adminQuestion(req, res, next) {
     })
       .then((user) => {
         console.log(user);
-        if (user.id  == roles.id) {
+        if (user.id  == 1) {
           console.log('Eres admin');
+          if(!req.session){
+            req.session = {}
+          }
+          req.locals.isAdmin = req.session.isAdmin
         } else {
           console.log('No eres admin');
         }
