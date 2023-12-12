@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #FAEBD7;
+}
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .container:before {
