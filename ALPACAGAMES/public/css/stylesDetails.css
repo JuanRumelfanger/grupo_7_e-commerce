@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto';
-    background-color: #344a5b;
+    /* background-color: rgba(192, 192, 192, 0.8); */
 }
 
 li {
@@ -25,9 +25,9 @@ span {
 }
 
 .image-product img {
-    margin  : 30px 0px 0px 30px;
+    margin: 30px 0px 0px 30px;
     border: solid;
-    border-color:#909ca4 ;
+    border-color: #909ca4;
 }
 
 .info-product {
