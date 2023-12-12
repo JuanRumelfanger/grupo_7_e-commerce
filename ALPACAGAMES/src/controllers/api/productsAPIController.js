@@ -15,25 +15,25 @@ module.exports = {
           attributes: ["name"],
         },
         {
-        model: db.Genre,
-        as: "genres",
-        attributes: ["name"]
-        }
+          model: db.Genre,
+          as: "genres",
+          attributes: ["name"],
+        },
       ],
     }).then((products) => {
       let respuesta = {
         meta: {
           status: 200,
-          url: "api/videogames/list"
+          url: "/videogames/list",
         },
-        data: products
-      }
-        res.json(respuesta)
-    })
+        data: products,
+      };
+      res.json(respuesta);
+    });
   },
 
   detail: (req, res) => {
-    db.VideoGame.findByPk(req.params.id,{
+    db.VideoGame.findByPk(req.params.id, {
       include: [
         {
           model: db.VideoGameDetail,
@@ -42,25 +42,26 @@ module.exports = {
         {
           model: db.Platform,
           as: "platforms",
-          attributes: ["name"]
+          attributes: ["name"],
         },
         {
           model: db.Genre,
           as: "genres",
           attributtes: ["name"],
         },
-      ]
-    }).then((users) => {
-      let respusta = {
-        meta: {
-          status: 200,
-          url: "",
-        },
-        data: users,
-      };
-      res.json(respusta);
+      ],
     })
-    .catch((error) => res.send(error));
+      .then((users) => {
+        let respusta = {
+          meta: {
+            status: 200,
+            url: "",
+          },
+          data: users,
+        };
+        res.json(respusta);
+      })
+      .catch((error) => res.send(error));
   },
 
   create: async (req, res) => {
@@ -120,70 +121,80 @@ module.exports = {
 
   update: async (req, res) => {
     const imagePath = req.file.filename;
-try {
-  const product = await db.VideoGame.findByPk(req.params.id, {
-    include: [
-      {
-        model: db.VideoGameDetail,
-        as: "details",
-      },
-      {
-        model: db.Platform,
-        as: "platforms",
-      },
-      {
-        model: db.Genre,
-        as: "genres",
-      },
-    ],
-  });
+    try {
+      const product = await db.VideoGame.findByPk(req.params.id, {
+        include: [
+          {
+            model: db.VideoGameDetail,
+            as: "details",
+          },
+          {
+            model: db.Platform,
+            as: "platforms",
+          },
+          {
+            model: db.Genre,
+            as: "genres",
+          },
+        ],
+      });
 
-  if (!product) {
-    return res.status(404).send("Product not found");
-  }
-
-  const updateProduct = product.update({
-    price: req.body.price,
-    name: req.body.name,
-    release_date: req.body.releaseDate,
-  });
-
-  const updateDetails = product.details.update({
-    description: req.body.description,
-    size: req.body.downloadSize,
-    images: imagePath,
-    requiments: {
-      os: req.body.os,
-      storage: req.body.storage,
-    },
-  });
-
-  const updatePlatforms = Promise.all(
-    product.platforms.map((platform, i) => {
-      if (req.body.platforms[i]) {
-        return platform.update({ name: req.body.platforms[i] });
+      if (!product) {
+        return res.status(404).send("Product not found");
       }
-    })
-  );
 
-  const updateGenres = Promise.all(
-    product.genres.map((genre) =>
-      genre.update({
-        name: req.body.genre,
-      })
-    )
-  );
-  // Esperar a que todas las actualizaciones se completen
-  await Promise.all([updateProduct, updateDetails, updatePlatforms, updateGenres]);
+      const updateProduct = product.update({
+        price: req.body.price,
+        name: req.body.name,
+        release_date: req.body.releaseDate,
+      });
 
-  // Mostrar lo que se modificó después de las actualizaciones
-  res.status(200).json({ message: 'Actualizaciones completadas exitosamente', updatedProduct: product });
-} catch (error) {
-  console.error('Error al realizar las actualizaciones:', error);
-  // Manejar el error y enviar una respuesta adecuada
-  res.status(500).json({ error: 'Internal Server Error' });
-}
-},
+      const updateDetails = product.details.update({
+        description: req.body.description,
+        size: req.body.downloadSize,
+        images: imagePath,
+        requiments: {
+          os: req.body.os,
+          storage: req.body.storage,
+        },
+      });
+
+      const updatePlatforms = Promise.all(
+        product.platforms.map((platform, i) => {
+          if (req.body.platforms[i]) {
+            return platform.update({ name: req.body.platforms[i] });
+          }
+        })
+      );
+
+      const updateGenres = Promise.all(
+        product.genres.map((genre) =>
+          genre.update({
+            name: req.body.genre,
+          })
+        )
+      );
+      // Esperar a que todas las actualizaciones se completen
+      await Promise.all([
+        updateProduct,
+        updateDetails,
+        updatePlatforms,
+        updateGenres,
+      ]);
+
+      // Mostrar lo que se modificó después de las actualizaciones
+      res
+        .status(200)
+        .json({
+          message: "Actualizaciones completadas exitosamente",
+          updatedProduct: product,
+        });
+    } catch (error) {
+      console.error("Error al realizar las actualizaciones:", error);
+      // Manejar el error y enviar una respuesta adecuada
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
   destroy: (req, res) => {
     db.VideoGame.destroy({
       where: { id: req.params.id },
@@ -196,4 +207,28 @@ try {
       })
       .catch((error) => res.send(error));
   },
+  listGenres: (req, res) => {
+    db.Genre.findAll().then((genres) => {
+      let respuesta = {
+        meta: {
+          status: 200,
+          url: "api/genres/list",
+        },
+        data: genres,
+      };
+      res.json(respuesta);
+    });
+  },
+  listPlataforms: (req, res) =>{
+    db.Platform.findAll().then((plataforms) => {
+      let respuesta = {
+        meta: {
+          status: 200,
+          url: "/plataforms/list",
+        },
+        data: plataforms,
+      };
+      res.json(respuesta);
+    });
+  }
 };

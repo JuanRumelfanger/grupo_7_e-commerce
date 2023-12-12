@@ -33,6 +33,8 @@ const usersController = {
           delete user.password;
           req.session.userAreLogged = user;
           if (req.body.rememberMe) {
+            console.log(req.session.userAreLogged);
+            console.log('Controller '+req.session.userAreLogged);
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
             return res.redirect(301, "/");
           } else {
@@ -48,12 +50,12 @@ const usersController = {
         }
       }else{
         return res.render("login", {
-            errors: {
-              email: {
-                msg: "Las credenciales no son correctas",
-              },
+          errors: {
+            email: {
+              msg: "Las credenciales no son correctas",
             },
-          });
+          },
+        });
       }
       
     });
@@ -61,6 +63,7 @@ const usersController = {
   logout: (req, res) => {
     req.session.destroy();
     res.status(301).redirect("/");
+    console.log(req.session);
   },
   register: (req, res) => {
     res.render("register");
