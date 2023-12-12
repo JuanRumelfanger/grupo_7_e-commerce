@@ -62,6 +62,9 @@
         top: 24px;
         right: 100px;
     }
+    .user-log {
+        align-items: flex-start;
+    }
     #submit{
         position: absolute;
         top: 26.5px;
