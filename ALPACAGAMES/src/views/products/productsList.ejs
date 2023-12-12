@@ -23,9 +23,10 @@
                 alt="<%= product.details.images %>"
                 id="imagen-product"
               />
+              <h2><%= product.name %></h2>
             </div>
             <div class="information-box">
-              <h2><%= product.name %></h2>
+              
 
               <p><%= product["details.description"]%></p>
 
@@ -61,4 +62,5 @@
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>
+  <script src="/js/productsList.js"></script>
 </html>
