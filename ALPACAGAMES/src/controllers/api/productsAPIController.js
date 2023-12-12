@@ -1,4 +1,4 @@
-const db = require("../../database/models");
+const db = require('../../database/models');
 
 module.exports = {
   list: (req, res) => {
@@ -6,25 +6,25 @@ module.exports = {
       include: [
         {
           model: db.VideoGameDetail,
-          as: "details",
-          attributes: ["description", "images"],
+          as: 'details',
+          attributes: ['description', 'images'],
         },
         {
           model: db.Platform,
-          as: "platforms",
-          attributes: ["name"],
+          as: 'platforms',
+          attributes: ['name'],
         },
         {
           model: db.Genre,
-          as: "genres",
-          attributes: ["name"],
+          as: 'genres',
+          attributes: ['name'],
         },
       ],
     }).then((products) => {
       let respuesta = {
         meta: {
           status: 200,
-          url: "/",
+          url: '/',
         },
         data: products,
       };
@@ -37,17 +37,17 @@ module.exports = {
       include: [
         {
           model: db.VideoGameDetail,
-          as: "details",
+          as: 'details',
         },
         {
           model: db.Platform,
-          as: "platforms",
-          attributes: ["name"],
+          as: 'platforms',
+          attributes: ['name'],
         },
         {
           model: db.Genre,
-          as: "genres",
-          attributtes: ["name"],
+          as: 'genres',
+          attributtes: ['name'],
         },
       ],
     })
@@ -55,7 +55,7 @@ module.exports = {
         let respusta = {
           meta: {
             status: 200,
-            url: "",
+            url: '',
           },
           data: users,
         };
@@ -85,12 +85,12 @@ module.exports = {
           },
         },
         {
-          include: [{ model: db.VideoGameDetail, as: "details" }],
-        }
+          include: [{ model: db.VideoGameDetail, as: 'details' }],
+        },
       );
 
       let platforms;
-      if (typeof req.body.platforms === "string") {
+      if (typeof req.body.platforms === 'string') {
         const [platform] = await db.Platform.findOrCreate({
           where: { name: req.body.platforms },
         });
@@ -98,8 +98,8 @@ module.exports = {
       } else {
         const platformPromises = req.body.platforms.map((name) =>
           db.Platform.findOrCreate({ where: { name } }).then(
-            ([platform]) => platform
-          )
+            ([platform]) => platform,
+          ),
         );
         platforms = await Promise.all(platformPromises);
       }
@@ -113,9 +113,9 @@ module.exports = {
         videoGameInstance.addGenre(genre),
       ]);
 
-      console.log("Video game, details and platforms created successfully");
+      console.log('Video game, details and platforms created successfully');
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
     }
   },
 
@@ -126,21 +126,21 @@ module.exports = {
         include: [
           {
             model: db.VideoGameDetail,
-            as: "details",
+            as: 'details',
           },
           {
             model: db.Platform,
-            as: "platforms",
+            as: 'platforms',
           },
           {
             model: db.Genre,
-            as: "genres",
+            as: 'genres',
           },
         ],
       });
 
       if (!product) {
-        return res.status(404).send("Product not found");
+        return res.status(404).send('Product not found');
       }
 
       const updateProduct = product.update({
@@ -164,15 +164,15 @@ module.exports = {
           if (req.body.platforms[i]) {
             return platform.update({ name: req.body.platforms[i] });
           }
-        })
+        }),
       );
 
       const updateGenres = Promise.all(
         product.genres.map((genre) =>
           genre.update({
             name: req.body.genre,
-          })
-        )
+          }),
+        ),
       );
       // Esperar a que todas las actualizaciones se completen
       await Promise.all([
@@ -183,16 +183,14 @@ module.exports = {
       ]);
 
       // Mostrar lo que se modificó después de las actualizaciones
-      res
-        .status(200)
-        .json({
-          message: "Actualizaciones completadas exitosamente",
-          updatedProduct: product,
-        });
+      res.status(200).json({
+        message: 'Actualizaciones completadas exitosamente',
+        updatedProduct: product,
+      });
     } catch (error) {
-      console.error("Error al realizar las actualizaciones:", error);
+      console.error('Error al realizar las actualizaciones:', error);
       // Manejar el error y enviar una respuesta adecuada
-      res.status(500).json({ error: "Internal Server Error" });
+      res.status(500).json({ error: 'Internal Server Error' });
     }
   },
   destroy: (req, res) => {
@@ -212,23 +210,23 @@ module.exports = {
       let respuesta = {
         meta: {
           status: 200,
-          url: "api/genres/list",
+          url: '/genres/list',
         },
         data: genres,
       };
       res.json(respuesta);
     });
   },
-  listPlataforms: (req, res) =>{
+  listPlataforms: (req, res) => {
     db.Platform.findAll().then((plataforms) => {
       let respuesta = {
         meta: {
           status: 200,
-          url: "/plataforms/list",
+          url: '/platforms/list',
         },
         data: plataforms,
       };
       res.json(respuesta);
     });
-  }
+  },
 };

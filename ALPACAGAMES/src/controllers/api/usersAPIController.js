@@ -1,4 +1,4 @@
-const db = require("../../database/models");
+const db = require('../../database/models');
 
 module.exports = {
   list: (req, res) => {
@@ -6,7 +6,7 @@ module.exports = {
       let respuesta = {
         meta: {
           status: 200,
-          url: "/api/users",
+          url: '/',
           //raw:true,
         },
         data: users,
@@ -20,7 +20,7 @@ module.exports = {
       let respusta = {
         meta: {
           status: 200,
-          url: "/api/users/" + req.params.id,
+          url: '/api/users/' + req.params.id,
         },
         data: users,
       };
@@ -44,7 +44,7 @@ module.exports = {
         let respuesta = {
           meta: {
             status: 200,
-            url: "/api/users/create",
+            url: '/api/users/create',
           },
           data: confirm,
         };
@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         where: { id: req.params.id },
-      }
+      },
     )
       .then((users) => {
         res.json({
