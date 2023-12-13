@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const db = require("../database/models");
-const { name } = require("ejs");
 const { Op } = require("sequelize");
 
 const productsController = {
@@ -49,7 +48,6 @@ const productsController = {
         ],
         distinct: "id",
       });
-      console.log(product.details.images);
       res.render("productDetail", { product });
     } catch (error) {
       console.error("Error:", error);
@@ -60,6 +58,7 @@ const productsController = {
   },
   store: async (req, res) => {
     const imagePath = req.file.path;
+    console.log(imagePath.slice(9));
 
     try {
       const videoGameInstance = await db.VideoGame.create(
@@ -70,7 +69,7 @@ const productsController = {
           details: {
             description: req.body.description,
             size: req.body.downloadSize,
-            images: imagePath,
+            images: imagePath.slice(11),
             requiments: {
               os: req.body.os,
               storage: req.body.storage,
@@ -201,24 +200,24 @@ const productsController = {
 
       if (detailsData) {
         const details = await db.VideoGameDetail.bulkCreate(detailsData);
-        updates.push(product.setDetails(details));
+        update.push(product.setDetails(details));
       }
 
       if (platformsData) {
         const platforms = await db.Platform.bulkCreate(
           platformsData.map((name) => ({ name }))
         );
-        updates.push(product.setPlatforms(platforms));
+        update.push(product.setPlatforms(platforms));
       }
 
       if (genresData) {
         const genres = await db.Genre.bulkCreate(
           genresData.map((name) => ({ name }))
         );
-        updates.push(product.setGenres(genres));
+        update.push(product.setGenres(genres));
       }
 
-      await Promise.all(updates);
+      await Promise.all(update);
 
       res.redirect("/products/" + req.params.id);
     } catch (error) {

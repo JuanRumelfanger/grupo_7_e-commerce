@@ -112,10 +112,17 @@
                   <%= product.details.requiments.storage %>
                 </li>
               </ul>
+              <% if (!locals.userAreLogged){ %>
+                
+              <% }else if (locals.userAreLogged.id == 1){ %>
+                  <strong class="options-admin"><li><a href="/products/<%= product.id %>/edit">Opciones de administrador</a></li></strong>
+              <% } %>
             </ul>
           </article>
           <article class="lore-product"></article>
         </section>
+
+
     </section>
     </div>
   </main>
