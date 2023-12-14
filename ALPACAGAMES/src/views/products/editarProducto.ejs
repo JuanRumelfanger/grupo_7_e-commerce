@@ -20,9 +20,9 @@
                     value="<%= product.name %>">
                 <section class="photo-cover">
                     <h3>Cambiar Foto de portada del Juego</h3>
+                    <input type="file" name="images" accept=".jpg, .jpeg, .png">
                     <div class="imagen">
-                        <img src='/img/<%= product.details.images %>' alt='<%= product.name %>'>
-                        <input type="file" name="images" accept=".jpg, .jpeg, .png">
+                        <img src='/img/<%= product.details.images %>' alt='<%= product.name %>' width="100px">
                     </div>
                 </section>
                 <section class="launch">
