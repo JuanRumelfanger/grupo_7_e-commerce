@@ -21,7 +21,7 @@ function userLogged(req, res, next) {
   }
   if (req.session && req.session.userAreLogged) {
     res.locals.isLogged = true;
-    res.locals.userAreLogged = req.session.userAreLogged;
+    res.locals.userAreLogged = req.session.userAreLogged;  
   }
 
   next();

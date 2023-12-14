@@ -18,6 +18,9 @@ const usersController = {
     res.render("login");
   },
   processLogin: (req, res) => {
+   // console.log('Log del controller');
+   // console.log(res.locals);
+   // console.log(req.session);
     db.User.findOne({
       raw: true,
       where: {

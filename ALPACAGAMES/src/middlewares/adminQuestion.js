@@ -3,7 +3,7 @@ const path = require("path");
 const db = require("../database/models");
 
 function adminQuestion(req, res, next) {
-
+  res.locals.isAdmin = false
  db.User.findOne({
     raw: true,
     where: {
@@ -12,7 +12,6 @@ function adminQuestion(req, res, next) {
    
   })
     .then((user) => {
-      console.log(user);
       let userLogin = user
       return userLogin;
   })
@@ -22,7 +21,6 @@ function adminQuestion(req, res, next) {
     raw:true,
   })
   .then((roles)=>{
-    console.log(roles);
     db.User.findOne({
       raw: true,
       where: {
@@ -31,14 +29,15 @@ function adminQuestion(req, res, next) {
      
     })
       .then((user) => {
-        console.log(user);
-        if (user.id  == roles.id) {
-          console.log('Eres admin');
-          if(!req.session){
-            req.session = {}
-          }
-          req.session.isAdmin = true
-          req.locals.isAdmin = req.session.isAdmin
+        //console.log(user);
+        if (user.id  == 1) {
+          console.log('Eres admin, log del midlleware');
+          let isAdmin = true
+          //console.log(isAdmin);
+          req.session.isAdmin = isAdmin
+          res.locals.isAdmin = req.session.isAdmin
+         // console.log('Log session');
+          //console.log(res.locals.isAdmin);
         } else {
           console.log('No eres admin');
         }

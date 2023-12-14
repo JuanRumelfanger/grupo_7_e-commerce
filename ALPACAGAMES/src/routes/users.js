@@ -10,7 +10,7 @@ const adminQuestion = require('../middlewares/adminQuestion.js');
 
 // Routes for users - Login and Register
 router.get('/login', areYouLogged, usersController.login);
-router.post('/login', validations.login, adminQuestion ,usersController.processLogin);
+router.post('/login', validations.login, adminQuestion,usersController.processLogin);
 // ------------------------------------------------------ //
 router.get('/register', areYouLogged, usersController.register);
 router.post(
