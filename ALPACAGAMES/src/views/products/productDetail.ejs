@@ -19,7 +19,8 @@
           %>
 
           <% for (let i = 0; i < imgs.length; i++) { %>
-          <% if (product.id === i + 11) { %>
+            <% //console.log(locals); %>
+          <% if (product.id === i + 1) { %>
           <img src="<%= imgs[i] %>" class="img-cover" alt="Imagen <%= i + 1 %>" />
           <% } %>
           <% } %>

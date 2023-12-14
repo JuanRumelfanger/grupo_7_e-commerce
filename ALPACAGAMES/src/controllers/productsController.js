@@ -58,7 +58,6 @@ const productsController = {
   },
   store: async (req, res) => {
     const imagePath = req.file.path;
-    console.log(imagePath.slice(9));
 
     try {
       const videoGameInstance = await db.VideoGame.create(

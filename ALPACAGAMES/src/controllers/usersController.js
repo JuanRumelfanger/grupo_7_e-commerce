@@ -18,11 +18,7 @@ const usersController = {
     res.render("login");
   },
   processLogin: (req, res) => {
-   // console.log('Log del controller');
-   // console.log(res.locals);
-   // console.log(req.session);
     db.User.findOne({
-      raw: true,
       where: {
         email: req.body.email,
       },
@@ -35,6 +31,8 @@ const usersController = {
         if (correctPassword) {
           delete user.password;
           req.session.userAreLogged = user;
+          console.log(req.session.userAreLogged );
+          console.log(res.locals);
           if (req.body.rememberMe) {
             res.cookie("userEmail", req.body.email, { maxAge: 1000 * 120 });
             return res.redirect(301, "/");
@@ -91,7 +89,7 @@ const usersController = {
       updateUserJSON();
       res.redirect('/');
     }*/
-    console.log(req.body);
+    //console.log(req.body);
     db.User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
