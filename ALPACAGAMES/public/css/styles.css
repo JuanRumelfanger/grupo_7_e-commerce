@@ -251,14 +251,7 @@ a {
     padding-block: 65px;
 }
 
-.h1,
-.h2,
-.h3 {
-    color: var(--white);
-    font-family: var(--ff-oxanium);
-    font-weight: var(--fw-800);
-    line-height: 1;
-}
+
 
 .h1 {
     font-size: 4.5rem;
@@ -368,7 +361,6 @@ a {
 
 
 .section-text {
-    color: var(--color, var(--light-gray-1));
     font-size: 1.5rem;
     font-weight: 500;
     max-width: 65ch;
@@ -459,11 +451,15 @@ a {
  * responsive for larger than 576px screen
  */
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
 
     /**
      * REUSED STYLE
      */
+
+    .content .main-text h1 {
+        font-size: 40px;
+    }
 
     .container {
         max-width: 540px;
@@ -471,9 +467,7 @@ a {
         margin-inline: auto;
     }
 
-    .h1 {
-        --fs-2: 7rem;
-    }
+
 }
 
 /**
@@ -535,7 +529,7 @@ a {
         }
 
         .h1 {
-            --fs-2: 7.5rem;
+            font-size: 60px;
         }
 
         .scrollbar-item {
@@ -679,6 +673,8 @@ a {
     transform: translateY(10%);
 }
 
+
+
 @media(max-width:600px) {
 
     /* Stack grid items */
@@ -696,20 +692,12 @@ a {
     }
 
     .card-container {
+        display: grid;
         grid-template-columns: 1fr;
-    }
-
-    .card-container article {
+        gap: 20px;
+        /* Ajusta según sea necesario */
         margin: auto;
-        width: 415px;
-        margin: 10px 0;
-    }
-
-    .card-container article :first-child {
-        margin: auto;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        /* Centra el grid horizontalmente */
     }
 }
 
@@ -720,9 +708,8 @@ a {
 }
 
 /* Slider */
-.container {
+.container-slider {
     width: 90%;
-    min-width: 100vh;
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
@@ -742,12 +729,13 @@ a {
 
 .slider_body {
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 1/3;
     opacity: 0;
     pointer-events: none;
     display: grid;
     /* background-color: #f2f2f2; */
     grid-template-columns: 1fr max-content;
+    grid-template-rows: max-content 1fr;
     align-items: center;
     transition: opacity 1.5s;
 }
@@ -790,6 +778,40 @@ a {
     justify-self: end;
 }
 
+@media(max-width: 425px) {
+
+
+    .slider_body {
+        grid-row: auto;
+    }
+
+    .slider_container {
+        grid-template-columns: 20px 1fr 20px;
+    }
+
+    .slider_arrow {
+        width: 100%;
+        top: 40px;
+    }
+
+    .slider_img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .slider_review {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+}
+
+
 @media(max-width: 760px) {
 
     .slider_body {
@@ -809,28 +831,75 @@ a {
 }
 
 
-@media(max-width: 425px) {
 
-    .slider_container {
-        grid-template-columns: 25px 1fr 25px;
+
+.denuncia-container {
+    display: flex;
+    padding: 20px;
+}
+
+.denuncia-info {
+    flex: 1;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 10px 0 10px;
+}
+
+.contacto-item {
+    display: flex;
+    margin: 40px 0 0 10px;
+}
+
+.contacto-item i {
+    font-size: 4.0rem;
+}
+
+.contacto-item p {
+    font-size: 2.8rem;
+}
+
+.contacto-item i {
+    margin-right: 10px;
+}
+
+.descripcion-logo {
+    flex-shrink: 0;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.descripcion-logo img {
+    width: 200px;
+    height: 200px;
+    background-color: #313339;
+}
+
+.descripcion-logo p {
+    color: #333;
+    margin-top: 10px;
+    max-width: 600px;
+    /* Ajusta el ancho máximo según tus necesidades */
+}
+
+.span-color {
+    color: red;
+
+}
+
+@media screen and (max-width: 600px) {
+    .denuncia-container {
+        flex-direction: column;
     }
 
-    .slider_arrow {
-        width: 100%;
+    .denuncia-info {
+        margin-bottom: 0;
     }
 
-    .slider_img {
-        width: 180px;
-        height: 180px;
-    }
-
-    .subtitle {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .slider_review {
-        font-size: 1rem;
-        line-height: 1.6;
+    .contacto-item {
+        margin: 20px 0 0 0;
     }
 }

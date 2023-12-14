@@ -1,84 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/stylesRegister.css" />
-  </head>
 
-  <body>
-    <%- include('../partials/header.ejs') %>
+<head>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/stylesRegister.css" />
+</head>
+
+<body>
+  <%- include('../partials/header.ejs') %>
 
     <main>
-      <form
-        action="/users/register"
-        class="form-container"
-        method="POST"
-        enctype="multipart/form-data"
-      >
+      <form action="/users/register" class="form-container" method="POST" enctype="multipart/form-data">
         <h6 class="text-title">Registrarse</h6>
-        <label for="first_name"
-          >Nombre
-          <input
-            class="input-form"
-            type="text"
-            name="first_name"
-            id="first_name"
-            placeholder="Ingrese su nombre"
-            required
-          />
+        <label for="first_name">Nombre
+          <input class="input-form" type="text" name="first_name" id="first_name" placeholder="Ingrese su nombre"
+            required />
         </label>
-        <label for="last_name"
-          >Apellido
-          <input
-            class="input-form"
-            type="text"
-            name="last_name"
-            id="last_name"
-            placeholder="Ingrese su apellido"
-            required
-          />
+        <label for="last_name">Apellido
+          <input class="input-form" type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido"
+            required />
         </label>
-        <label for="display_name"
-          >Nombre de usuario
-          <input
-            class="input-form"
-            type="text"
-            name="display_name"
-            id="display_name"
-            placeholder="Ingrese nombre de usuario"
-          />
+        <label for="display_name">Nombre de usuario
+          <input class="input-form" type="text" name="display_name" id="display_name"
+            placeholder="Ingrese nombre de usuario" />
         </label>
-        <label for="email"
-          >Email
-          <input
-            class="input-form"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ingrese su email"
-            required
-          />
+        <label for="email">Email
+          <input class="input-form" type="email" name="email" id="email" placeholder="Ingrese su email" required />
         </label>
-        <label for="password"
-          >Contraseña
-          <input
-            class="input-form"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Ingrese su contraseña"
-            required
-          />
+        <label for="password">Contraseña
+          <input class="input-form" type="password" name="password" id="password" placeholder="Ingrese su contraseña"
+            required />
         </label>
         <div class="container-input-label">
           <label for="date_of_birth">Fecha de nacimiento</label>
-          <input
-            id="date_of_birth"
-            name="date_of_birth"
-            type="date"
-            class="input-form"
-            required
-          />
+          <input id="date_of_birth" name="date_of_birth" type="date" class="input-form" required />
         </div>
         <div class="container-input-label">
           <label for="country">País</label>
@@ -114,6 +69,7 @@
 
     <%- include('../partials/footer') %>
 
-    <script src="/js/validationsRegister.js"></script>
-  </body>
+      <script src="/js/validationsRegister.js"></script>
+</body>
+
 </html>
