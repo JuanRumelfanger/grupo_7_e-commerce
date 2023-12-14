@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.body{
+
+.body {
     border: 1px solid black;
     height: 555px;
     font-family: 'Roboto';
@@ -13,15 +14,17 @@
     margin-right: 0px;
     background-color: black;
 }
-main{
+
+main {
     background: linear-gradient(black, rgb(56, 56, 56));
     padding: 20px 0;
 }
-.conteiner-all{
+
+.conteiner-all {
     display: flex;
     flex-wrap: wrap;
-    width: 94%;
-    margin: 3%;
+    width: 34%;
+    margin: auto;
     border: 1px solid rgb(75, 75, 75);
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
@@ -29,17 +32,19 @@ main{
     box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
-.mensaje-1{
+.mensaje-1 {
     background-color: black;
     height: 25px;
     text-align: center;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
     width: 100%;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
 }
-marquee{
+
+
+marquee {
     margin: 0 auto;
     text-align: center;
     width: 250px;
@@ -51,69 +56,83 @@ marquee{
     text-align: right;
 } */
 
-.rememberMe{
-    display:flex;
+.rememberMe {
+    display: flex;
     position: relative;
     font-family: 'Roboto';
     justify-content: center;
     color: rgb(121, 142, 187);
     padding: 5px;
 }
-form{
+
+form {
     width: 100%;
 }
-.label{
+
+.label {
     width: 100%;
 }
-#label{
+
+#label {
     font-size: 1.1rem;
     color: black;
 }
-.caja-email{
+
+.caja-email {
     display: block;
     text-align: center;
 }
-.caja-email input[type=email]{
+
+.caja-email input[type=email] {
     width: 90%;
     height: 35px;
-    border: 1px solid #ebebeb;;
+    border: 1px solid #ebebeb;
+    ;
     border-radius: 10px;
     margin-bottom: 15px;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
 }
-.caja-email input:hover[type=email]{
+
+.caja-email input:hover[type=email] {
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
-.container-error-email{
+
+.container-error-email {
     width: 90%;
     height: 30px;
     border-radius: 10px;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
     color: red;
 }
-.caja-contraseña{
+
+.caja-contraseña {
     display: block;
     text-align: center;
 }
-input[type=password]{
+
+input[type=password] {
     width: 90%;
     height: 35px;
-    border: 1px solid #ebebeb;;
+    border: 1px solid #ebebeb;
+    ;
     border-radius: 10px;
     margin-bottom: 15px;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
 }
-input:hover[type=password]{
+
+input:hover[type=password] {
     box-shadow: 0 0 10px rgb(0, 0, 0);
 }
-.iniciar-sesion{
+
+.iniciar-sesion {
     display: block;
     text-align: center;
 }
-button[type="submit"]{
+
+button[type="submit"] {
     background-color: blue;
     width: 90%;
     height: 35px;
@@ -122,34 +141,39 @@ button[type="submit"]{
     margin-bottom: 15px;
     color: white;
 }
-button:hover[type="submit"]{
+
+button:hover[type="submit"] {
     box-shadow: 0 0 10px black
 }
-#mensaje-3{
+
+#mensaje-3 {
     color: white;
     text-decoration: none;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
 }
-.caja-mensaje-4{
+
+.caja-mensaje-4 {
     text-align: center;
     margin-bottom: 10px;
     width: 100%;
 }
-#mensaje-4{
+
+#mensaje-4 {
     color: blue;
     text-decoration: none;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
     width: 50px;
     text-align: center;
     transition: 1s;
 }
-#mensaje-4:hover{
+
+#mensaje-4:hover {
     color: rgb(0, 0, 0);
 }
 
-.conteiner-logo{
+.conteiner-logo {
     background-color: rgb(0, 0, 0);
     border: 1px solid #ebebeb;
     height: 70px;
@@ -159,11 +183,13 @@ button:hover[type="submit"]{
     border-radius: 10px;
     margin: 0 40%;
 }
-#logo-AG{
+
+#logo-AG {
     width: 100%;
     height: 70px;
 }
-.conteiner-mensaje{
+
+.conteiner-mensaje {
     background-color: rgb(0, 0, 0);
     height: 30px;
     width: 100%;
@@ -174,32 +200,38 @@ button:hover[type="submit"]{
     border-radius: 10px;
     text-align: center;
 }
-h3{
+
+h3 {
     color: rgb(255, 255, 255);
     position: relative;
     top: 2px;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     font-weight: bold;
 
 }
-h3:hover{
+
+h3:hover {
     border: 1px solid rgb(41, 41, 41);
     background-color: rgb(41, 41, 41);
     border-radius: 10px;
 }
-#logos-redes{
+
+#logos-redes {
     font-size: 40px;
 }
-#logos-redes:hover{
+
+#logos-redes:hover {
     box-shadow: 0 0 10px white;
 }
-.conteiner-mensaje-2{
+
+.conteiner-mensaje-2 {
     text-align: center;
     background-color: black;
     position: relative;
     bottom: 20px;
 }
-.mensaje-2{
+
+.mensaje-2 {
     width: 94%;
     margin: 10px 3%;
     color: rgb(0, 0, 0);
@@ -208,34 +240,44 @@ h3:hover{
     text-transform: uppercase;
     font-weight: bold;
 }
-.conteiner-login{
+
+.conteiner-login {
     background-color: black;
     height: 300px;
     width: 100%;
 }
-.conteiner-logo:hover{
+
+.conteiner-logo:hover {
     box-shadow: 0 0 10px black;
 }
-#mensaje-6{
+
+#mensaje-6 {
     text-align: center;
     justify-content: center;
     flex: 1;
 }
-@media(min-width: 400px){
-    .container-error-email{
+
+@media(min-width: 400px) {
+    .container-error-email {
         position: relative;
         left: 20px;
     }
+
+    .conteiner-all {
+        width: 420px;
+    }
 }
-@media(min-width: 700px){
-    .container-error-email{
+
+@media(min-width: 700px) {
+    .container-error-email {
         position: relative;
         left: 40px;
     }
 }
-@media(min-width: 1000px){
-    .container-error-email{
+
+@media(min-width: 1000px) {
+    .container-error-email {
         position: relative;
         left: 60px;
     }
-}    
+}
