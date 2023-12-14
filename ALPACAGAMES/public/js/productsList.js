@@ -49,7 +49,7 @@ window.onload = function(){
             })
             
         })
-    }else if(innerWidth <= 450){
+    }else if(innerWidth >= 450){
         imgs.forEach(function(img){
             img.addEventListener('mouseover', function(){
                 img.style.width = "90%"
