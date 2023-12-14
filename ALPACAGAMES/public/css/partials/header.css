@@ -46,7 +46,7 @@
         display: block;
         color: white;
         position: absolute;
-        top: 65px;
+        top: 30px;
         right: 105px;
         font-size: 1rem;
         visibility: hidden;
@@ -138,7 +138,7 @@
     #saludo{
         visibility: visible;
         position: absolute;
-        top: 30px;
+        top: 50px;
     }
 }
     
@@ -161,7 +161,7 @@
         display: block;
         color: white;
         position: absolute;
-        top: 20px;
+        top: 48px;
         right: 90px;
         font-size: 1.3rem;
         visibility: visible;
@@ -235,7 +235,7 @@
         display: block;
         color: white;
         position: absolute;
-        top: 20px;
+        top: 48px;
         right: 90px;
         font-size: 1.3rem;
         visibility: hidden;
@@ -310,7 +310,7 @@
         display: block;
         color: white;
         position: absolute;
-        top: 20px;
+        top: 48px;
         right: 90px;
         font-size: 1.3rem;
         visibility: hidden;
@@ -377,7 +377,7 @@
         display: block;
         color: white;
         position: absolute;
-        top: 20px;
+        top: 48px;
         right: 90px;
         font-size: 1.3rem;
         visibility: visible;
