@@ -76,9 +76,9 @@ window.onload = function(){
             icon2.addEventListener('click', function () {
                 console.log('yes')
                 let visibilityIcon = window.getComputedStyle(icon).getPropertyValue('visibility');
-                if(visibilityIcon === "hidden" && innerWidth <= 400){
+                if(visibilityIcon === "hidden" && innerWidth <= 370){
                     icon.style.visibility = "visible"
-                }else if(innerWidth <= 400){
+                }else if(innerWidth <= 370){
                     icon.style.visibility = "hidden"
                 }
                 let visibilityLogin = window.getComputedStyle(login).getPropertyValue('visibility');
@@ -103,7 +103,7 @@ window.onload = function(){
             })
 
         }
-        else if (innerWidth <= 760 && innerWidth >= 640) {
+        else if (innerWidth <= 764 && innerWidth >= 640) {
             icon2.addEventListener('click', function () {
                 console.log('yes')
                 let visibilityNavBar = window.getComputedStyle(navBar).getPropertyValue('visibility');

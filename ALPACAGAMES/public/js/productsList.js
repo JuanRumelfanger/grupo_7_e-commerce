@@ -1,7 +1,7 @@
 window.onload = function(){
     let informationBoxes = document.querySelectorAll('.information-box')
     let products = document.querySelectorAll('.product')
-    let imgs = document.querySelectorAll('img')
+    let imgs = document.querySelectorAll('.imagen-product')
     console.log(informationBoxes)
     if(innerWidth < 303){
         console.log('a')
@@ -49,16 +49,19 @@ window.onload = function(){
             })
             
         })
-    }else if(innerWidth <= 450){
-        imgs.forEach(function(img){
-            img.addEventListener('mouseover', function(){
-                img.style.width = "90%"
-                img.style.height = "250px"
+    }else if(innerWidth >= 450){
+
+            products.forEach(function(product, i){
+                product.addEventListener('mouseover', function(){
+                    imgs[i].style.width = "90%"
+                    imgs[i].style.height = "250px"
             })
-            img.addEventListener('mouseout', function(){
-                img.style.width = "80%"
-                img.style.height = "200px"
+                product.addEventListener('mouseout', function(){
+                    imgs[i].style.width = "80%"
+                    imgs[i].style.height = "200px"
             })
-        })
+            })
+            
+        
     }
 }
