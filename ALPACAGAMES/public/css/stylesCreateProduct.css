@@ -255,7 +255,7 @@ h1 {
         font-size: 0.9rem;
     }
 
-    .container:before {
+    .containerf:before {
         display: none;
         top: 120px;
     }
