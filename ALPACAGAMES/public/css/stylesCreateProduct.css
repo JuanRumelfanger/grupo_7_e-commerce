@@ -27,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.94
+    opacity: 0.96
 }
 
 
@@ -218,7 +218,7 @@ h1 {
 
 
 /* Responsive */
-@media screen and (max-width: 500px) {
+@media(max-width: 500px) {
 
 
     .containerf {
